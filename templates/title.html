@@ -1,0 +1,17 @@
+<article class="post">
+    <h1>
+        $if(linked)$
+        <a href="$link$" target="_blank" class="linked-link">
+            $title$
+        </a>
+        $else$
+        <a href="$url$">
+            $title$
+        </a>
+        $endif$
+        <a href="$url$" class="link-perma">
+            <span>&#9679</span>
+        </a>
+    </h1>
+    $body$
+</article>
