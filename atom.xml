@@ -1,52 +1,29 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Kaushikc.Org</title>
-        <link rel="stylesheet" href="./css/style.css" />
-        <link rel="stylesheet" href="./css/default.css" />
-    </head>
-    <body>
-        <header>
-            <div class="page-width">
-                <a href="./">
-                    <div class="site-logo">
-                        Kaushikc.Org
-                    </div>
-                </a>
-                <nav>
-                    <div class="main-menu-container">
-                        <ul class="menu">
-                            <li class="menu-item">
-                                <a href="./archive.html">Archive</a>
-                            </li>
-                            <li class="menu-item">
-                                <a target="_blank" href="https://keybase.io/kaushikc">Kaushik Chakraborty</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="./atom.xml">Feed</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </header>
-
-        <main role="main" class="page-width">
-            
-
-<div class="in-index">
-    <article class="post">
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Kaushikc.Org</title>
+    <link href="kaushikc.org/atom.xml" rel="self" />
+    <link href="kaushikc.org" />
+    <id>kaushikc.org/atom.xml</id>
+    <author>
+        <name>Kaushik Chakraborty</name>
+        <email>feed@kaushikc.org</email>
+    </author>
+    <updated>2017-06-22T00:00:00Z</updated>
+    <entry>
+    <title>How to play WWDC Session Videos in Chrome ?</title>
+    <link href="kaushikc.org/posts/how-to-play-wwdc-session-videos-in-chrome.html" />
+    <id>kaushikc.org/posts/how-to-play-wwdc-session-videos-in-chrome.html</id>
+    <published>2017-06-22T00:00:00Z</published>
+    <updated>2017-06-22T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<article class="post">
     <h1>
         
-        <a href="./posts/how-to-play-wwdc-session-videos-in-chrome.html">
+        <a href="/posts/how-to-play-wwdc-session-videos-in-chrome.html">
             How to play WWDC Session Videos in Chrome ?
         </a>
         
-        <a href="./posts/how-to-play-wwdc-session-videos-in-chrome.html" class="link-perma">
-            <span>●</span>
+        <a href="/posts/how-to-play-wwdc-session-videos-in-chrome.html" class="link-perma">
+            <span>&#9679</span>
         </a>
     </h1>
     <div class="byline">
@@ -54,7 +31,7 @@
 </div>
 <div class="bodycopy">
     <div class="figure">
-<img src="./images/kaychaks_2017-Jun-17.jpg" alt="Oops" />
+<img src="/images/kaychaks_2017-Jun-17.jpg" alt="Oops" />
 <p class="caption">Oops</p>
 </div>
 <p><em>Oh you can’t</em></p>
@@ -73,21 +50,23 @@
 </div>
 
 </article>
-
-</div>
-    
-<hr />
-  
-<div class="in-index">
-    <article class="post">
+]]></summary>
+</entry>
+<entry>
+    <title>PGP - Signal Debate</title>
+    <link href="kaushikc.org/posts/pgp-signal-debate.html" />
+    <id>kaushikc.org/posts/pgp-signal-debate.html</id>
+    <published>2016-12-25T00:00:00Z</published>
+    <updated>2016-12-25T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<article class="post">
     <h1>
         
-        <a href="./posts/pgp-signal-debate.html">
+        <a href="/posts/pgp-signal-debate.html">
             PGP - Signal Debate
         </a>
         
-        <a href="./posts/pgp-signal-debate.html" class="link-perma">
-            <span>●</span>
+        <a href="/posts/pgp-signal-debate.html" class="link-perma">
+            <span>&#9679</span>
         </a>
     </h1>
     <div class="byline">
@@ -101,21 +80,23 @@
 </div>
 
 </article>
-
-</div>
-    
-<hr />
-  
-<div class="in-index">
-    <article class="post">
+]]></summary>
+</entry>
+<entry>
+    <title>Functional Ladder</title>
+    <link href="kaushikc.org/posts/functional-ladder.html" />
+    <id>kaushikc.org/posts/functional-ladder.html</id>
+    <published>2016-12-03T00:00:00Z</published>
+    <updated>2016-12-03T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<article class="post">
     <h1>
         
-        <a href="./posts/functional-ladder.html">
+        <a href="/posts/functional-ladder.html">
             Functional Ladder
         </a>
         
-        <a href="./posts/functional-ladder.html" class="link-perma">
-            <span>●</span>
+        <a href="/posts/functional-ladder.html" class="link-perma">
+            <span>&#9679</span>
         </a>
     </h1>
     <div class="byline">
@@ -132,21 +113,23 @@
 </div>
 
 </article>
-
-</div>
-    
-<hr />
-  
-<div class="in-index">
-    <article class="post">
+]]></summary>
+</entry>
+<entry>
+    <title>Joe Armstrong's method of solving problems</title>
+    <link href="kaushikc.org/linked/joe-armstrongs-method-of-solving-problems.html" />
+    <id>kaushikc.org/linked/joe-armstrongs-method-of-solving-problems.html</id>
+    <published>2016-08-15T00:00:00Z</published>
+    <updated>2016-08-15T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<article class="post">
     <h1>
         
         <a href="http://bit.ly/2bbknVu" target="_blank" class="linked-link">
             Joe Armstrong's method of solving problems
         </a>
         
-        <a href="./linked/joe-armstrongs-method-of-solving-problems.html" class="link-perma">
-            <span>●</span>
+        <a href="/linked/joe-armstrongs-method-of-solving-problems.html" class="link-perma">
+            <span>&#9679</span>
         </a>
     </h1>
     <div class="byline">
@@ -171,21 +154,23 @@
 </div>
 
 </article>
-
-</div>
-    
-<hr />
-  
-<div class="in-index">
-    <article class="post">
+]]></summary>
+</entry>
+<entry>
+    <title>Aarohi 🎗</title>
+    <link href="kaushikc.org/posts/aarohi.html" />
+    <id>kaushikc.org/posts/aarohi.html</id>
+    <published>2016-07-27T00:00:00Z</published>
+    <updated>2016-07-27T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<article class="post">
     <h1>
         
-        <a href="./posts/aarohi.html">
+        <a href="/posts/aarohi.html">
             Aarohi 🎗
         </a>
         
-        <a href="./posts/aarohi.html" class="link-perma">
-            <span>●</span>
+        <a href="/posts/aarohi.html" class="link-perma">
+            <span>&#9679</span>
         </a>
     </h1>
     <div class="byline">
@@ -193,7 +178,7 @@
 </div>
 <div class="bodycopy">
     <div class="figure">
-<img src="./images/IMG_0036.JPG" alt="👧🏻" />
+<img src="/images/IMG_0036.JPG" alt="👧🏻" />
 <p class="caption">👧🏻</p>
 </div>
 <p>It’s been 20 days today but better late than never - we got our first human resource, an awesome baby girl - <strong>Aarohi</strong></p>
@@ -204,21 +189,23 @@
 </div>
 
 </article>
-
-</div>
-    
-<hr />
-  
-<div class="in-index">
-    <article class="post">
+]]></summary>
+</entry>
+<entry>
+    <title>Apple Pay on the Web</title>
+    <link href="kaushikc.org/posts/apple-pay-on-the-web.html" />
+    <id>kaushikc.org/posts/apple-pay-on-the-web.html</id>
+    <published>2016-06-14T00:00:00Z</published>
+    <updated>2016-06-14T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<article class="post">
     <h1>
         
-        <a href="./posts/apple-pay-on-the-web.html">
+        <a href="/posts/apple-pay-on-the-web.html">
             Apple Pay on the Web
         </a>
         
-        <a href="./posts/apple-pay-on-the-web.html" class="link-perma">
-            <span>●</span>
+        <a href="/posts/apple-pay-on-the-web.html" class="link-perma">
+            <span>&#9679</span>
         </a>
     </h1>
     <div class="byline">
@@ -245,21 +232,23 @@
 </div>
 
 </article>
-
-</div>
-    
-<hr />
-  
-<div class="in-index">
-    <article class="post">
+]]></summary>
+</entry>
+<entry>
+    <title>Getting rid of "um"s and "like"s</title>
+    <link href="kaushikc.org/posts/getting-rid-of-um-s-and-like-s.html" />
+    <id>kaushikc.org/posts/getting-rid-of-um-s-and-like-s.html</id>
+    <published>2016-06-13T00:00:00Z</published>
+    <updated>2016-06-13T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<article class="post">
     <h1>
         
-        <a href="./posts/getting-rid-of-um-s-and-like-s.html">
+        <a href="/posts/getting-rid-of-um-s-and-like-s.html">
             Getting rid of "um"s and "like"s
         </a>
         
-        <a href="./posts/getting-rid-of-um-s-and-like-s.html" class="link-perma">
-            <span>●</span>
+        <a href="/posts/getting-rid-of-um-s-and-like-s.html" class="link-perma">
+            <span>&#9679</span>
         </a>
     </h1>
     <div class="byline">
@@ -274,21 +263,23 @@
 </div>
 
 </article>
-
-</div>
-    
-<hr />
-  
-<div class="in-index">
-    <article class="post">
+]]></summary>
+</entry>
+<entry>
+    <title>English hooliganism - far better show than their game</title>
+    <link href="kaushikc.org/posts/english-hooliganism-far-better-show-than-their-game.html" />
+    <id>kaushikc.org/posts/english-hooliganism-far-better-show-than-their-game.html</id>
+    <published>2016-06-12T00:00:00Z</published>
+    <updated>2016-06-12T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<article class="post">
     <h1>
         
-        <a href="./posts/english-hooliganism-far-better-show-than-their-game.html">
+        <a href="/posts/english-hooliganism-far-better-show-than-their-game.html">
             English hooliganism - far better show than their game
         </a>
         
-        <a href="./posts/english-hooliganism-far-better-show-than-their-game.html" class="link-perma">
-            <span>●</span>
+        <a href="/posts/english-hooliganism-far-better-show-than-their-game.html" class="link-perma">
+            <span>&#9679</span>
         </a>
     </h1>
     <div class="byline">
@@ -303,21 +294,23 @@
 </div>
 
 </article>
-
-</div>
-    
-<hr />
-  
-<div class="in-index">
-    <article class="post">
+]]></summary>
+</entry>
+<entry>
+    <title>Quit cribbing about Homeopathy</title>
+    <link href="kaushikc.org/posts/quit-cribbing-about-homeopathy.html" />
+    <id>kaushikc.org/posts/quit-cribbing-about-homeopathy.html</id>
+    <published>2016-06-11T00:00:00Z</published>
+    <updated>2016-06-11T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<article class="post">
     <h1>
         
-        <a href="./posts/quit-cribbing-about-homeopathy.html">
+        <a href="/posts/quit-cribbing-about-homeopathy.html">
             Quit cribbing about Homeopathy
         </a>
         
-        <a href="./posts/quit-cribbing-about-homeopathy.html" class="link-perma">
-            <span>●</span>
+        <a href="/posts/quit-cribbing-about-homeopathy.html" class="link-perma">
+            <span>&#9679</span>
         </a>
     </h1>
     <div class="byline">
@@ -329,21 +322,23 @@
 </div>
 
 </article>
-
-</div>
-    
-<hr />
-  
-<div class="in-index">
-    <article class="post">
+]]></summary>
+</entry>
+<entry>
+    <title>Heil RSS</title>
+    <link href="kaushikc.org/linked/heil-rss.html" />
+    <id>kaushikc.org/linked/heil-rss.html</id>
+    <published>2016-06-04T00:00:00Z</published>
+    <updated>2016-06-04T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<article class="post">
     <h1>
         
         <a href="http://sethgodin.typepad.com/seths_blog/2016/06/read-more-blogs.html" target="_blank" class="linked-link">
             Heil RSS
         </a>
         
-        <a href="./linked/heil-rss.html" class="link-perma">
-            <span>●</span>
+        <a href="/linked/heil-rss.html" class="link-perma">
+            <span>&#9679</span>
         </a>
     </h1>
     <div class="byline">
@@ -368,35 +363,7 @@ Yes, I co-host a weekly podcast, since last 61 weeks, named “The Tech Show” 
 </div>
 
 </article>
+]]></summary>
+</entry>
 
-</div>
-    
-
-
-        </main>
-
-        <footer class="page-width">
-            <hr />
-            <nav>
-                <div class="menu-footer-menu-container">
-                    <ul class="menu">
-                        <li class="menu-item">
-                            © 2017 <a target="_blank" href="https://keybase.io/kaushikc">Kaushik Chakraborty</a>
-                        </li>
-
-                        <li class="menu-item">
-                            <a href="./archive.html"><strong>Archive</strong></a>
-                        </li>
-
-                        <li class="menu-item">
-                            Styles influenced from <a href="https://webkit.org/blog/" target="_blank">WebKit Blog</a>
-                        </li>
-                        <li class="menu-item">
-                            Generated via <a href="http://jaspervdj.be/hakyll" target="_blank">Hakyll</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </footer>
-    </body>
-</html>
+</feed>
