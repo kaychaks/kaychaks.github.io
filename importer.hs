@@ -62,15 +62,16 @@ checklinkedpost s = let pat = "\\[(.*)\\]\\((.*)\\)" :: String
 
 
 instance FromJSON Post where
-  parseJSON  = withObject "data" (\o -> do
-  pid <- o .: "id"
-  t <- o .: "title"
-  c <- o .: "markdown"
-  d <- o .: "published_at"
-  s <- o .: "slug"
-  let u = "http://kaushikc.org/" <> s
-  let (tt, ml) = checklinkedpost t
-  return $ Post pid tt c d Nothing u s ml)
+  parseJSON  = withObject "data" (
+    \o -> do
+      pid <- o .: "id"
+      t <- o .: "title"
+      c <- o .: "markdown"
+      d <- o .: "published_at"
+      s <- o .: "slug"
+      let u = "http://kaushikc.org/" <> s
+      let (tt, ml) = checklinkedpost t
+      return $ Post pid tt c d Nothing u s ml)
 
 tpair :: (AsValue t) => T.Text -> T.Text -> Fold t (Int, Value)
 tpair l r = folding $ \v ->
