@@ -1,8 +1,8 @@
 ---
 title : Appalling favorites & fearless goalkeepers (World Cup Knockouts Day 4)
 published : 2014-07-02
-tags : sports
-link : 
+tags : sports, football, world-cup, wc-2014
+link :
 ---
 
 Argentina pathetically won their knockout with Switzerland. And Belgium - USA produced another gem of a match of this world cup.
@@ -29,4 +29,4 @@ This game also went into extra time. Belgium scored twice and USA scared them wi
 
 __And in quarters__
 
-I'm going to cheer for Belgium when they will play against Argentina. After Germany, they are the best team that's gonna play in quarters. And I am starting to believe that a final between them would be more enticing than any South American component in it.  
+I'm going to cheer for Belgium when they will play against Argentina. After Germany, they are the best team that's gonna play in quarters. And I am starting to believe that a final between them would be more enticing than any South American component in it.

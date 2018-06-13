@@ -1,8 +1,8 @@
 ---
 title : Goalkeeper Gods (World Cup Knockouts Day 3)
 published : 2014-07-01
-tags : sports
-link : 
+tags : sports, football, world-cup, wc-2014
+link :
 ---
 
 It was a superb night of football. Both Nigerian & Algerian saved some amazing shots on goal & raised the bar of the already high quality of matches happened in this World Cup. This World Cup is becoming goalkeeper’s tournament more than the striker’s.

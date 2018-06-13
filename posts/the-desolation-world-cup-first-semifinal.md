@@ -1,8 +1,8 @@
 ---
 title : The Desolation (World Cup First Semifinal)
 published : 2014-07-10
-tags : sports
-link : 
+tags : sports, football, world-cup, wc-2014
+link :
 ---
 
 **Brazil lost to Germany by 7 goals to 1**

@@ -1,8 +1,8 @@
 ---
 title : No beauty any more (World Cup Third Place)
 published : 2014-07-13
-tags : sports
-link : 
+tags : sports, football, world-cup, wc-2014
+link :
 ---
 
 __Brazil lost to Netherlands 3-0__

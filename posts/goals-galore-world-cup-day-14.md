@@ -1,8 +1,8 @@
 ---
 title : Goals galore (World Cup Day 14)
 published : 2014-06-27
-tags : sports
-link : 
+tags : sports, football, world-cup, wc-2014
+link :
 ---
 
 High scoring matches except the France - Ecuador one.

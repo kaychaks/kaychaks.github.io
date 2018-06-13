@@ -1,8 +1,8 @@
 ---
 title : Cliffhangers (World Cup Day 11)
 published : 2014-06-23
-tags : sports
-link : 
+tags : sports, football, world-cup, wc-2014
+link :
 ---
 
 This world cup is turning out to be more nail-biting than expected.

@@ -1,8 +1,8 @@
 ---
 title : English misery continues (World Cup Day 8)
 published : 2014-06-22
-tags : sports
-link : 
+tags : sports, football, world-cup, wc-2014
+link :
 ---
 
 Suarez destroyed England. Drogba could not produce any last minute miracle against Columbia. Greece & Japan settled for a boring draw.
@@ -14,7 +14,3 @@ Suarez proved again why he is aggressively becoming one of the hottest forwards.
 England had the ball 60% of the time but could produce handful of real chances on the goal. Uruguay on the other hand made full use of their limited visits to English goalpost.
 
 It seemed to be a shocker for Suarez who could not believe his historic acts. For me, what happened with England, was not much of a surprise.
-
-
-
-

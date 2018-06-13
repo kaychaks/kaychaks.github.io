@@ -1,8 +1,8 @@
 ---
 title : Rise of underdogs (World Cup Day 3)
 published : 2014-06-16
-tags : sports
-link : 
+tags : sports, football, world-cup, wc-2014
+link :
 ---
 
 Except for one game - England vs Italy. That went the expected way, at least for me. High points for England - they are not that bad this time. Thanks to the fresh bloods from Liverpool (Sturridge & Sterling). And low points - as always, Rooney could never find his right place & right shot at the goal.
@@ -13,4 +13,4 @@ Now on the actual thing about teams who were not supposed to be winners. All spo
 
 It signifies nothing as these are everyone's first matches. But of course it depicts one very clear message - clubs culture around the world has immensely helped guys from far off places learn the skills required to play international matches.
 
-So I am expecting more such set-offs. 
+So I am expecting more such set-offs.

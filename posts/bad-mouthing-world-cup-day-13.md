@@ -1,8 +1,8 @@
 ---
 title : Bad mouthing (World Cup Day 13)
 published : 2014-06-27
-tags : sports
-link : 
+tags : sports, football, world-cup, wc-2014
+link :
 ---
 
 Italy became the next European to thrash out of the world cup. Thanks to their dispirited & hopeless performance. They played to draw and lost to a team who also had no inclination to win.

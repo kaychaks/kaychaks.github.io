@@ -1,7 +1,7 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
 import           Control.Monad           (forM)
-import           Data.List               (groupBy, sort, sortBy)
+import           Data.List               (groupBy, sortBy)
 import           Data.Maybe              (fromMaybe)
 import           Data.Monoid             (mappend)
 import           Data.Time.Clock         (UTCTime (..))
@@ -22,22 +22,49 @@ main = hakyll $ do
         route   idRoute
         compile compressCssCompiler
 
+    tags <- buildTags "posts/*" (fromCapture "tags/*.html")
+
+    tagsRules tags $ \t p -> do
+      route idRoute
+      compile $ do
+        posts <- recentFirst =<< loadAll p
+        let tagCtx =
+              constField "title" t `mappend`
+              listField "posts" postCtx (return posts) `mappend`
+              defaultContext
+
+        makeItem ""
+          >>= loadAndApplyTemplate "templates/tag.html" tagCtx
+          >>= loadAndApplyTemplate "templates/default.html" tagCtx
+          >>= relativizeUrls
+
+    create ["tags/index.html"] $ do
+      route idRoute
+      compile $
+        renderTags
+         (\a b c d e -> "<li><a href=" ++ b ++ ">" ++ a ++ " (" ++ show c ++ ")" ++ "</a></li>")
+         (\xs -> "<article><ul>" ++ concat xs ++ "</ul></article>")
+         tags
+        >>= makeItem
+        >>= loadAndApplyTemplate "templates/default.html" defaultContext
+        >>= relativizeUrls
+
     matchMetadata "posts/*" (elem ("linked" :: String) . getTagsFromMetadata) $ do
       route $ gsubRoute "posts/" (const "linked/") `composeRoutes` setExtension "html"
       compile $ pandocCompiler
-        >>= loadAndApplyTemplate "templates/post.html" postCtx
-        >>= loadAndApplyTemplate "templates/title.html" (boolField "linked" (const True) `mappend` postCtx)
+        >>= loadAndApplyTemplate "templates/post.html" (postCtxWithTags tags)
+        >>= loadAndApplyTemplate "templates/title.html" (boolField "linked" (const True) `mappend` (postCtxWithTags tags))
         >>= saveSnapshot "postSave"
-        >>= loadAndApplyTemplate "templates/default.html" postCtx
+        >>= loadAndApplyTemplate "templates/default.html" (postCtxWithTags tags)
         >>= relativizeUrls
 
     matchMetadata "posts/*" (notElem ("linked" :: String) . getTagsFromMetadata) $ do
       route $ setExtension "html"
       compile $ pandocCompiler
-        >>= loadAndApplyTemplate "templates/post.html" postCtx
-        >>= loadAndApplyTemplate "templates/title.html" (boolField "linked" (const False) `mappend` postCtx)
+        >>= loadAndApplyTemplate "templates/post.html" (postCtxWithTags tags)
+        >>= loadAndApplyTemplate "templates/title.html" (boolField "linked" (const False) `mappend` (postCtxWithTags tags))
         >>= saveSnapshot "postSave"
-        >>= loadAndApplyTemplate "templates/default.html" postCtx
+        >>= loadAndApplyTemplate "templates/default.html" (postCtxWithTags tags)
         >>= relativizeUrls
 
     create ["archive.html"] $ do
@@ -70,7 +97,6 @@ main = hakyll $ do
                     listField "posts" postCtx (return posts) `mappend`
                     constField "title" (feedTitle feedConfig) `mappend`
                     defaultContext
-
             getResourceBody
                 >>= applyAsTemplate indexCtx
                 >>= loadAndApplyTemplate "templates/default.html" indexCtx
@@ -84,6 +110,9 @@ postCtx :: Context String
 postCtx =
     dateField "date" "%B %e, %Y" `mappend`
     defaultContext
+
+postCtxWithTags :: Tags -> Context String
+postCtxWithTags t = tagsField "tags" t `mappend` postCtx
 
 postGroupCtx :: Context ArchiveGroup
 postGroupCtx = field "month" (return . month . fst . itemBody) `mappend`

@@ -1,8 +1,8 @@
 ---
 title : Skills & Strategies (World Cup Quarters Day 2)
 published : 2014-07-06
-tags : sports
-link : 
+tags : sports, football, world-cup, wc-2014
+link :
 ---
 
 __Argentina vs Belgium__

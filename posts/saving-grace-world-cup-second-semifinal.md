@@ -1,8 +1,8 @@
 ---
 title : Saving grace (World Cup Second Semifinal)
 published : 2014-07-11
-tags : sports
-link : 
+tags : sports, football, world-cup, wc-2014
+link :
 ---
 
 __Argentina won over Netherlands 4-2, in penalties__
@@ -17,4 +17,4 @@ But in the end it came down to goalkeepers, like so many times in this World Cup
 
 And it costed them the match. Ramos on the other hand made one of the most scintillating saves in penalties in recent times.
 
-Argentina did not look like a threat to Germany by their calm & composed play. But we can't just write them out. I am happy that it's not going to be again another all European affair. There is still hope for South Americans to keep the cup with them, although against an opponent who are like a hungry lion in front of the same prey that has been snatched away from him multiple times in the past. 
+Argentina did not look like a threat to Germany by their calm & composed play. But we can't just write them out. I am happy that it's not going to be again another all European affair. There is still hope for South Americans to keep the cup with them, although against an opponent who are like a hungry lion in front of the same prey that has been snatched away from him multiple times in the past.

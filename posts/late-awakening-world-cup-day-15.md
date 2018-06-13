@@ -1,8 +1,8 @@
 ---
 title : Late awakening (World Cup Day 15)
 published : 2014-06-27
-tags : sports
-link : 
+tags : sports, football, world-cup, wc-2014
+link :
 ---
 
 It was the last day of the group stages. And there were heavy rains that was supposed to delay the game between USA & Germany.

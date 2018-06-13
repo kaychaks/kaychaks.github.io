@@ -1,8 +1,8 @@
 ---
 title : It's getting sweet (World Cup Day 12)
 published : 2014-06-26
-tags : sports
-link : 
+tags : sports, football, world-cup, wc-2014
+link :
 ---
 
 It started a bit scrawny and with a tad too much cautiousness. Teams are now getting the hang of the climate, crowd & the game itself.

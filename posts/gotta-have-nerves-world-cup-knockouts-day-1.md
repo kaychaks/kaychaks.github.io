@@ -1,8 +1,8 @@
 ---
 title : Gotta have nerves (World Cup Knockouts Day 1)
 published : 2014-06-30
-tags : sports
-link : 
+tags : sports, football, world-cup, wc-2014
+link :
 ---
 
 Brazil took it to the wire against Chile and Colombia never rested peacefully against Uruguay. Both of them won and would play against each other in quarters. That I'm expecting to be another tense match.

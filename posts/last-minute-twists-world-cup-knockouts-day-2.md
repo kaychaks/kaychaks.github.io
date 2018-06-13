@@ -1,8 +1,8 @@
 ---
 title : Last minute twists (World Cup Knockouts Day 2)
 published : 2014-07-01
-tags : sports
-link : 
+tags : sports, football, world-cup, wc-2014
+link :
 ---
 
 Both Netherlands & Greece happen to turn the fate of the game after the normal game time is over. Former could turn it to their advantage and later went more with the drama but faltered.

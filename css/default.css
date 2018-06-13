@@ -31,3 +31,10 @@ a.linked-link:hover {
 .footnotes ol, .footnotes p {
     font-size: 1.5rem;
 }
+
+
+article .byline .author {
+    white-space: normal;
+    line-height: 2rem;
+
+}

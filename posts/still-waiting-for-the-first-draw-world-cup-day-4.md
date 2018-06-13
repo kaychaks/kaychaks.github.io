@@ -1,8 +1,8 @@
 ---
 title : Still waiting for the first draw (World Cup Day 4)
 published : 2014-06-17
-tags : sports
-link : 
+tags : sports, football, world-cup, wc-2014
+link :
 ---
 
 Ecuador had the closest chance to have it but then the Swiss scored with 30 seconds to go in the 93rd minute.

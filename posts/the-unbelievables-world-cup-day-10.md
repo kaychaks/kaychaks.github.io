@@ -1,8 +1,8 @@
 ---
 title : The Unbelievables (World Cup Day 10)
 published : 2014-06-23
-tags : sports
-link : 
+tags : sports, football, world-cup, wc-2014
+link :
 ---
 
 First the goal from Messi.

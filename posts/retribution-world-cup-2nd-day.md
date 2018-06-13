@@ -1,8 +1,8 @@
 ---
 title : Retribution (World Cup Day 2)
 published : 2014-06-15
-tags : sports
-link : 
+tags : sports, football, world-cup, wc-2014
+link :
 ---
 
 ![flying dutchman](https://pbs.twimg.com/media/BqF7DWYIcAA0ay-.jpg:large)
