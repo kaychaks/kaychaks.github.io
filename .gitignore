@@ -1,7 +1,7 @@
 _site
 _cache
 .*
-!.gitignore
-!.circleci/
+!/.gitignore
+!/.circleci/
 *.out
 dist*
