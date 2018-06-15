@@ -15,16 +15,16 @@ jobs:
       - run:
           name: setup nix & get dependencies
           command: |
-            if [ -d "/home/circleci/nix-store" ]
+            if [ -d "~/nix-store" ]
             then
-              sudo cp -r /home/circleci/nix-store/ /nix
+              sudo cp -r ~/nix-store/ /nix
               sudo chown circleci /nix
             else
               bash <(curl https://nixos.org/nix/install)
-              source /home/circleci/.nix-profile/etc/profile.d/nix.sh
+              source ~/.nix-profile/etc/profile.d/nix.sh
               nix-env -iA nixpkgs.haskellPackages.cabal-install
               nix-shell --run exit
-              cp -ru /nix /home/circleci/nix-store
+              cp -ru /nix ~/nix-store
             fi
       - save-cache:
           name: saving nix cache
@@ -39,12 +39,12 @@ jobs:
       - run:
           name: build project
           command: |
-            source /home/circleci/.nix-profile/etc/profile.d/nix.sh
+            source ~/.nix-profile/etc/profile.d/nix.sh
             nix-shell --run "cabal new-build"
       - deploy:
           name: deploy master to github pages
           command: |
-            source /home/circleci/.nix-profile/etc/profile.d/nix.sh
+            source ~/.nix-profile/etc/profile.d/nix.sh
             git config --global user.email robots@circleci.com
             git config --global user.name CircleCI
             nix-shell --run "cabal new-run site -- clean"
