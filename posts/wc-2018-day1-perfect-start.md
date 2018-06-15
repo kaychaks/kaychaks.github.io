@@ -1,5 +1,5 @@
 ---
-title : WC 2018: Day 1: A perfect start
+title : "WC 2018: Day 1: A perfect start"
 published : 2018-06-15
 tags : football, sport, world-cup, wc-2018
 link :
