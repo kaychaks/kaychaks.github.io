@@ -1,0 +1,59 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/blog-hakyll
+    machine: true
+    branches:
+      only:
+        - develop
+    steps:
+      - checkout
+      - restore_cache:
+          key: nix-store-v1-{{ checksum "shell.nix" }}
+      - restore_cache:
+          key: nix-profile-v1-{{ checksum "shell.nix" }}
+      - run:
+          name: setup nix & get dependencies
+          command: |
+            if [ -d "/home/circleci/nix-store" ]
+            then
+              sudo cp -r /home/circleci/nix-store/ /nix
+              sudo chown circleci /nix
+            else
+              bash <(curl https://nixos.org/nix/install)
+              source /home/circleci/.nix-profile/etc/profile.d/nix.sh
+              nix-env -iA nixpkgs.haskellPackages.cabal-install
+              nix-shell --run exit
+              cp -ru /nix /home/circleci/nix-store
+            fi
+      - save-cache:
+          name: saving nix cache
+          key: nix-store-v1-{{ checksum "shell.nix" }}
+          paths:
+            - ~/nix-store
+      - save-cache:
+          name: saving nix profile
+          key: nix-profile-v1-{{ checksum "shell.nix" }}
+          paths:
+            - ~/.nix-profile
+      - run:
+          name: build project
+          command: |
+            source /home/circleci/.nix-profile/etc/profile.d/nix.sh
+            nix-shell --run "cabal new-build"
+      - deploy:
+          name: deploy master to github pages
+          command: |
+            source /home/circleci/.nix-profile/etc/profile.d/nix.sh
+            git config --global user.email robots@circleci.com
+            git config --global user.name CircleCI
+            nix-shell --run "cabal new-run site -- clean"
+            nix-shell --run "cabal new-run site -- build"
+            git checkout master
+            git pull --rebase
+            echo "Overwrite existing files with new files"
+            cp -a _site/. .
+            echo "Commit"
+            git add --all
+            git commit -m "[`date '+%F %T %Z'`] New Post"
+            git push origin master:master
