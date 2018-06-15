@@ -30,6 +30,7 @@ jobs:
       - deploy:
           name: deploy master to github pages
           command: |
+            source ~/.nix-profile/etc/profile.d/nix.sh
             git config --global user.email robots@circleci.com
             git config --global user.name CircleCI
             nix-shell --run "new-run site -- clean"
