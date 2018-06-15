@@ -9,23 +9,35 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: nix-store-{{ checksum "shell.nix" }}
+          key: nix-store-v1-{{ checksum "shell.nix" }}
+      - restore_cache:
+          key: nix-profile-v1-{{ checksum "shell.nix" }}
       - run:
           name: setup nix & get dependencies
           command: |
-            sudo mkdir /nix
-            sudo chown circleci /nix
-            bash <(curl https://nixos.org/nix/install)
-            source ~/.nix-profile/etc/profile.d/nix.sh
-            nix-shell --run exit
+            [ -d "~/nix-store" ] && \
+              sudo cp -r ~/nix-store/ /nix && \
+              sudo chown circleci /nix
+            [ ! -d "~/nix-store" ] && \
+              bash <(curl https://nixos.org/nix/install) && \
+              source ~/.nix-profile/etc/profile.d/nix.sh && \
+              nix-env -iA nixpkgs.haskellPackages.cabal-install && \
+              nix-shell --run exit && \
+              cp -ru /nix ~/nix-store
       - save-cache:
           name: saving nix cache
-          key: nix-store-{{ checksum "shell.nix" }}
+          key: nix-store-v1-{{ checksum "shell.nix" }}
           paths:
-            - /nix
+            - ~/nix-store
+      - save-cache:
+          name: saving nix profile
+          key: nix-profile-v1-{{ checksum "shell.nix" }}
+          paths:
+            - ~/.nix-profile
       - run:
           name: build project
           command: |
+            source ~/.nix-profile/etc/profile.d/nix.sh
             nix-shell --run "cabal new-build"
       - deploy:
           name: deploy master to github pages
@@ -33,8 +45,8 @@ jobs:
             source ~/.nix-profile/etc/profile.d/nix.sh
             git config --global user.email robots@circleci.com
             git config --global user.name CircleCI
-            nix-shell --run "new-run site -- clean"
-            nix-shell --run "new-run site -- build"
+            nix-shell --run "cabal new-run site -- clean"
+            nix-shell --run "cabal new-run site -- build"
             git checkout master
             git pull --rebase
             echo "Overwrite existing files with new files"
