@@ -5,7 +5,7 @@ jobs:
     machine: true
     branches:
       only:
-        develop
+        - develop
     steps:
       - checkout
       - restore_cache:
@@ -14,14 +14,14 @@ jobs:
           name: setup nix & get dependencies
           command: |
             sudo mkdir /nix
-            sudo chown ubuntu /nix
+            sudo chown circleci /nix
             bash <(curl https://nixos.org/nix/install)
-            source /nix/etc/profile.d/nix.sh
+            source ~/.nix-profile/etc/profile.d/nix.sh
             nix-shell --run exit
       - save-cache:
           name: saving nix cache
           key: nix-store-{{ checksun "shell.nix" }}
-          path:
+          paths:
             - /nix
       - run:
           name: build project
