@@ -1,0 +1,44 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/blog-hakyll
+    machine: true
+    branches:
+      only:
+        - develop
+    steps:
+      - checkout
+      - restore_cache:
+          key: nix-store-{{ checksum "shell.nix" }}
+      - run:
+          name: setup nix & get dependencies
+          command: |
+            sudo mkdir /nix
+            sudo chown circleci /nix
+            bash <(curl https://nixos.org/nix/install)
+            source ~/.nix-profile/etc/profile.d/nix.sh
+            nix-shell --run exit
+      - save-cache:
+          name: saving nix cache
+          key: nix-store-{{ checksun "shell.nix" }}
+          paths:
+            - /nix
+      - run:
+          name: build project
+          command: |
+            nix-shell --run "cabal new-build"
+      - deploy:
+          name: deploy master to github pages
+          command: |
+            git config --global user.email robots@circleci.com
+            git config --global user.name CircleCI
+            nix-shell --run "new-run site -- clean"
+            nix-shell --run "new-run site -- build"
+            git checkout master
+            git pull --rebase
+            echo "Overwrite existing files with new files"
+            cp -a _site/. .
+            echo "Commit"
+            git add --all
+            git commit -m "[`date '+%F %T %Z'`] New Post"
+            git push origin master:master
