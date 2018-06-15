@@ -28,7 +28,6 @@ jobs:
             git config --global user.name CircleCI
             nix-shell --run "cabal new-run site -- clean"
             nix-shell --run "cabal new-run site -- build"
-            git fetch --all
             git checkout master
             echo "Overwrite existing files with new files"
             cp -a _site/. .
