@@ -15,15 +15,17 @@ jobs:
       - run:
           name: setup nix & get dependencies
           command: |
-            [ -d "~/nix-store" ] && \
-              sudo cp -r ~/nix-store/ /nix && \
+            if [ -d "~/nix-store" ]
+            then
+              sudo cp -r ~/nix-store/ /nix
               sudo chown circleci /nix
-            [ ! -d "~/nix-store" ] && \
-              bash <(curl https://nixos.org/nix/install) && \
-              source ~/.nix-profile/etc/profile.d/nix.sh && \
-              nix-env -iA nixpkgs.haskellPackages.cabal-install && \
-              nix-shell --run exit && \
+            else
+              bash <(curl https://nixos.org/nix/install)
+              source ~/.nix-profile/etc/profile.d/nix.sh
+              nix-env -iA nixpkgs.haskellPackages.cabal-install
+              nix-shell --run exit
               cp -ru /nix ~/nix-store
+            fi
       - save-cache:
           name: saving nix cache
           key: nix-store-v1-{{ checksum "shell.nix" }}
