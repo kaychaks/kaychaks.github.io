@@ -18,7 +18,7 @@ jobs:
             if [ -d "/home/circleci/nix-store" ]
             then
               sudo cp -r /home/circleci/nix-store/ /nix
-              sudo chown circleci /nix
+              sudo chown -R circleci /nix
             else
               bash <(curl https://nixos.org/nix/install)
               source /home/circleci/.nix-profile/etc/profile.d/nix.sh
