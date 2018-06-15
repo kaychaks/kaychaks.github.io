@@ -18,7 +18,7 @@ let
           aeson base bytestring containers hakyll lens lens-aeson mtl
           regex-pcre text time time-locale-compat vector
         ];
-        executableSystemDepends = [pkgs.darwin.apple_sdk.frameworks.Cocoa];
+        executableSystemDepends = if pkgs.stdenv.isDarwin then [pkgs.darwin.apple_sdk.frameworks.Cocoa] else [];
         license = stdenv.lib.licenses.unfree;
         hydraPlatforms = stdenv.lib.platforms.none;
       };

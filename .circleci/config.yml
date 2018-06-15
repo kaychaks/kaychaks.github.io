@@ -20,7 +20,7 @@ jobs:
             nix-shell --run exit
       - save-cache:
           name: saving nix cache
-          key: nix-store-{{ checksun "shell.nix" }}
+          key: nix-store-{{ checksum "shell.nix" }}
           paths:
             - /nix
       - run:
