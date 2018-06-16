@@ -7,10 +7,16 @@ jobs:
       only:
         - develop
     steps:
+      - checkout
       - run:
           name: get code
           command: |
-            git clone https://github.com/kaychaks/kaychaks.github.io.git ~/blog-hakyll
+            # git clone https://github.com/kaychaks/kaychaks.github.io.git ~/blog-hakyll
+            git config --global user.email robots@circleci.com
+            git config --global user.name CircleCI
+            git fetch --force origin "master:remotes/origin/master"
+            git checkout -q -B master
+            git reset --hard origin/master
             git checkout develop
       - run:
           name: setup nix & get dependencies
@@ -33,7 +39,6 @@ jobs:
             nix-shell --run "cabal new-run site -- clean"
             nix-shell --run "cabal new-run site -- build"
             git checkout master
-            git pull
             echo "Overwrite existing files with new files"
             cp -a _site/. .
             echo "Commit"
