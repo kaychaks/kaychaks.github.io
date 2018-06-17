@@ -13,4 +13,5 @@ Both goals of France were thanks to the technologies - *goal-line* & *VAR* which
 
 **Argentina 1 - Iceland 1**
 
-Messi’s folks could not breach the *sons* of Iceland (pun intended). It’s sad to see Messi giving everything & failing in front of the Icelandish giants. Apart from blocking Argentine attack they could also show huge gaps in Argentine defence. These are exactly the kind of games fans like us tune in to the World Cup finals for. 
+Messi’s folks could not breach the *sons* of Iceland (pun intended). It’s sad to see Messi giving everything & failing in front of the Icelandish giants. Apart from blocking Argentine attack they could also show huge gaps in Argentine defence. These are exactly the kind of games fans like us tune in to the World Cup finals for.
+
