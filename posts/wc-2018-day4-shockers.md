@@ -1,9 +1,9 @@
-–––
+---
 title : "WC 2018: Day 4: Day of Shockers"
 published : 2018-06-17
 tags : sports, football, world-cup, wc-2018
 link :
-–––
+---
 
 All matches today resulted against any cat, pig or expert’s predictions. It’s a fine day for football when the team that persevered got to keep the fame. And in all three matches, it was the underdog that shined against the stronger but poor opponent.
 
