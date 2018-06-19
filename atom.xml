@@ -8,8 +8,40 @@
         <name>Kaushik Chakraborty</name>
         <email>feed@kaushikc.org</email>
     </author>
-    <updated>2018-06-17T00:00:00Z</updated>
+    <updated>2018-06-18T00:00:00Z</updated>
     <entry>
+    <title>WC 2018: Day 5: Belgian rise and English dilemma</title>
+    <link href="kaushikc.org/posts/wc-2018-day-eng-dilemma.html" />
+    <id>kaushikc.org/posts/wc-2018-day-eng-dilemma.html</id>
+    <published>2018-06-18T00:00:00Z</published>
+    <updated>2018-06-18T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<article class="post">
+    <h1>
+        
+        <a href="/posts/wc-2018-day-eng-dilemma.html">
+            WC 2018: Day 5: Belgian rise and English dilemma
+        </a>
+        
+        <a href="/posts/wc-2018-day-eng-dilemma.html" class="link-perma">
+            <span>&#9679</span>
+        </a>
+    </h1>
+    <div class="byline">
+    <p class="date">June 18, 2018</p>
+    <p class="author"><a href="/tags/sports.html">sports</a>, <a href="/tags/football.html">football</a>, <a href="/tags/world-cup.html">world-cup</a>, <a href="/tags/wc-2018.html">wc-2018</a></p>
+</div>
+<div class="bodycopy">
+    <p>A day with less drama. Still, England maintained their tradition of displaying careless game-play in the world cups.</p>
+<p><strong>Belgium 3 - Panama 0</strong></p>
+<p>It was a game between a team of battle-tested individuals against the World Cup debutantes. And it concluded with an expected outcome. But Panama could constrain Belgians in the first half. In the second half, their legs gave up. Belgian game in the second half had glimpses of fine play which is worthy of a notice. Belgians might have a good shot at the crown, unlike their group mate –England</p>
+<p><strong>England 2 - Tunisia 1</strong></p>
+<p>English struggle in world cup finals continues. They took 91 minutes to score the winning goal. Against a team which struggled to keep the ball to themselves. Even though the English players pushed deep most of the time, their game was unconvincing. It will take a lot than what the English have showcased for a better progress this time.</p>
+</div>
+
+</article>
+]]></summary>
+</entry>
+<entry>
     <title>WC 2018: Day 4: Day of Shockers</title>
     <link href="kaushikc.org/posts/wc-2018-day4-shockers.html" />
     <id>kaushikc.org/posts/wc-2018-day4-shockers.html</id>
@@ -328,40 +360,6 @@ Automation &amp; AI are the current marketing gimmicks around Enterprises<a href
 <p>However PGP has not got its right share of footing in the world yet. So it has remained as a mean of few (mostly Hackers &amp; Nerds). That should change. For it to happen people familiar with its highs and lows should talk, write and fight. Such conversations only can bring the right change both in thinking &amp; doing.</p>
 <p>Recently <a href="http://arstechnica.com/security/2016/12/op-ed-im-giving-up-on-pgp/">Filippo wrote</a> that Signal can replace PGP. And then Bruce Schenier <a href="https://www.schneier.com/blog/archives/2016/12/giving_up_on_pg.html">backed him</a>. To me the thought sounded a bit strange. But the points raised against PGP are important to note and act upon. As a counter, <a href="http://arstechnica.com/information-technology/2016/12/signal-does-not-replace-pgp/">Walkfield wrote</a> a fine piece backing PGP. All of these view points will only help and should happen often.</p>
 <p>In the mean time, I will say that <a href="https://keybase.io">Keybase</a> is doing their best to spread the love of PGP. <a href="https://keybase.io/kaushikc">I am there</a>. I hope others will join.</p>
-</div>
-
-</article>
-]]></summary>
-</entry>
-<entry>
-    <title>Functional Ladder</title>
-    <link href="kaushikc.org/posts/functional-ladder.html" />
-    <id>kaushikc.org/posts/functional-ladder.html</id>
-    <published>2016-12-03T00:00:00Z</published>
-    <updated>2016-12-03T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<article class="post">
-    <h1>
-        
-        <a href="/posts/functional-ladder.html">
-            Functional Ladder
-        </a>
-        
-        <a href="/posts/functional-ladder.html" class="link-perma">
-            <span>&#9679</span>
-        </a>
-    </h1>
-    <div class="byline">
-    <p class="date">December  3, 2016</p>
-    <p class="author"><a href="/tags/technology.html">technology</a>, <a href="/tags/fun-prog.html">fun-prog</a></p>
-</div>
-<div class="bodycopy">
-    <p>The LambdaConf guys came up with an <a href="http://lambdaconf.us/downloads/documents/lambdaconf_slfp.pdf">interesting way to group Functional Programmers</a>.</p>
-<blockquote>
-<p>LOFP is a standardised progression of different concepts and skills that developers must master on their journey to becoming expert-level functional programmers</p>
-</blockquote>
-<p>Too bad it made many developers, especially in Twitter, go mad. It’s not <em>Politically Correct</em> to call anyone by some kind of name these days, that was the biggest worry for most. People also said - most of the stuffs mentioned are really hard, placed in wrong order, will take years to learn, and does not matter.</p>
-<p>I don’t agree. To me the note is important for anyone who cares for <em>Functional Thinking</em> and want to have a deep understanding of the same. It has directions to what one should know at each step and how to put use of the same. People must realise - <a href="http://webcache.googleusercontent.com/search?q=cache:SHt7f6BhFjIJ:norvig.com/21-days.html+&amp;cd=3&amp;hl=en&amp;ct=clnk&amp;gl=in&amp;client=safari">It takes time to know something well</a>.</p>
-<p>However, I could think of one small thing to add - the instructions will make more sense for people who are fine with the idea of <em>Typed Functional Programming</em> (oh no!)</p>
 </div>
 
 </article>
