@@ -42,7 +42,7 @@ main = hakyll $ do
       route idRoute
       compile $
         renderTags
-         (\a b c d e -> "<li><a href=" ++ b ++ ">" ++ a ++ " (" ++ show c ++ ")" ++ "</a></li>")
+         (\a b c _ _ -> "<li><a href=" ++ b ++ ">" ++ a ++ " (" ++ show c ++ ")" ++ "</a></li>")
          (\xs -> "<article><ul>" ++ concat xs ++ "</ul></article>")
          tags
         >>= makeItem
@@ -88,6 +88,12 @@ main = hakyll $ do
         posts <- fmap (take 10) . recentFirst =<< loadAllSnapshots "posts/*" "postSave"
         renderAtom feedConfig feedCtx posts
 
+    create ["micro-atom.xml"] $ do
+      route idRoute
+      compile $ do
+        let feedCtx = postCtx `mappend` bodyField "description"
+        posts <- fmap (take 10) . recentFirst =<< loadAllSnapshots "micro/*" "microPostSave"
+        renderAtom feedConfig feedCtx posts
 
     match "index.html" $ do
         route idRoute
@@ -102,38 +108,30 @@ main = hakyll $ do
                 >>= loadAndApplyTemplate "templates/default.html" indexCtx
                 >>= relativizeUrls
 
+    -- experimental micro blog
+    match "micro/*" $ do
+      route $ setExtension "html"
+      compile $ pandocCompiler
+        >>= loadAndApplyTemplate "templates/micro-post.html" (postCtxWithTags tags)
+        >>= saveSnapshot "microPostSave"
+        >>= loadAndApplyTemplate "templates/micro-default.html" (postCtxWithTags tags)
+        >>= relativizeUrls
+
+    match "micro-index.html" $ do
+      route idRoute
+      compile $ do
+        posts <- recentFirst =<< loadAllSnapshots "micro/*" "microPostSave"
+
+        let indexCtx =
+                listField "posts" postCtx (return posts) `mappend`
+                defaultContext
+        getResourceBody
+            >>= applyAsTemplate indexCtx
+            >>= loadAndApplyTemplate "templates/micro-default.html" indexCtx
+            >>= relativizeUrls
     match "templates/*" $ compile templateBodyCompiler
 
 
-    -- experimental micro blog
-    -- match "micro/*" $ do
-    --   route $ setExtension "html"
-    --   compile $ pandocCompiler
-    --     >>= loadAndApplyTemplate "templates/micro-post.html" (postCtxWithTags tags)
-    --     >>= saveSnapshot "microPostSave"
-    --     >>= loadAndApplyTemplate "templates/micro-default.html" (postCtxWithTags tags)
-    --     >>= relativizeUrls
-
-    -- create ["micro/index.html"] $ do
-    --   route idRoute
-    --   compile $
-    --     posts <- recentFirst =<< loadAllSnapshots "micro/*" "microPostSave"
-
-    --     let indexCtx =
-    --             listField "posts" postCtx (return posts) `mappend`
-    --             constField "title" (feedTitle feedConfig) `mappend`
-    --             defaultContext
-    --     getResourceBody
-    --         >>= applyAsTemplate indexCtx
-    --         >>= loadAndApplyTemplate "templates/default.html" indexCtx
-    --         >>= relativizeUrls
-    --     renderTags
-    --      (\a b c d e -> "<li><a href=" ++ b ++ ">" ++ a ++ " (" ++ show c ++ ")" ++ "</a></li>")
-    --      (\xs -> "<article><ul>" ++ concat xs ++ "</ul></article>")
-    --      tags
-    --     >>= makeItem
-    --     >>= loadAndApplyTemplate "templates/default.html" defaultContext
-    --     >>= relativizeUrls
 
 --------------------------------------------------------------------------------
 postCtx :: Context String
