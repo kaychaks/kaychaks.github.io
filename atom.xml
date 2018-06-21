@@ -8,8 +8,38 @@
         <name>Kaushik Chakraborty</name>
         <email>feed@kaushikc.org</email>
     </author>
-    <updated>2018-06-20T00:00:00Z</updated>
+    <updated>2018-06-21T00:00:00Z</updated>
     <entry>
+    <title>WC 2018: Day 6: Reigning Ronaldo</title>
+    <link href="kaushikc.org/posts/wc-2018-day6-reigning-ronaldo.html" />
+    <id>kaushikc.org/posts/wc-2018-day6-reigning-ronaldo.html</id>
+    <published>2018-06-21T00:00:00Z</published>
+    <updated>2018-06-21T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<article class="post">
+    <h1>
+        
+        <a href="/posts/wc-2018-day6-reigning-ronaldo.html">
+            WC 2018: Day 6: Reigning Ronaldo
+        </a>
+        
+        <a href="/posts/wc-2018-day6-reigning-ronaldo.html" class="link-perma">
+            <span>&#9679</span>
+        </a>
+    </h1>
+    <div class="byline">
+    <p class="date">June 21, 2018</p>
+    <p class="author"><a href="/tags/sports.html">sports</a>, <a href="/tags/football.html">football</a>, <a href="/tags/world-cup.html">world-cup</a>, <a href="/tags/wc-2018.html">wc-2018</a></p>
+</div>
+<div class="bodycopy">
+    <p><strong>Portugal 1 - Morocco 0</strong></p>
+<p>Is this the time for real Ronaldo to stand up and shine like Euro 2016? Or it’s a matter of time till their luck runs out?</p>
+<p>They had a similar start back in 2016 when they picked up steam very late. But, Ronaldo’s impact is there both on the ball as well as on his teammates. Although they have serious issues to take care with ball possession, mid-field play and callous defence, an immense amount of uplifting energy flows through his mates as soon as Ronaldo make his run for the ball. We will have to wait to see how long will this living on the edge continue.</p>
+</div>
+
+</article>
+]]></summary>
+</entry>
+<entry>
     <title>WC 2018: Day 6: African Might</title>
     <link href="kaushikc.org/posts/wc-2018-day6-african-might.html" />
     <id>kaushikc.org/posts/wc-2018-day6-african-might.html</id>
@@ -315,49 +345,6 @@ Automation &amp; AI are the current marketing gimmicks around Enterprises<a href
 </li>
 </ol>
 </div>
-</div>
-
-</article>
-]]></summary>
-</entry>
-<entry>
-    <title>How to play WWDC Session Videos in Chrome ?</title>
-    <link href="kaushikc.org/posts/how-to-play-wwdc-session-videos-in-chrome.html" />
-    <id>kaushikc.org/posts/how-to-play-wwdc-session-videos-in-chrome.html</id>
-    <published>2017-06-22T00:00:00Z</published>
-    <updated>2017-06-22T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<article class="post">
-    <h1>
-        
-        <a href="/posts/how-to-play-wwdc-session-videos-in-chrome.html">
-            How to play WWDC Session Videos in Chrome ?
-        </a>
-        
-        <a href="/posts/how-to-play-wwdc-session-videos-in-chrome.html" class="link-perma">
-            <span>&#9679</span>
-        </a>
-    </h1>
-    <div class="byline">
-    <p class="date">June 22, 2017</p>
-    <p class="author"><a href="/tags/apple.html">apple</a>, <a href="/tags/technology.html">technology</a></p>
-</div>
-<div class="bodycopy">
-    <figure>
-<img src="/images/kaychaks_2017-Jun-17.jpg" alt="Oops" /><figcaption>Oops</figcaption>
-</figure>
-<p><em>Oh you can’t</em></p>
-<p>Gruber few days back <a href="https://daringfireball.net/2017/05/safari_vs_chrome_on_the_mac">was praising Safari</a></p>
-<blockquote>
-<p>Safari is Apple’s browser for Apple devices.</p>
-</blockquote>
-<p>I think it should be</p>
-<blockquote>
-<p>Safari is Apple’s browser for Apple devices <em>to serve Apple’s walled garden interests</em>.</p>
-</blockquote>
-<p>The keynote is <a href="https://www.youtube.com/watch?v=oaqHdULqet0">available in YouTube</a> so every browser could play it, same keynote in <a href="http://apple.co/2svxHNj">Apple’s website</a> could be streamed in every browser <strong>but</strong> none of the <a href="https://developer.apple.com/videos/wwdc2017/">session videos</a> could be streamed in any browser other than Apple’s own Safari and they are not in YouTube. <em>Any guesses on why such discrepancy !</em></p>
-<p>In the <a href="https://developer.apple.com/videos/play/wwdc2017/402/">What’s new in Swift</a> session, presenters were talking on some new features geared towards server side Swift. Unfortunately, all those developers who are in Linux using Chrome thinking about using <em>open source</em> Swift for their next system software or server side usage can’t see / listen them.</p>
-<p>There is always the option to download SD (min. size 400 MB) / HD (min. size 1.4 GB) videos of sessions, <em>am sure that’ll be a really nice experience.</em></p>
-<p><a href="https://twitter.com/AppleSupport">Apple’s support handle</a> in Twitter is <a href="https://twitter.com/AppleSupport/status/876141756227751936">confused</a> about it and developer forum is <a href="https://forums.developer.apple.com/message/237245#237245">mum</a>.</p>
 </div>
 
 </article>
