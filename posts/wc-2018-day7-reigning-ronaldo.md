@@ -1,5 +1,5 @@
 ---
-title : "WC 2018: Day 6: Reigning Ronaldo"
+title : "WC 2018: Day 7: Reigning Ronaldo"
 published : 2018-06-21
 tags : sports, football, world-cup, wc-2018
 link :
