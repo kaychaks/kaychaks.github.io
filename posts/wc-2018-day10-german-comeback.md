@@ -1,6 +1,6 @@
 ---
 title : "WC 2018: Day 10: German comeback"
-published : 2018 - 06 - 24
+published : 2018-06-24
 tags : sports, football, world-cup, wc-2018
 link : 
 ---
