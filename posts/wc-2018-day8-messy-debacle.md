@@ -1,5 +1,5 @@
 ---
-title : "WC 2018: Day 7: A Messy Debacle"
+title : "WC 2018: Day 8: A Messy Debacle"
 published : 2018-06-22
 tags : sports, football, world-cup, wc-2018
 link :
