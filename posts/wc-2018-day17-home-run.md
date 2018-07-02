@@ -1,5 +1,5 @@
 ---
-title : "WC 2018: Day 17: Home run**
+title : "WC 2018: Day 17: Home run"
 published : 2018-07-02
 tags : sports, football, world-cup, wc-2018
 link :
