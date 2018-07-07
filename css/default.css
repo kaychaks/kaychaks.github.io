@@ -1,3 +1,17 @@
+html, input[type=text] {
+    font-family: "acuta",serif;
+}
+
+body {
+    font-weight: 300;
+    font-style: normal;
+}
+
+em {
+    font-weight: 200;
+    font-style: italic;
+}
+
 .archive-groups {
     margin: 5rem auto 3rem;
 }
