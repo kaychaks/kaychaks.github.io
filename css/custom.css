@@ -1,0 +1,54 @@
+html, input[type=text] {
+    font-family: "acuta","Myriad Set Pro","Helvetica Neue",serif;
+}
+
+body {
+    font-weight: 300;
+    font-style: normal;
+}
+
+em {
+    font-weight: 200;
+    font-style: italic;
+}
+
+.archive-groups {
+    margin: 5rem auto 3rem;
+}
+
+.archive-group .bodycopy{
+    margin: 0
+}
+
+.linked-link{
+    text-decoration: underline;
+    text-decoration-color: #08c;
+    text-decoration-style: dotted;
+}
+
+.link-perma{
+    margin-left: 2px;
+    font-size: 16px;
+    color: #b5190e;
+}
+
+a.link-perma:hover {
+    color: #f91909;
+}
+
+a.linked-link:hover {
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-color: #08abfc;
+}
+
+.footnotes ol, .footnotes p {
+    font-size: 1.5rem;
+}
+
+
+article .byline .author {
+    white-space: normal;
+    line-height: 2rem;
+
+}
