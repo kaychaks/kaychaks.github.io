@@ -88,12 +88,12 @@ main = hakyll $ do
         posts <- fmap (take 10) . recentFirst =<< loadAllSnapshots "posts/*" "postSave"
         renderAtom feedConfig feedCtx posts
 
-    create ["micro-posts/atom.xml"] $ do
+    create ["micro-posts/rss.xml"] $ do
       route $ gsubRoute "micro-posts/" (const "micro/")
       compile $ do
-        let feedCtx = postCtx `mappend` bodyField "description"
+        let feedCtx = constField "title" "" <> postCtx <> bodyField "description"
         posts <- fmap (take 10) . recentFirst =<< loadAllSnapshots "micro-posts/*.md" "microPostSave"
-        renderAtom feedConfig feedCtx posts
+        renderRss microFeedConfig feedCtx posts
 
     match "index.html" $ do
         route idRoute
@@ -180,6 +180,14 @@ groupPostsByMonth xs = do
 
 month :: UTCTime -> String
 month = formatTime defaultTimeLocale "%B, %Y"
+
+microFeedConfig :: FeedConfiguration
+microFeedConfig = FeedConfiguration
+  { feedTitle = "Kaushikc.Org"
+  , feedDescription = "Kaushik Chakraborty's micro blog"
+  , feedAuthorName = "Kaushik Chakraborty"
+  , feedAuthorEmail = "feed@kaushikc.org"
+  , feedRoot = "kaushikc.org/micro" }
 
 feedConfig :: FeedConfiguration
 feedConfig = FeedConfiguration
