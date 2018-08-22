@@ -143,7 +143,7 @@ postCtx =
 
 microPostCtx :: Context String
 microPostCtx =
-  dateField "date" "%F %T" <>
+  dateField "date" "%F %T%z" <>
   defaultContext
 
 postCtxWithTags :: Tags -> Context String
