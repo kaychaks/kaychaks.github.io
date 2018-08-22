@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Kaushikc.Org</title>
+    <link href="kaushikc.org/micro/atom.xml" rel="self" />
+    <link href="kaushikc.org" />
+    <id>kaushikc.org/micro/atom.xml</id>
+    <author>
+        <name>Kaushik Chakraborty</name>
+        <email>feed@kaushikc.org</email>
+    </author>
+    <updated>Unknown</updated>
+    
+</feed>
