@@ -88,11 +88,11 @@ main = hakyll $ do
         posts <- fmap (take 10) . recentFirst =<< loadAllSnapshots "posts/*" "postSave"
         renderAtom feedConfig feedCtx posts
 
-    create ["micro-atom.xml"] $ do
-      route idRoute
+    create ["micro-posts/atom.xml"] $ do
+      route $ gsubRoute "micro-posts/" (const "micro/")
       compile $ do
         let feedCtx = postCtx `mappend` bodyField "description"
-        posts <- fmap (take 10) . recentFirst =<< loadAllSnapshots "micro/*" "microPostSave"
+        posts <- fmap (take 10) . recentFirst =<< loadAllSnapshots "micro-posts/*.md" "microPostSave"
         renderAtom feedConfig feedCtx posts
 
     match "index.html" $ do
@@ -109,26 +109,28 @@ main = hakyll $ do
                 >>= relativizeUrls
 
     -- experimental micro blog
-    match "micro/*" $ do
-      route $ setExtension "html"
-      compile $ pandocCompiler
-        >>= loadAndApplyTemplate "templates/micro-post.html" (postCtxWithTags tags)
-        >>= saveSnapshot "microPostSave"
-        >>= loadAndApplyTemplate "templates/micro-default.html" (postCtxWithTags tags)
-        >>= relativizeUrls
-
-    match "micro-index.html" $ do
-      route idRoute
+    match "micro-posts/*.md" $ do
+      route $ gsubRoute "micro-posts/" (const "micro/") `composeRoutes` setExtension "html"
       compile $ do
-        posts <- recentFirst =<< loadAllSnapshots "micro/*" "microPostSave"
+          pandocCompiler
+          >>= loadAndApplyTemplate "templates/micro-post.html" microPostCtx
+          >>= saveSnapshot "microPostSave"
+          >>= loadAndApplyTemplate "templates/micro-default.html" defaultContext
+          >>= relativizeUrls
 
-        let indexCtx =
-                listField "posts" postCtx (return posts) `mappend`
-                defaultContext
-        getResourceBody
-            >>= applyAsTemplate indexCtx
-            >>= loadAndApplyTemplate "templates/micro-default.html" indexCtx
-            >>= relativizeUrls
+    match "micro-posts/index.html" $ do
+      route $ gsubRoute "micro-posts/" (const "micro/")
+      compile $
+          do
+            posts <- ( recentFirst =<< loadAllSnapshots "micro-posts/*.md" "microPostSave" ) :: Compiler [Item String]
+            let indexCtx =
+                  listField "posts" microPostCtx (return posts) `mappend`
+                  defaultContext
+            getResourceBody
+              >>= applyAsTemplate indexCtx
+              >>= loadAndApplyTemplate "templates/micro-default.html" indexCtx
+              >>= relativizeUrls
+
     match "templates/*" $ compile templateBodyCompiler
 
 
@@ -138,6 +140,11 @@ postCtx :: Context String
 postCtx =
     dateField "date" "%B %e, %Y" `mappend`
     defaultContext
+
+microPostCtx :: Context String
+microPostCtx =
+  dateField "date" "%F %T" <>
+  defaultContext
 
 postCtxWithTags :: Tags -> Context String
 postCtxWithTags t = tagsField "tags" t `mappend` postCtx
