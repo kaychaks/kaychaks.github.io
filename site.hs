@@ -189,7 +189,7 @@ microFeedConfig = FeedConfiguration
   , feedDescription = "Kaushik Chakraborty's micro blog"
   , feedAuthorName = "Kaushik Chakraborty"
   , feedAuthorEmail = "feed@kaushikc.org"
-  , feedRoot = "kaushikc.org/micro" }
+  , feedRoot = "https://kaushikc.org/micro" }
 
 feedConfig :: FeedConfiguration
 feedConfig = FeedConfiguration
@@ -197,4 +197,4 @@ feedConfig = FeedConfiguration
   , feedDescription = "Kaushik Chakraborty's web blog"
   , feedAuthorName = "Kaushik Chakraborty"
   , feedAuthorEmail = "feed@kaushikc.org"
-  , feedRoot = "kaushikc.org" }
+  , feedRoot = "https://kaushikc.org" }
