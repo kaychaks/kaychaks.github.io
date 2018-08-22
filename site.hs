@@ -88,12 +88,6 @@ main = hakyll $ do
         posts <- fmap (take 10) . recentFirst =<< loadAllSnapshots "posts/*" "postSave"
         renderAtom feedConfig feedCtx posts
 
-    create ["micro-posts/rss.xml"] $ do
-      route $ gsubRoute "micro-posts/" (const "micro/")
-      compile $ do
-        let feedCtx = constField "title" "" <> postCtx <> bodyField "description"
-        posts <- fmap (take 10) . recentFirst =<< loadAllSnapshots "micro-posts/*.md" "microPostSave"
-        renderRss microFeedConfig feedCtx posts
 
     match "index.html" $ do
         route idRoute
@@ -113,6 +107,8 @@ main = hakyll $ do
       route $ gsubRoute "micro-posts/" (const "micro/") `composeRoutes` setExtension "html"
       compile $ do
           pandocCompiler
+          >>= loadAndApplyTemplate "templates/micro-post-body.html" microPostCtx
+          >>= saveSnapshot "microPostBodySave"
           >>= loadAndApplyTemplate "templates/micro-post.html" microPostCtx
           >>= saveSnapshot "microPostSave"
           >>= loadAndApplyTemplate "templates/micro-default.html" defaultContext
@@ -131,6 +127,12 @@ main = hakyll $ do
               >>= loadAndApplyTemplate "templates/micro-default.html" indexCtx
               >>= relativizeUrls
 
+    create ["micro-posts/rss.xml"] $ do
+      route $ gsubRoute "micro-posts/" (const "micro/")
+      compile $ do
+        let feedCtx = constField "title" "" <> postCtx <> bodyField "description"
+        posts <- fmap (take 10) . recentFirst =<< loadAllSnapshots "micro-posts/*.md" "microPostBodySave"
+        renderRss microFeedConfig feedCtx posts
     match "templates/*" $ compile templateBodyCompiler
 
 --------------------------------------------------------------------------------
