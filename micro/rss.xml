@@ -3,27 +3,27 @@
     xmlns:dc="http://purl.org/dc/elements/1.1/">
     <channel>
         <title>Kaushikc.Org</title>
-        <link>kaushikc.org/micro</link>
+        <link>https://kaushikc.org/micro</link>
         <description><![CDATA[Kaushik Chakraborty's micro blog]]></description>
-        <atom:link href="kaushikc.org/micro/micro/rss.xml" rel="self"
+        <atom:link href="https://kaushikc.org/micro/micro/rss.xml" rel="self"
                    type="application/rss+xml" />
         <lastBuildDate>Wed, 22 Aug 2018 15:38:26 UT</lastBuildDate>
         <item>
     <title></title>
-    <link>kaushikc.org/micro/micro/20180822210826.html</link>
+    <link>https://kaushikc.org/micro/micro/20180822210826.html</link>
     <description><![CDATA[<p>Currently reading <em>The Universal Computer: The Road from Leibniz to Turing by Martin D. Davis</em> 📚</p>
 ]]></description>
     <pubDate>Wed, 22 Aug 2018 15:38:26 UT</pubDate>
-    <guid>kaushikc.org/micro/micro/20180822210826.html</guid>
+    <guid>https://kaushikc.org/micro/micro/20180822210826.html</guid>
     <dc:creator>Kaushik Chakraborty</dc:creator>
 </item>
 <item>
     <title></title>
-    <link>kaushikc.org/micro/micro/0.html</link>
+    <link>https://kaushikc.org/micro/micro/0.html</link>
     <description><![CDATA[<p>Let’s start…</p>
 ]]></description>
     <pubDate>Wed, 22 Aug 2018 10:02:38 UT</pubDate>
-    <guid>kaushikc.org/micro/micro/0.html</guid>
+    <guid>https://kaushikc.org/micro/micro/0.html</guid>
     <dc:creator>Kaushik Chakraborty</dc:creator>
 </item>
 

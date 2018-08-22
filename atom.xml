@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>Kaushikc.Org</title>
-    <link href="kaushikc.org/atom.xml" rel="self" />
-    <link href="kaushikc.org" />
-    <id>kaushikc.org/atom.xml</id>
+    <link href="https://kaushikc.org/atom.xml" rel="self" />
+    <link href="https://kaushikc.org" />
+    <id>https://kaushikc.org/atom.xml</id>
     <author>
         <name>Kaushik Chakraborty</name>
         <email>feed@kaushikc.org</email>
@@ -11,8 +11,8 @@
     <updated>2018-07-16T00:00:00Z</updated>
     <entry>
     <title>WC 2018: Final Day: Game of the champions</title>
-    <link href="kaushikc.org/posts/wc-2018-day-25-game-of-champions.html" />
-    <id>kaushikc.org/posts/wc-2018-day-25-game-of-champions.html</id>
+    <link href="https://kaushikc.org/posts/wc-2018-day-25-game-of-champions.html" />
+    <id>https://kaushikc.org/posts/wc-2018-day-25-game-of-champions.html</id>
     <published>2018-07-16T00:00:00Z</published>
     <updated>2018-07-16T00:00:00Z</updated>
     <summary type="html"><![CDATA[<article class="post">
@@ -43,8 +43,8 @@
 </entry>
 <entry>
     <title>WC 2018: Day 24: The consolation game</title>
-    <link href="kaushikc.org/posts/wc-2018-day-24-consolation-game.html" />
-    <id>kaushikc.org/posts/wc-2018-day-24-consolation-game.html</id>
+    <link href="https://kaushikc.org/posts/wc-2018-day-24-consolation-game.html" />
+    <id>https://kaushikc.org/posts/wc-2018-day-24-consolation-game.html</id>
     <published>2018-07-15T00:00:00Z</published>
     <updated>2018-07-15T00:00:00Z</updated>
     <summary type="html"><![CDATA[<article class="post">
@@ -73,8 +73,8 @@
 </entry>
 <entry>
     <title>WC 2018: Day 23: Croatian dream run</title>
-    <link href="kaushikc.org/posts/wc-2018-day-23-croatian-dream-run.html" />
-    <id>kaushikc.org/posts/wc-2018-day-23-croatian-dream-run.html</id>
+    <link href="https://kaushikc.org/posts/wc-2018-day-23-croatian-dream-run.html" />
+    <id>https://kaushikc.org/posts/wc-2018-day-23-croatian-dream-run.html</id>
     <published>2018-07-12T00:00:00Z</published>
     <updated>2018-07-12T00:00:00Z</updated>
     <summary type="html"><![CDATA[<article class="post">
@@ -110,8 +110,8 @@
 </entry>
 <entry>
     <title>WC 2018: Day 22: Les bleus le progrès</title>
-    <link href="kaushikc.org/posts/wc-2018-day-22-les-bleus-le-progres.html" />
-    <id>kaushikc.org/posts/wc-2018-day-22-les-bleus-le-progres.html</id>
+    <link href="https://kaushikc.org/posts/wc-2018-day-22-les-bleus-le-progres.html" />
+    <id>https://kaushikc.org/posts/wc-2018-day-22-les-bleus-le-progres.html</id>
     <published>2018-07-11T00:00:00Z</published>
     <updated>2018-07-11T00:00:00Z</updated>
     <summary type="html"><![CDATA[<article class="post">
@@ -140,8 +140,8 @@
 </entry>
 <entry>
     <title>WC 2018: Day 21: The English March</title>
-    <link href="kaushikc.org/posts/wc-2018-day-21-english-march.html" />
-    <id>kaushikc.org/posts/wc-2018-day-21-english-march.html</id>
+    <link href="https://kaushikc.org/posts/wc-2018-day-21-english-march.html" />
+    <id>https://kaushikc.org/posts/wc-2018-day-21-english-march.html</id>
     <published>2018-07-08T00:00:00Z</published>
     <updated>2018-07-08T00:00:00Z</updated>
     <summary type="html"><![CDATA[<article class="post">
@@ -172,8 +172,8 @@
 </entry>
 <entry>
     <title>WC 2018: Day 20: South American exodus</title>
-    <link href="kaushikc.org/posts/wc-2018-day20-south-american-exodus.html" />
-    <id>kaushikc.org/posts/wc-2018-day20-south-american-exodus.html</id>
+    <link href="https://kaushikc.org/posts/wc-2018-day20-south-american-exodus.html" />
+    <id>https://kaushikc.org/posts/wc-2018-day20-south-american-exodus.html</id>
     <published>2018-07-07T00:00:00Z</published>
     <updated>2018-07-07T00:00:00Z</updated>
     <summary type="html"><![CDATA[<article class="post">
@@ -206,8 +206,8 @@
 </entry>
 <entry>
     <title>WC 2018: Day 19: Boring drama</title>
-    <link href="kaushikc.org/posts/wc-2018-day19-boring-drama.html" />
-    <id>kaushikc.org/posts/wc-2018-day19-boring-drama.html</id>
+    <link href="https://kaushikc.org/posts/wc-2018-day19-boring-drama.html" />
+    <id>https://kaushikc.org/posts/wc-2018-day19-boring-drama.html</id>
     <published>2018-07-04T00:00:00Z</published>
     <updated>2018-07-04T00:00:00Z</updated>
     <summary type="html"><![CDATA[<article class="post">
@@ -237,8 +237,8 @@
 </entry>
 <entry>
     <title>WC 2018: Day 18: A new found calmness</title>
-    <link href="kaushikc.org/posts/wc-2018-day18-brazilian-calm.html" />
-    <id>kaushikc.org/posts/wc-2018-day18-brazilian-calm.html</id>
+    <link href="https://kaushikc.org/posts/wc-2018-day18-brazilian-calm.html" />
+    <id>https://kaushikc.org/posts/wc-2018-day18-brazilian-calm.html</id>
     <published>2018-07-03T00:00:00Z</published>
     <updated>2018-07-03T00:00:00Z</updated>
     <summary type="html"><![CDATA[<article class="post">
@@ -269,8 +269,8 @@
 </entry>
 <entry>
     <title>WC 2018: Day 17: Home run</title>
-    <link href="kaushikc.org/posts/wc-2018-day17-home-run.html" />
-    <id>kaushikc.org/posts/wc-2018-day17-home-run.html</id>
+    <link href="https://kaushikc.org/posts/wc-2018-day17-home-run.html" />
+    <id>https://kaushikc.org/posts/wc-2018-day17-home-run.html</id>
     <published>2018-07-02T00:00:00Z</published>
     <updated>2018-07-02T00:00:00Z</updated>
     <summary type="html"><![CDATA[<article class="post">
@@ -300,8 +300,8 @@
 </entry>
 <entry>
     <title>WC 2018: Day 16: Gears changed to sports mode</title>
-    <link href="kaushikc.org/posts/wc-2018-day16-sports-mode-on.html" />
-    <id>kaushikc.org/posts/wc-2018-day16-sports-mode-on.html</id>
+    <link href="https://kaushikc.org/posts/wc-2018-day16-sports-mode-on.html" />
+    <id>https://kaushikc.org/posts/wc-2018-day16-sports-mode-on.html</id>
     <published>2018-07-01T00:00:00Z</published>
     <updated>2018-07-01T00:00:00Z</updated>
     <summary type="html"><![CDATA[<article class="post">
