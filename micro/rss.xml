@@ -7,8 +7,17 @@
         <description><![CDATA[Kaushik Chakraborty's micro blog]]></description>
         <atom:link href="https://kaushikc.org/micro/rss.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Thu, 23 Aug 2018 07:20:34 UT</lastBuildDate>
+        <lastBuildDate>Thu, 23 Aug 2018 16:26:38 UT</lastBuildDate>
         <item>
+    <title></title>
+    <link>https://kaushikc.org/micro/201808232156380530.html</link>
+    <description><![CDATA[<p>This post’s workflow : iOS workflow app action -&gt; git commands via working copy app -&gt; circle CI build script -&gt; rss generated -&gt; micro.blog</p>
+]]></description>
+    <pubDate>Thu, 23 Aug 2018 16:26:38 UT</pubDate>
+    <guid>https://kaushikc.org/micro/201808232156380530.html</guid>
+    <dc:creator>Kaushik Chakraborty</dc:creator>
+</item>
+<item>
     <title></title>
     <link>https://kaushikc.org/micro/20180823125034.html</link>
     <description><![CDATA[<p>This post’s workflow : automator service with selected text -&gt; git push to github repo -&gt; circle CI build script -&gt; rss generated in master branch -&gt; micro.blog</p>
