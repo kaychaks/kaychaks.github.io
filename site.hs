@@ -5,8 +5,7 @@ import           Data.List               (groupBy, sortBy)
 import           Data.Maybe              (fromMaybe)
 import           Data.Monoid             (mappend)
 import           Data.Time.Clock         (UTCTime (..))
-import           Data.Time.Format        (formatTime)
-import           Data.Time.Locale.Compat (defaultTimeLocale)
+import           Data.Time.Format        (formatTime,defaultTimeLocale)
 import           Data.Tuple              (swap)
 import           Hakyll
 
@@ -143,7 +142,7 @@ postCtx =
 
 microPostCtx :: Context String
 microPostCtx =
-  dateField "date" "%F %T%z" <>
+  dateField "date" "%FT%TZ" <>
   defaultContext
 
 postCtxWithTags :: Tags -> Context String

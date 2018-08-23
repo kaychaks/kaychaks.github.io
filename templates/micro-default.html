@@ -23,7 +23,13 @@
                     <div class="main-menu-container">
                         <ul class="menu">
                             <li class="menu-item">
-                                <a href="/">Kaushik Chakraborty</a>
+                                <a target="_blank" href="https://keybase.io/kaushikc">About</a>
+                            </li>
+                            <li class="menu-item">
+                                <a target="_blank" href="https://micro.blog/kaychaks" rel="me">Micro.Blog</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="https://kaushikc.org">Blog</a>
                             </li>
                             <li class="menu-item">
                                 <a href="/micro/rss.xml">Feed</a>
@@ -58,4 +64,16 @@
             </nav>
         </footer>
     </body>
+    <script>
+     const dts = document.querySelectorAll("a.micro-date");
+     Array.from(dts).map( curr =>
+         {
+             const dt = new Date(curr.text)
+             const text =
+                 dt.getFullYear() + "-" + dt.getMonth().toString().padStart(2,'0') + "-" + dt.getDate().toString().padStart(2,'0')
+                 + " " + dt.getHours().toString().padStart(2,'0') + ":" + dt.getMinutes().toString().padStart(2,'0')
+                 + ":" + dt.getSeconds().toString().padStart(2,'0')
+             curr.text = text
+         })
+    </script>
 </html>
