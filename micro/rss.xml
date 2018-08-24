@@ -7,8 +7,18 @@
         <description><![CDATA[Kaushik Chakraborty's micro blog]]></description>
         <atom:link href="https://kaushikc.org/micro/rss.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Thu, 23 Aug 2018 16:26:38 UT</lastBuildDate>
+        <lastBuildDate>Fri, 24 Aug 2018 07:04:35 UT</lastBuildDate>
         <item>
+    <title></title>
+    <link>https://kaushikc.org/micro/201808243435.html</link>
+    <description><![CDATA[<p>Matt Parsons’ conversion of Rust’s type level trickery to Haskell brings out the elegance of Haskell syntax &amp; sophistication of it’s type system</p>
+<p><a href="http://www.parsonsmatt.org/2018/03/26/stealing_where_from_rust.html">Stealing Where From Rust</a></p>
+]]></description>
+    <pubDate>Fri, 24 Aug 2018 07:04:35 UT</pubDate>
+    <guid>https://kaushikc.org/micro/201808243435.html</guid>
+    <dc:creator>Kaushik Chakraborty</dc:creator>
+</item>
+<item>
     <title></title>
     <link>https://kaushikc.org/micro/201808232156380530.html</link>
     <description><![CDATA[<p>This post’s workflow : iOS workflow app action -&gt; git commands via working copy app -&gt; circle CI build script -&gt; rss generated -&gt; micro.blog</p>
