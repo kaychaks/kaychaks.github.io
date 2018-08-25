@@ -120,6 +120,7 @@ main = hakyll $ do
             posts <- ( recentFirst =<< loadAllSnapshots "micro-posts/*.md" "microPostSave" ) :: Compiler [Item String]
             let indexCtx =
                   listField "posts" microPostCtx (return posts) `mappend`
+                  constField "title" (feedTitle microFeedConfig) `mappend`
                   defaultContext
             getResourceBody
               >>= applyAsTemplate indexCtx
@@ -184,7 +185,7 @@ month = formatTime defaultTimeLocale "%B, %Y"
 
 microFeedConfig :: FeedConfiguration
 microFeedConfig = FeedConfiguration
-  { feedTitle = "Kaushikc.Org"
+  { feedTitle = "Kaushikc.Org Micro"
   , feedDescription = "Kaushik Chakraborty's micro blog"
   , feedAuthorName = "Kaushik Chakraborty"
   , feedAuthorEmail = "feed@kaushikc.org"
