@@ -7,8 +7,17 @@
         <description><![CDATA[Kaushik Chakraborty's micro blog]]></description>
         <atom:link href="https://kaushikc.org/micro/rss.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Sat, 25 Aug 2018 02:33:53 UT</lastBuildDate>
+        <lastBuildDate>Mon, 27 Aug 2018 07:00:53 UT</lastBuildDate>
         <item>
+    <title></title>
+    <link>https://kaushikc.org/micro/20180827123053.html</link>
+    <description><![CDATA[<p>Brett Victor &amp; Alan Kay’s Dynamicland is exciting but lacked implementation details. Oman Rizwan, one of the resident researchers there, via his awesome account of making a new library there called Geokit has provided interesting insides into Dynamicland &amp; RealTalk – the programming system behind all the coolness. <a href="https://rsnous.com/posts/notes-from-dynamicland-geokit/">Notes from Dynamicland: Geokit</a></p>
+]]></description>
+    <pubDate>Mon, 27 Aug 2018 07:00:53 UT</pubDate>
+    <guid>https://kaushikc.org/micro/20180827123053.html</guid>
+    <dc:creator>Kaushik Chakraborty</dc:creator>
+</item>
+<item>
     <title></title>
     <link>https://kaushikc.org/micro/20180825080353.html</link>
     <description><![CDATA[<p>I’ve been meaning to study Domain Theory for the things I am researching on lately at work. And then I saw this <a href="https://twitter.com/_julesh_/status/1032641702761259008">tweet</a> from <a href="https://twitter.com/_julesh_"><em>julesh</em></a></p>
