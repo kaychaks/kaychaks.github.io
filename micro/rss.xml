@@ -7,8 +7,24 @@
         <description><![CDATA[Kaushik Chakraborty's micro blog]]></description>
         <atom:link href="https://kaushikc.org/micro/rss.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Mon, 27 Aug 2018 07:00:53 UT</lastBuildDate>
+        <lastBuildDate>Fri, 07 Sep 2018 11:42:53 UT</lastBuildDate>
         <item>
+    <title></title>
+    <link>https://kaushikc.org/micro/20180907115325.html</link>
+    <description><![CDATA[<p><a href="https://www.wired.com/story/google-wants-to-kill-the-url/">Google wants to kill the URL</a> and Wired is complicit in their propaganda by writing this stupid article. I’ve lost most hope from Google where engineering managers say dumb things like</p>
+<blockquote>
+<p>People have a really hard time understanding URLs</p>
+</blockquote>
+<p>but Wired also have this gem of a loose statement (without any evidence)</p>
+<blockquote>
+<p>If you’re having a tough time thinking of what could possibly be used in place of URLs, you’re not alone. Academics have considered options over the years, but the problem doesn’t have an easy answer.</p>
+</blockquote>
+]]></description>
+    <pubDate>Fri, 07 Sep 2018 11:42:53 UT</pubDate>
+    <guid>https://kaushikc.org/micro/20180907115325.html</guid>
+    <dc:creator>Kaushik Chakraborty</dc:creator>
+</item>
+<item>
     <title></title>
     <link>https://kaushikc.org/micro/20180827123053.html</link>
     <description><![CDATA[<p>Brett Victor &amp; Alan Kay’s Dynamicland is exciting but lacked implementation details. Oman Rizwan, one of the resident researchers there, via his awesome account of making a new library there called Geokit has provided interesting insides into Dynamicland &amp; RealTalk – the programming system behind all the coolness. <a href="https://rsnous.com/posts/notes-from-dynamicland-geokit/">Notes from Dynamicland: Geokit</a></p>
