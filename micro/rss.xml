@@ -7,8 +7,18 @@
         <description><![CDATA[Kaushik Chakraborty's micro blog]]></description>
         <atom:link href="https://kaushikc.org/micro/rss.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Wed, 19 Sep 2018 03:44:59 UT</lastBuildDate>
+        <lastBuildDate>Wed, 19 Sep 2018 04:25:39 UT</lastBuildDate>
         <item>
+    <title></title>
+    <link>https://kaushikc.org/micro/20180919095539.html</link>
+    <description><![CDATA[<p>I’ve griped in the past [3,4] but this unnecessary grudge cycle against RSS comes back. Brent Simmons’ [2] latest explanation [1] is another good reminder - <em>leave RSS alone!</em></p>
+<p>[1] http://inessential.com/2018/09/17/oh_god_not_this_again [2] https://micro.blog/brentsimmons [3] https://twitter.com/kaychaks/status/980797708314148865 [4] https://kaushikc.org/linked/heil-rss.html</p>
+]]></description>
+    <pubDate>Wed, 19 Sep 2018 04:25:39 UT</pubDate>
+    <guid>https://kaushikc.org/micro/20180919095539.html</guid>
+    <dc:creator>Kaushik Chakraborty</dc:creator>
+</item>
+<item>
     <title></title>
     <link>https://kaushikc.org/micro/20180919071504.html</link>
     <description><![CDATA[<p>A decent rant by <a href="https://twitter.com/nikitonsky">Nikita (creator of the font Fira Code)</a> on the apalling <em>state of the art</em> with modern softwares. There is a bit of trivialization but overall a required call for action.</p>
@@ -105,15 +115,6 @@
 ]]></description>
     <pubDate>Thu, 23 Aug 2018 16:26:38 UT</pubDate>
     <guid>https://kaushikc.org/micro/201808232156380530.html</guid>
-    <dc:creator>Kaushik Chakraborty</dc:creator>
-</item>
-<item>
-    <title></title>
-    <link>https://kaushikc.org/micro/20180823125034.html</link>
-    <description><![CDATA[<p>This post’s workflow : automator service with selected text -&gt; git push to github repo -&gt; circle CI build script -&gt; rss generated in master branch -&gt; micro.blog</p>
-]]></description>
-    <pubDate>Thu, 23 Aug 2018 07:20:34 UT</pubDate>
-    <guid>https://kaushikc.org/micro/20180823125034.html</guid>
     <dc:creator>Kaushik Chakraborty</dc:creator>
 </item>
 
