@@ -7,12 +7,24 @@
         <description><![CDATA[Kaushik Chakraborty's micro blog]]></description>
         <atom:link href="https://kaushikc.org/micro/rss.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Wed, 19 Sep 2018 04:25:39 UT</lastBuildDate>
+        <lastBuildDate>Wed, 19 Sep 2018 04:35:36 UT</lastBuildDate>
         <item>
+    <title></title>
+    <link>https://kaushikc.org/micro/20180919100536.html</link>
+    <description><![CDATA[<p>As <a href="http://micro.kaushikc.org">my micro blogs</a> contain more than one link the automatic cross-posting to Twitter goes haywire. But it’s a trade off I can live with.</p>
+]]></description>
+    <pubDate>Wed, 19 Sep 2018 04:35:36 UT</pubDate>
+    <guid>https://kaushikc.org/micro/20180919100536.html</guid>
+    <dc:creator>Kaushik Chakraborty</dc:creator>
+</item>
+<item>
     <title></title>
     <link>https://kaushikc.org/micro/20180919095539.html</link>
     <description><![CDATA[<p>I’ve griped in the past [3,4] but this unnecessary grudge cycle against RSS comes back. Brent Simmons’ [2] latest explanation [1] is another good reminder - <em>leave RSS alone!</em></p>
-<p>[1] http://inessential.com/2018/09/17/oh_god_not_this_again [2] https://micro.blog/brentsimmons [3] https://twitter.com/kaychaks/status/980797708314148865 [4] https://kaushikc.org/linked/heil-rss.html</p>
+<p>[1] http://inessential.com/2018/09/17/oh_god_not_this_again</p>
+<p>[2] https://micro.blog/brentsimmons</p>
+<p>[3] https://twitter.com/kaychaks/status/980797708314148865</p>
+<p>[4] https://kaushikc.org/linked/heil-rss.html</p>
 ]]></description>
     <pubDate>Wed, 19 Sep 2018 04:25:39 UT</pubDate>
     <guid>https://kaushikc.org/micro/20180919095539.html</guid>
@@ -106,15 +118,6 @@
 ]]></description>
     <pubDate>Fri, 24 Aug 2018 07:04:35 UT</pubDate>
     <guid>https://kaushikc.org/micro/201808243435.html</guid>
-    <dc:creator>Kaushik Chakraborty</dc:creator>
-</item>
-<item>
-    <title></title>
-    <link>https://kaushikc.org/micro/201808232156380530.html</link>
-    <description><![CDATA[<p>This post’s workflow : iOS workflow app action -&gt; git commands via working copy app -&gt; circle CI build script -&gt; rss generated -&gt; micro.blog</p>
-]]></description>
-    <pubDate>Thu, 23 Aug 2018 16:26:38 UT</pubDate>
-    <guid>https://kaushikc.org/micro/201808232156380530.html</guid>
     <dc:creator>Kaushik Chakraborty</dc:creator>
 </item>
 
