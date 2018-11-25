@@ -11,7 +11,6 @@ let
       mkDerivation {
         pname = "blog-hakyll";
         version = "0.1.0.0";
-        allowUnfree = true;
         src = ./.;
         isLibrary = false;
         isExecutable = true;
