@@ -12,6 +12,7 @@ jobs:
           name: setup nix & get dependencies
           command: |
             bash <(curl https://nixos.org/nix/install)
+            mkdir --parents /home/circleci/.config/nixpkgs; mv config.nix $_
             source /home/circleci/.nix-profile/etc/profile.d/nix.sh
             nix-env -iA nixpkgs.haskellPackages.cabal-install
             nix-shell --run exit
