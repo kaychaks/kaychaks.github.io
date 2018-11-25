@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>Kaushikc.Org Micro</title>
+        <link>https://kaushikc.org</link>
+        <description><![CDATA[Kaushik Chakraborty's micro blog]]></description>
+        <atom:link href="https://kaushikc.org/micro/rss.xml" rel="self"
+                   type="application/rss+xml" />
+        <lastBuildDate>Wed, 19 Sep 2018 04:35:36 UT</lastBuildDate>
+        <item>
+    <title></title>
+    <link>https://kaushikc.org/micro/20180919100536.html</link>
+    <description><![CDATA[<p>As <a href="http://micro.kaushikc.org">my micro blogs</a> contain more than one link the automatic cross-posting to Twitter goes haywire. But it’s a trade off I can live with.</p>
+]]></description>
+    <pubDate>Wed, 19 Sep 2018 04:35:36 UT</pubDate>
+    <guid>https://kaushikc.org/micro/20180919100536.html</guid>
+    <dc:creator>Kaushik Chakraborty</dc:creator>
+</item>
+<item>
+    <title></title>
+    <link>https://kaushikc.org/micro/20180919095539.html</link>
+    <description><![CDATA[<p>I’ve griped in the past [3,4] but this unnecessary grudge cycle against RSS comes back. Brent Simmons’ [2] latest explanation [1] is another good reminder - <em>leave RSS alone!</em></p>
+<p>[1] <a href="http://inessential.com/2018/09/17/oh_god_not_this_again" class="uri">http://inessential.com/2018/09/17/oh_god_not_this_again</a></p>
+<p>[2] <a href="https://micro.blog/brentsimmons" class="uri">https://micro.blog/brentsimmons</a></p>
+<p>[3] <a href="https://twitter.com/kaychaks/status/980797708314148865" class="uri">https://twitter.com/kaychaks/status/980797708314148865</a></p>
+<p>[4] <a href="https://kaushikc.org/linked/heil-rss.html" class="uri">https://kaushikc.org/linked/heil-rss.html</a></p>
+]]></description>
+    <pubDate>Wed, 19 Sep 2018 04:25:39 UT</pubDate>
+    <guid>https://kaushikc.org/micro/20180919095539.html</guid>
+    <dc:creator>Kaushik Chakraborty</dc:creator>
+</item>
+<item>
+    <title></title>
+    <link>https://kaushikc.org/micro/20180919071504.html</link>
+    <description><![CDATA[<p>A decent rant by <a href="https://twitter.com/nikitonsky">Nikita (creator of the font Fira Code)</a> on the apalling <em>state of the art</em> with modern softwares. There is a bit of trivialization but overall a required call for action.</p>
+<p><a href="http://tonsky.me/blog/disenchantment/">Software disenchantment</a></p>
+]]></description>
+    <pubDate>Wed, 19 Sep 2018 03:44:59 UT</pubDate>
+    <guid>https://kaushikc.org/micro/20180919071504.html</guid>
+    <dc:creator>Kaushik Chakraborty</dc:creator>
+</item>
+<item>
+    <title></title>
+    <link>https://kaushikc.org/micro/20180916080502.html</link>
+    <description><![CDATA[<figure>
+<img src="https://kaushikc.org/images/modern-sins.jpg" alt="modern sins" /><figcaption>modern sins</figcaption>
+</figure>
+<p>Pretty accurate modern version of 7 deadly sins via <a href="https://twitter.com/THErealDVORAK">THErealDVORAK</a> in the recent <a href="https://mailchi.mp/dvorak/pictures-of-the-happy-couple-for-you-manafort-no-agenda">No Agenda newsletter</a>, the best podcast in the universe.</p>
+]]></description>
+    <pubDate>Sun, 16 Sep 2018 02:48:24 UT</pubDate>
+    <guid>https://kaushikc.org/micro/20180916080502.html</guid>
+    <dc:creator>Kaushik Chakraborty</dc:creator>
+</item>
+<item>
+    <title></title>
+    <link>https://kaushikc.org/micro/20180910071416.html</link>
+    <description><![CDATA[<p>Rarely I agree to Guardian’s views but this one on <a href="https://www.theguardian.com/sport/blog/2018/sep/09/serena-williams-womens-treatment-tennis-us-open-final">US Open Ladies Final drama</a> is spot on</p>
+<blockquote>
+<p>But none of that excuses what Williams did in the Arthur Ashe Stadium on Saturday night – which was to manipulate sentiment to her advantage,</p>
+</blockquote>
+]]></description>
+    <pubDate>Mon, 10 Sep 2018 01:45:51 UT</pubDate>
+    <guid>https://kaushikc.org/micro/20180910071416.html</guid>
+    <dc:creator>Kaushik Chakraborty</dc:creator>
+</item>
+<item>
+    <title></title>
+    <link>https://kaushikc.org/micro/20180909072729.html</link>
+    <description><![CDATA[<p>To all those newborns of today, you got yourself a nice birth date: 09 - 09 - 18 🤓</p>
+]]></description>
+    <pubDate>Sun, 09 Sep 2018 01:57:29 UT</pubDate>
+    <guid>https://kaushikc.org/micro/20180909072729.html</guid>
+    <dc:creator>Kaushik Chakraborty</dc:creator>
+</item>
+<item>
+    <title></title>
+    <link>https://kaushikc.org/micro/20180907115325.html</link>
+    <description><![CDATA[<p><a href="https://www.wired.com/story/google-wants-to-kill-the-url/">Google wants to kill the URL</a> and Wired is complicit in their propaganda by writing this stupid article. I’ve lost most hope from Google where engineering managers say dumb things like</p>
+<blockquote>
+<p>People have a really hard time understanding URLs</p>
+</blockquote>
+<p>but Wired also have this gem of a loose statement (without any evidence)</p>
+<blockquote>
+<p>If you’re having a tough time thinking of what could possibly be used in place of URLs, you’re not alone. Academics have considered options over the years, but the problem doesn’t have an easy answer.</p>
+</blockquote>
+]]></description>
+    <pubDate>Fri, 07 Sep 2018 11:42:53 UT</pubDate>
+    <guid>https://kaushikc.org/micro/20180907115325.html</guid>
+    <dc:creator>Kaushik Chakraborty</dc:creator>
+</item>
+<item>
+    <title></title>
+    <link>https://kaushikc.org/micro/20180827123053.html</link>
+    <description><![CDATA[<p>Brett Victor &amp; Alan Kay’s Dynamicland is exciting but lacked implementation details. Oman Rizwan, one of the resident researchers there, via his awesome account of making a new library there called Geokit has provided interesting insides into Dynamicland &amp; RealTalk – the programming system behind all the coolness. <a href="https://rsnous.com/posts/notes-from-dynamicland-geokit/">Notes from Dynamicland: Geokit</a></p>
+]]></description>
+    <pubDate>Mon, 27 Aug 2018 07:00:53 UT</pubDate>
+    <guid>https://kaushikc.org/micro/20180827123053.html</guid>
+    <dc:creator>Kaushik Chakraborty</dc:creator>
+</item>
+<item>
+    <title></title>
+    <link>https://kaushikc.org/micro/20180825080353.html</link>
+    <description><![CDATA[<p>I’ve been meaning to study Domain Theory for the things I am researching on lately at work. And then I saw this <a href="https://twitter.com/_julesh_/status/1032641702761259008">tweet</a> from <a href="https://twitter.com/_julesh_"><em>julesh</em></a></p>
+<blockquote>
+<p>The bible of domain theory, by Samson Abramsky and Achim Jung https://www.cs.bham.ac.uk/~axj/pub/papers/handy1.pdf</p>
+</blockquote>
+]]></description>
+    <pubDate>Sat, 25 Aug 2018 02:33:53 UT</pubDate>
+    <guid>https://kaushikc.org/micro/20180825080353.html</guid>
+    <dc:creator>Kaushik Chakraborty</dc:creator>
+</item>
+<item>
+    <title></title>
+    <link>https://kaushikc.org/micro/201808243435.html</link>
+    <description><![CDATA[<p>Matt Parsons’ conversion of Rust’s type level trickery to Haskell brings out the elegance of Haskell syntax &amp; sophistication of it’s type system</p>
+<p><a href="http://www.parsonsmatt.org/2018/03/26/stealing_where_from_rust.html">Stealing Where From Rust</a></p>
+]]></description>
+    <pubDate>Fri, 24 Aug 2018 07:04:35 UT</pubDate>
+    <guid>https://kaushikc.org/micro/201808243435.html</guid>
+    <dc:creator>Kaushik Chakraborty</dc:creator>
+</item>
+
+    </channel>
+</rss>
