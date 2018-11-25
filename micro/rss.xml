@@ -7,8 +7,17 @@
         <description><![CDATA[Kaushik Chakraborty's micro blog]]></description>
         <atom:link href="https://kaushikc.org/micro/rss.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Sun, 25 Nov 2018 06:39:37 UT</lastBuildDate>
+        <lastBuildDate>Sun, 25 Nov 2018 08:18:34 UT</lastBuildDate>
         <item>
+    <title></title>
+    <link>https://kaushikc.org/micro/20181125134834.html</link>
+    <description><![CDATA[<p>Had a really good time last evening at local Blr Haskell Meetup. Went after a long time and it’s inspiring to see a thriving Haskell community. Shout out to <span class="citation" data-cites="puffnfresh">@puffnfresh</span> <span class="citation" data-cites="hk_hooda">@hk_hooda</span></p>
+]]></description>
+    <pubDate>Sun, 25 Nov 2018 08:18:34 UT</pubDate>
+    <guid>https://kaushikc.org/micro/20181125134834.html</guid>
+    <dc:creator>Kaushik Chakraborty</dc:creator>
+</item>
+<item>
     <title></title>
     <link>https://kaushikc.org/micro/20181125120937.html</link>
     <description><![CDATA[<p>I sigh at those startup founders who propagandise quitting social media just coz they can’t control their impulses. How do they expect people (esp. the VCs) to trust them running a business ! #douchebags</p>
@@ -105,18 +114,6 @@
 ]]></description>
     <pubDate>Mon, 27 Aug 2018 07:00:53 UT</pubDate>
     <guid>https://kaushikc.org/micro/20180827123053.html</guid>
-    <dc:creator>Kaushik Chakraborty</dc:creator>
-</item>
-<item>
-    <title></title>
-    <link>https://kaushikc.org/micro/20180825080353.html</link>
-    <description><![CDATA[<p>I’ve been meaning to study Domain Theory for the things I am researching on lately at work. And then I saw this <a href="https://twitter.com/_julesh_/status/1032641702761259008">tweet</a> from <a href="https://twitter.com/_julesh_"><em>julesh</em></a></p>
-<blockquote>
-<p>The bible of domain theory, by Samson Abramsky and Achim Jung https://www.cs.bham.ac.uk/~axj/pub/papers/handy1.pdf</p>
-</blockquote>
-]]></description>
-    <pubDate>Sat, 25 Aug 2018 02:33:53 UT</pubDate>
-    <guid>https://kaushikc.org/micro/20180825080353.html</guid>
     <dc:creator>Kaushik Chakraborty</dc:creator>
 </item>
 
