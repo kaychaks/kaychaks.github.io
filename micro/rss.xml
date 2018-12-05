@@ -7,8 +7,17 @@
         <description><![CDATA[Kaushik Chakraborty's micro blog]]></description>
         <atom:link href="https://kaushikc.org/micro/rss.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Sun, 25 Nov 2018 08:18:34 UT</lastBuildDate>
+        <lastBuildDate>Wed, 05 Dec 2018 02:32:44 UT</lastBuildDate>
         <item>
+    <title></title>
+    <link>https://kaushikc.org/micro/20181205080244.html</link>
+    <description><![CDATA[<p>On account of the Indian currency situation being in tatters, I only have 2 avenues for my year-end “thank you &amp; go on” donations - #NixOS Foundation &amp; #Haskell Org.</p>
+]]></description>
+    <pubDate>Wed, 05 Dec 2018 02:32:44 UT</pubDate>
+    <guid>https://kaushikc.org/micro/20181205080244.html</guid>
+    <dc:creator>Kaushik Chakraborty</dc:creator>
+</item>
+<item>
     <title></title>
     <link>https://kaushikc.org/micro/20181125134834.html</link>
     <description><![CDATA[<p>Had a really good time last evening at local Blr Haskell Meetup. Went after a long time and it’s inspiring to see a thriving Haskell community. Shout out to <span class="citation" data-cites="puffnfresh">@puffnfresh</span> <span class="citation" data-cites="hk_hooda">@hk_hooda</span></p>
@@ -105,15 +114,6 @@
 ]]></description>
     <pubDate>Fri, 07 Sep 2018 11:42:53 UT</pubDate>
     <guid>https://kaushikc.org/micro/20180907115325.html</guid>
-    <dc:creator>Kaushik Chakraborty</dc:creator>
-</item>
-<item>
-    <title></title>
-    <link>https://kaushikc.org/micro/20180827123053.html</link>
-    <description><![CDATA[<p>Brett Victor &amp; Alan Kay’s Dynamicland is exciting but lacked implementation details. Oman Rizwan, one of the resident researchers there, via his awesome account of making a new library there called Geokit has provided interesting insides into Dynamicland &amp; RealTalk – the programming system behind all the coolness. <a href="https://rsnous.com/posts/notes-from-dynamicland-geokit/">Notes from Dynamicland: Geokit</a></p>
-]]></description>
-    <pubDate>Mon, 27 Aug 2018 07:00:53 UT</pubDate>
-    <guid>https://kaushikc.org/micro/20180827123053.html</guid>
     <dc:creator>Kaushik Chakraborty</dc:creator>
 </item>
 
