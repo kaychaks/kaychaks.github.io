@@ -7,8 +7,18 @@
         <description><![CDATA[Kaushik Chakraborty's micro blog]]></description>
         <atom:link href="https://kaushikc.org/micro/rss.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Wed, 05 Dec 2018 02:32:44 UT</lastBuildDate>
+        <lastBuildDate>Thu, 13 Dec 2018 13:54:11 UT</lastBuildDate>
         <item>
+    <title></title>
+    <link>https://kaushikc.org/micro/20181213192411.html</link>
+    <description><![CDATA[<p>Poignant perspective on the decline of Indian mainstream media in this month’s Caravan. It’s difficult to curtail Govt. coercion but easy to cut big conglomerates / advertisers by directly asking the consumer to pay for the value. It’s tough but it’s transparent, ethical, &amp; only way for long term survival.</p>
+<p><a href="https://caravanmagazine.in/media/indian-newsrooms-morgues-investigative-journalism">The Byline is Dead</a></p>
+]]></description>
+    <pubDate>Thu, 13 Dec 2018 13:54:11 UT</pubDate>
+    <guid>https://kaushikc.org/micro/20181213192411.html</guid>
+    <dc:creator>Kaushik Chakraborty</dc:creator>
+</item>
+<item>
     <title></title>
     <link>https://kaushikc.org/micro/20181205080244.html</link>
     <description><![CDATA[<p>On account of the Indian currency situation being in tatters, I only have 2 avenues for my year-end “thank you &amp; go on” donations - #NixOS Foundation &amp; #Haskell Org.</p>
@@ -98,22 +108,6 @@
 ]]></description>
     <pubDate>Sun, 09 Sep 2018 01:57:29 UT</pubDate>
     <guid>https://kaushikc.org/micro/20180909072729.html</guid>
-    <dc:creator>Kaushik Chakraborty</dc:creator>
-</item>
-<item>
-    <title></title>
-    <link>https://kaushikc.org/micro/20180907115325.html</link>
-    <description><![CDATA[<p><a href="https://www.wired.com/story/google-wants-to-kill-the-url/">Google wants to kill the URL</a> and Wired is complicit in their propaganda by writing this stupid article. I’ve lost most hope from Google where engineering managers say dumb things like</p>
-<blockquote>
-<p>People have a really hard time understanding URLs</p>
-</blockquote>
-<p>but Wired also have this gem of a loose statement (without any evidence)</p>
-<blockquote>
-<p>If you’re having a tough time thinking of what could possibly be used in place of URLs, you’re not alone. Academics have considered options over the years, but the problem doesn’t have an easy answer.</p>
-</blockquote>
-]]></description>
-    <pubDate>Fri, 07 Sep 2018 11:42:53 UT</pubDate>
-    <guid>https://kaushikc.org/micro/20180907115325.html</guid>
     <dc:creator>Kaushik Chakraborty</dc:creator>
 </item>
 
