@@ -8,8 +8,44 @@
         <name>Kaushik Chakraborty</name>
         <email>feed@kaushikc.org</email>
     </author>
-    <updated>2018-07-16T00:00:00Z</updated>
+    <updated>2018-12-26T00:00:00Z</updated>
     <entry>
+    <title>Retrospecting 2018</title>
+    <link href="https://kaushikc.org/posts/retro-2018.html" />
+    <id>https://kaushikc.org/posts/retro-2018.html</id>
+    <published>2018-12-26T00:00:00Z</published>
+    <updated>2018-12-26T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<article class="post">
+    <h1>
+        
+        <a href="/posts/retro-2018.html">
+            Retrospecting 2018
+        </a>
+        
+        <a href="/posts/retro-2018.html" class="link-perma">
+            <span>&#9679</span>
+        </a>
+    </h1>
+    <div class="byline">
+    <p class="date">December 26, 2018</p>
+    <p class="author"><a href="/tags/technology.html">technology</a></p>
+</div>
+<div class="bodycopy">
+    <p>This year was mostly uneventful unlike 2017. However, I did do a lot more technical reading - mostly papers and a few books - than previous years. Professionally things changed quite drastically. I am now meant to do mostly research-y things than what used to be half &amp; half with engineering before. Not that I complain, my feelings are on the contrary actually. But this whole new setting at work, both from an operations &amp; vision standpoint, is still clumsy and need more time to shape up well.</p>
+<p>I am beginning to focus on the areas of <em>Knowledge Engineering</em>. I want to tie it with fascinating things from <em>Type Systems</em>. I believe their shared foundations in <em>Mathematical Logic</em> will provide interesting things to work on. And my choice of technology to realise any such research will be <em>Haskell</em>, mostly.</p>
+<p>So apart from spending most of the time reading papers on the history of knowledge bases, their representation, and reasoning I also tried to get used to logic and proofs. During one such excavation, I landed on a course aptly named <a href="https://leanprover.github.io/logic_and_proof/">Logic and Proof</a> which uses this beautiful language called <a href="https://leanprover.github.io/">Lean</a> to write the proofs. Lean, like Haskell, has its roots in Microsoft Research. It, like Agda, is dependently typed language which also provides means to do inductive/automated theorem proving. It was my first foray into the world of computational theorem proving and some serious work with dependent types (I did dabble with Idris but it is better not to talk about that). Working with Lean and learning more about its origins and background type systems research gave me ideas that I believe are relevant to knowledge systems.</p>
+<p>With Lean, I digressed heavily into learning dependent types, this time with a larger vision to make them useful for knowledge systems. And hence I got this amazing book called <a href="https://mitpress.mit.edu/books/little-typer"><em>The Little Typer</em></a>. It provides the necessary foundations for me to relate dependent types, higher-order logic, relational programming, and eventually their role in knowledge systems. I am nowhere close to anything concrete to go after but I am having fun peeling the layers of these seemingly disjoint fields converging together elegantly.</p>
+<p>Haskell with its dependent typing tools is nowhere close to things that Lean and Agda could do today. But it’s still amazing how far the current type system could take you. <a href="https://leanpub.com/thinking-with-types">Sandy Maguire’s new book</a> is how I am trying to get my head around all those esoteric corners of Haskell. It’s pretty good.</p>
+<p>I also want to mention one other thing that is happening coincidentally and maybe right now I am not able to leverage it to its full extent only coz of my lack of understanding but I am pretty sure it will be something that I will be leaning a lot in future. And that is <a href="https://www.twitch.tv/ekmett/videos?filter=all&amp;sort=time">Edward Kmett’s Twitch videos on his creation of Guanxi</a>. Ed’s videos are highly motivational (for some apparent indescribable reason).</p>
+<p>Finally, I also want to highlight that I continued persevering with <em>Nix</em> irrespective of it still not friendly as a package manager in macOS. I realised that there’s no other way, right now, to reading <a href="https://github.com/NixOS/nixpkgs/">nixpkgs</a> source code to make stuff work properly with Nix especially in macOS. Hopefully, it will improve and I will also do my best towards that goal. But <em>Nix</em> is the future of so-called <em>devops</em> that I believe in and I want it to succeed at all costs.</p>
+<p>As <a href="https://twitter.com/aarohi_c">my daughter</a> grows up to her 3rd year of existence in 2019, I am hoping her to be a bit more independent and me getting a bit more time off work to try to contribute to some open source Haskell projects. Having a 2-year-old kid around when you are trying to do some focussed programming session is not a happy setting (no offence to any 2-year-olds).</p>
+<p>I learnt a lot of new things in 2018 that now I think I have some roadmap for next year to channel my energies on. But none of them is related to <em>Deep Learning</em>, <em>Blockchain</em>, or <em>Microservices</em> unfortunately !!</p>
+</div>
+
+</article>
+]]></summary>
+</entry>
+<entry>
     <title>WC 2018: Final Day: Game of the champions</title>
     <link href="https://kaushikc.org/posts/wc-2018-day-25-game-of-champions.html" />
     <id>https://kaushikc.org/posts/wc-2018-day-25-game-of-champions.html</id>
@@ -293,39 +329,6 @@
 <p>Russia reaped the home advantage and this is turning out to be the world cup of penalties.</p>
 <p><strong>Span 1 (3) - Russia 1 (4)</strong></p>
 <p>Spanish complacency was ludicrous as they started without Iniesta – their main mastermind in front of a stubborn defence. It was a game that tested the patience of spectators. As the Spaniards passed the ball among each other, the Russians made sure they don’t cross the borders of the penalty box. I consider the game to be a tactical win of Russians as they pretty much stuck to their plan of resistance. And the way Spain responded was – maintaining the possession of the ball for more than 70% of the whole 120 minutes but shooting the target less than 10 times! As they say, when it goes to penalties it’s more luck than talent. And as was pretty evident during the normal time of the match Spain’s luck was already homebound. Russia will face Croatia in the quarters who like the Russians also had to grind till the penalties.</p>
-</div>
-
-</article>
-]]></summary>
-</entry>
-<entry>
-    <title>WC 2018: Day 16: Gears changed to sports mode</title>
-    <link href="https://kaushikc.org/posts/wc-2018-day16-sports-mode-on.html" />
-    <id>https://kaushikc.org/posts/wc-2018-day16-sports-mode-on.html</id>
-    <published>2018-07-01T00:00:00Z</published>
-    <updated>2018-07-01T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<article class="post">
-    <h1>
-        
-        <a href="/posts/wc-2018-day16-sports-mode-on.html">
-            WC 2018: Day 16: Gears changed to sports mode
-        </a>
-        
-        <a href="/posts/wc-2018-day16-sports-mode-on.html" class="link-perma">
-            <span>&#9679</span>
-        </a>
-    </h1>
-    <div class="byline">
-    <p class="date">July  1, 2018</p>
-    <p class="author"><a href="/tags/sports.html">sports</a>, <a href="/tags/football.html">football</a>, <a href="/tags/world-cup.html">world-cup</a>, <a href="/tags/wc-2018.html">wc-2018</a></p>
-</div>
-<div class="bodycopy">
-    <h2 id="knockouts-day-1">Knockouts Day 1</h2>
-<p>As expected teams upped the ante as the knockouts begin. And hence the setbacks.</p>
-<p><strong>Argentina 3 - France 4</strong></p>
-<p>I earlier lamented on French football the way they played in the group games. After this game, I take some of my qualms back. It seems as if they deliberately created a fake perception around themselves. Thereby saving all their real talents for now when it matters the most. Mbappe’s sprints are like Ronaldo’s. It’s a breath of fresh air watching him run like a lightning towards the goal. Argentinian weak defence had no idea what to do with him. They never strategised how to tackle him. Which, as it is quite clear now, was the biggest mistake. Messy was helpless as the solid French defence surrounded him like hawks the moment he touched the ball. Overall the game was worthy of a knockout between 2 matured teams. It was fast-paced, there were some startling long distance shots, and – continuing the spirit of this World Cup– had some last minute drama.</p>
-<p><strong>Portugal 1 - Uruguay 2</strong></p>
-<p>Uruguayans, like the French, presented their unique proposition for the Cup with the way they played in this match. It was the game when Cavani resurged being one of Uruguay’s real stars. People should move away from Suarez. Ronaldo like Messi was caged by a more unbreakable defence. Portugal’s vulnerability with lack of attacking options was out in the open for Uruguayans to exploit. At one time it was appalling to watch Portugal’s attack being helpless &amp; failing to take a single shot at the goal. The best team won in this match as well and now both of these worthy winners will meet for, hopefully, a riveting quarterfinal.</p>
 </div>
 
 </article>
