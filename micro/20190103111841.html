@@ -1,21 +1,23 @@
 <!doctype html>
 <html lang="en">
     <head>
+        <link href="https://micro.blog/kaychaks" rel="me" />
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>sport</title>
+        <title>20190103111841</title>
+        <link rel="stylesheet" href="../css/style.css" />
         <link rel="stylesheet" href="../css/default.css" />
-        <link rel="stylesheet" href="../css/custom.css" />
         <link rel="stylesheet" href="../css/syntax.css" />
+        <link rel="stylesheet" href="../css/micro.css" />
         <link rel="stylesheet" href="https://use.typekit.net/jrr7jdg.css">
     </head>
     <body>
         <header>
             <div class="page-width">
-                <a href="../">
+                <a href="../micro">
                     <div class="site-logo">
-                        kaushikc.Org
+                        kaushikc.Org<span class="site-logo-small">  micro</span>
                     </div>
                 </a>
                 <nav>
@@ -25,13 +27,13 @@
                                 <a target="_blank" href="https://keybase.io/kaushikc">About</a>
                             </li>
                             <li class="menu-item">
-                                <a href="../archive.html">Archive</a>
+                                <a target="_blank" href="https://micro.blog/kaychaks" rel="me">Micro.Blog</a>
                             </li>
                             <li class="menu-item">
-                                <a href="http://micro.kaushikc.org">Micro</a>
+                                <a href="https://kaushikc.org">Blog</a>
                             </li>
                             <li class="menu-item">
-                                <a href="../atom.xml">Feed</a>
+                                <a href="../micro/rss.xml">Feed</a>
                             </li>
                         </ul>
                     </div>
@@ -40,26 +42,17 @@
         </header>
 
         <main role="main" class="page-width">
-            <div class="archive-groups">
-    <article class="archive-group">
-        <div class="bodycopy">
-            <h3>sport</h3>
-        </div>
-        <ul>
-    
-        <li>
-            
-            <a href="../posts/wc-2018-day1-perfect-start.html">
-                WC 2018: Day 1: A perfect start
-            </a>
-            
-
-        </li>
-    
-</ul>
-
-    </article>
+            <article class="post">
+<div class="byline">
+    <p class="date">
+        <a href="../micro/20190103111841.html" class="micro-date">2019-01-03T05:48:41Z</a>
+    </p>
 </div>
+<div class="bodycopy">
+    <p><a href="https://arxiv.org/pdf/1812.03651.pdf">Serverless Computing: One Step Forward, Two Steps Back</a> is a remarkable assessment of the current “serverless computing” state of affairs or the lack of it. Moreover, it has some interesting research ideas/references towards the broader vision of “truly programmable &amp; dynamic cloud computing”.</p>
+
+</div>
+</article>
 
         </main>
 
@@ -73,10 +66,6 @@
                         </li>
 
                         <li class="menu-item">
-                            <a href="../archive.html"><strong>Archive</strong></a>
-                        </li>
-
-                        <li class="menu-item">
                             Styles influenced from <a href="https://webkit.org/blog/" target="_blank">WebKit Blog</a>
                         </li>
                         <li class="menu-item">
@@ -87,4 +76,16 @@
             </nav>
         </footer>
     </body>
+    <script>
+     const dts = document.querySelectorAll("a.micro-date");
+     Array.from(dts).map( curr =>
+         {
+             const dt = new Date(curr.text)
+             const text =
+                 dt.getFullYear() + "-" + dt.getMonth().toString().padStart(2,'0') + "-" + dt.getDate().toString().padStart(2,'0')
+                 + " " + dt.getHours().toString().padStart(2,'0') + ":" + dt.getMinutes().toString().padStart(2,'0')
+                 + ":" + dt.getSeconds().toString().padStart(2,'0')
+             curr.text = text
+         })
+    </script>
 </html>

@@ -7,8 +7,17 @@
         <description><![CDATA[Kaushik Chakraborty's micro blog]]></description>
         <atom:link href="https://kaushikc.org/micro/rss.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Wed, 26 Dec 2018 01:19:22 UT</lastBuildDate>
+        <lastBuildDate>Thu, 03 Jan 2019 05:48:41 UT</lastBuildDate>
         <item>
+    <title></title>
+    <link>https://kaushikc.org/micro/20190103111841.html</link>
+    <description><![CDATA[<p><a href="https://arxiv.org/pdf/1812.03651.pdf">Serverless Computing: One Step Forward, Two Steps Back</a> is a remarkable assessment of the current “serverless computing” state of affairs or the lack of it. Moreover, it has some interesting research ideas/references towards the broader vision of “truly programmable &amp; dynamic cloud computing”.</p>
+]]></description>
+    <pubDate>Thu, 03 Jan 2019 05:48:41 UT</pubDate>
+    <guid>https://kaushikc.org/micro/20190103111841.html</guid>
+    <dc:creator>Kaushik Chakraborty</dc:creator>
+</item>
+<item>
     <title></title>
     <link>https://kaushikc.org/micro/20181226064922.html</link>
     <description><![CDATA[<figure>
@@ -97,18 +106,6 @@
 ]]></description>
     <pubDate>Wed, 19 Sep 2018 03:44:59 UT</pubDate>
     <guid>https://kaushikc.org/micro/20180919071504.html</guid>
-    <dc:creator>Kaushik Chakraborty</dc:creator>
-</item>
-<item>
-    <title></title>
-    <link>https://kaushikc.org/micro/20180916080502.html</link>
-    <description><![CDATA[<figure>
-<img src="https://kaushikc.org/images/modern-sins.jpg" alt="modern sins" /><figcaption>modern sins</figcaption>
-</figure>
-<p>Pretty accurate modern version of 7 deadly sins via <a href="https://twitter.com/THErealDVORAK">THErealDVORAK</a> in the recent <a href="https://mailchi.mp/dvorak/pictures-of-the-happy-couple-for-you-manafort-no-agenda">No Agenda newsletter</a>, the best podcast in the universe.</p>
-]]></description>
-    <pubDate>Sun, 16 Sep 2018 02:48:24 UT</pubDate>
-    <guid>https://kaushikc.org/micro/20180916080502.html</guid>
     <dc:creator>Kaushik Chakraborty</dc:creator>
 </item>
 
