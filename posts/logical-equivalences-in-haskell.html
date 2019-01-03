@@ -118,7 +118,7 @@
 <a class="sourceLine" id="cb5-18" title="18">        proof x <span class="fu">=</span> <span class="fu">either</span> (<span class="fu">flip</span> <span class="fu">fst</span>) (\f _ <span class="ot">-&gt;</span> f x)</a>
 <a class="sourceLine" id="cb5-19" title="19">        </a></code></pre></div>
 <div class="sourceCode" id="cb6"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb6-1" title="1"><span class="co">-- forall. P,Q. - (P /\ Q) -&gt; (P -&gt; - Q)</span></a>
-<a class="sourceLine" id="cb6-2" title="2"><span class="kw">import</span>           <span class="dt">Control.Applicative</span> (liftA2)</a>
+<a class="sourceLine" id="cb6-2" title="2"><span class="kw">import</span> <span class="dt">Control.Applicative</span> (liftA2)</a>
 <a class="sourceLine" id="cb6-3" title="3"></a>
 <a class="sourceLine" id="cb6-4" title="4"><span class="kw">newtype</span> <span class="dt">Prop3</span> m <span class="fu">=</span> </a>
 <a class="sourceLine" id="cb6-5" title="5">    <span class="dt">Prop3</span></a>
@@ -128,29 +128,46 @@
 <a class="sourceLine" id="cb6-9" title="9"><span class="co">-- proof, Prop3 &lt;==&gt; LEM</span></a>
 <a class="sourceLine" id="cb6-10" title="10"><span class="kw">instance</span> <span class="dt">Monad</span> m <span class="ot">=&gt;</span> <span class="dt">Proof.Iso</span> (<span class="dt">Prop3</span> m) (<span class="dt">Lem</span> m) <span class="kw">where</span></a>
 <a class="sourceLine" id="cb6-11" title="11"><span class="ot">    to ::</span> <span class="dt">Prop3</span> m <span class="ot">-&gt;</span> <span class="dt">Lem</span> m</a>
-<a class="sourceLine" id="cb6-12" title="12">    to (<span class="dt">Prop3</span> p) <span class="fu">=</span> <span class="dt">Lem</span> <span class="fu">$</span> <span class="fu">fmap</span> <span class="dt">Right</span> <span class="fu">$</span> proof <span class="fu">&gt;&gt;=</span> (\f <span class="ot">-&gt;</span> <span class="fu">pure</span> (liftA2 (<span class="fu">&gt;&gt;=</span>) f (<span class="fu">flip</span> <span class="fu">id</span>))) <span class="kw">where</span></a>
-<a class="sourceLine" id="cb6-13" title="13"><span class="ot">        proof ::</span> m (a <span class="ot">-&gt;</span> m (a <span class="ot">-&gt;</span> m <span class="dt">Void</span>))</a>
-<a class="sourceLine" id="cb6-14" title="14">        proof <span class="fu">=</span> p (\(x,y) <span class="ot">-&gt;</span> proof <span class="fu">&gt;&gt;=</span> ((<span class="fu">$</span> y) <span class="fu">=&lt;&lt;</span>) <span class="fu">.</span> (<span class="fu">$</span> x))</a>
-<a class="sourceLine" id="cb6-15" title="15">        </a>
-<a class="sourceLine" id="cb6-16" title="16"><span class="ot">    from ::</span> <span class="dt">Lem</span> m <span class="ot">-&gt;</span> <span class="dt">Prop3</span> m</a>
-<a class="sourceLine" id="cb6-17" title="17">    from (<span class="dt">Lem</span> l) <span class="fu">=</span> <span class="dt">Prop3</span> <span class="fu">$</span> (\f <span class="ot">-&gt;</span> <span class="fu">pure</span> (\a <span class="ot">-&gt;</span> <span class="fu">either</span> (<span class="fu">const</span> <span class="fu">.</span> f <span class="fu">.</span> (a ,)) <span class="fu">id</span> <span class="fu">&lt;$&gt;</span> l))</a></code></pre></div>
-<div class="sourceCode" id="cb7"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">import</span> <span class="dt">Proof</span></a>
-<a class="sourceLine" id="cb7-2" title="2"><span class="co">-- forall. P,Q. -P /\ -Q -&gt; - (P \/ Q)</span></a>
-<a class="sourceLine" id="cb7-3" title="3"></a>
-<a class="sourceLine" id="cb7-4" title="4"><span class="kw">newtype</span> <span class="dt">Prop4</span> m <span class="fu">=</span> </a>
-<a class="sourceLine" id="cb7-5" title="5">    <span class="dt">Prop4</span></a>
-<a class="sourceLine" id="cb7-6" title="6">        (<span class="kw">forall</span> a b<span class="fu">.</span></a>
-<a class="sourceLine" id="cb7-7" title="7">            ((a <span class="ot">-&gt;</span> m <span class="dt">Void</span> , b <span class="ot">-&gt;</span> m <span class="dt">Void</span>) <span class="ot">-&gt;</span> m (<span class="dt">Either</span> a b <span class="ot">-&gt;</span>  m <span class="dt">Void</span>)))</a>
-<a class="sourceLine" id="cb7-8" title="8">            </a>
-<a class="sourceLine" id="cb7-9" title="9"><span class="co">-- proof, Prop4 &lt;==&gt; LEM</span></a>
-<a class="sourceLine" id="cb7-10" title="10"><span class="kw">instance</span> <span class="dt">Monad</span> m <span class="ot">=&gt;</span> <span class="dt">Proof.Iso</span> (<span class="dt">Prop4</span> m) (<span class="dt">Lem</span> m) <span class="kw">where</span></a>
-<a class="sourceLine" id="cb7-11" title="11"><span class="ot">    to ::</span> <span class="dt">Prop4</span> m <span class="ot">-&gt;</span> <span class="dt">Lem</span> m</a>
-<a class="sourceLine" id="cb7-12" title="12">    to (<span class="dt">Prop4</span> p) <span class="fu">=</span> <span class="dt">Lem</span> <span class="fu">$</span> <span class="fu">pure</span> <span class="fu">$</span> <span class="dt">Right</span> ((proof <span class="fu">&gt;&gt;=</span>) <span class="fu">.</span> <span class="fu">flip</span> <span class="fu">id</span> <span class="fu">.</span> <span class="dt">Left</span>) <span class="kw">where</span></a>
-<a class="sourceLine" id="cb7-13" title="13"><span class="ot">        proof ::</span> m (<span class="dt">Either</span> a a <span class="ot">-&gt;</span> m <span class="dt">Void</span>)</a>
-<a class="sourceLine" id="cb7-14" title="14">        proof <span class="fu">=</span> <span class="fu">curry</span> p ((proof <span class="fu">&gt;&gt;=</span>) <span class="fu">.</span> <span class="fu">flip</span> <span class="fu">id</span> <span class="fu">.</span> <span class="dt">Left</span>) ((proof <span class="fu">&gt;&gt;=</span>) <span class="fu">.</span> <span class="fu">flip</span> <span class="fu">id</span> <span class="fu">.</span> <span class="dt">Right</span>)</a>
-<a class="sourceLine" id="cb7-15" title="15">        </a>
-<a class="sourceLine" id="cb7-16" title="16"><span class="ot">    from ::</span> <span class="dt">Lem</span> m <span class="ot">-&gt;</span> <span class="dt">Prop4</span> m</a>
-<a class="sourceLine" id="cb7-17" title="17">    from _ <span class="fu">=</span> <span class="dt">Prop4</span> <span class="fu">$</span> <span class="fu">uncurry</span> <span class="fu">$</span> (<span class="fu">pure</span> <span class="fu">.</span>) <span class="fu">.</span> <span class="fu">either</span></a></code></pre></div>
+<a class="sourceLine" id="cb6-12" title="12">    to (<span class="dt">Prop3</span> p) <span class="fu">=</span> <span class="dt">Lem</span> </a>
+<a class="sourceLine" id="cb6-13" title="13">                    <span class="fu">$</span> <span class="fu">fmap</span> <span class="dt">Right</span> </a>
+<a class="sourceLine" id="cb6-14" title="14">                    <span class="fu">$</span> proof </a>
+<a class="sourceLine" id="cb6-15" title="15">                        <span class="fu">&gt;&gt;=</span> </a>
+<a class="sourceLine" id="cb6-16" title="16">                        (\f <span class="ot">-&gt;</span> <span class="fu">pure</span> (liftA2 (<span class="fu">&gt;&gt;=</span>) f (<span class="fu">flip</span> <span class="fu">id</span>))) </a>
+<a class="sourceLine" id="cb6-17" title="17">                <span class="kw">where</span></a>
+<a class="sourceLine" id="cb6-18" title="18"><span class="ot">                proof ::</span> m (a <span class="ot">-&gt;</span> m (a <span class="ot">-&gt;</span> m <span class="dt">Void</span>))</a>
+<a class="sourceLine" id="cb6-19" title="19">                proof <span class="fu">=</span> p (\(x,y) <span class="ot">-&gt;</span> proof <span class="fu">&gt;&gt;=</span> ((<span class="fu">$</span> y) <span class="fu">=&lt;&lt;</span>) <span class="fu">.</span> (<span class="fu">$</span> x))</a>
+<a class="sourceLine" id="cb6-20" title="20">        </a>
+<a class="sourceLine" id="cb6-21" title="21"><span class="ot">    from ::</span> <span class="dt">Lem</span> m <span class="ot">-&gt;</span> <span class="dt">Prop3</span> m</a>
+<a class="sourceLine" id="cb6-22" title="22">    from (<span class="dt">Lem</span> l) <span class="fu">=</span> <span class="dt">Prop3</span></a>
+<a class="sourceLine" id="cb6-23" title="23">                    <span class="fu">$</span> (\f <span class="ot">-&gt;</span></a>
+<a class="sourceLine" id="cb6-24" title="24">                            <span class="fu">pure</span></a>
+<a class="sourceLine" id="cb6-25" title="25">                                <span class="fu">$</span> \a <span class="ot">-&gt;</span></a>
+<a class="sourceLine" id="cb6-26" title="26">                                    <span class="fu">either</span> (<span class="fu">const</span> <span class="fu">.</span> f <span class="fu">.</span> (a ,)) <span class="fu">id</span> <span class="fu">&lt;$&gt;</span> l)</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb7-1" title="1"><span class="co">-- forall. P,Q. -P /\ -Q -&gt; - (P \/ Q)</span></a>
+<a class="sourceLine" id="cb7-2" title="2"></a>
+<a class="sourceLine" id="cb7-3" title="3"><span class="kw">newtype</span> <span class="dt">Prop4</span> m <span class="fu">=</span> </a>
+<a class="sourceLine" id="cb7-4" title="4">    <span class="dt">Prop4</span></a>
+<a class="sourceLine" id="cb7-5" title="5">        (<span class="kw">forall</span> a b<span class="fu">.</span></a>
+<a class="sourceLine" id="cb7-6" title="6">            ((a <span class="ot">-&gt;</span> m <span class="dt">Void</span> , b <span class="ot">-&gt;</span> m <span class="dt">Void</span>) <span class="ot">-&gt;</span> m (<span class="dt">Either</span> a b <span class="ot">-&gt;</span>  m <span class="dt">Void</span>)))</a>
+<a class="sourceLine" id="cb7-7" title="7">            </a>
+<a class="sourceLine" id="cb7-8" title="8"><span class="co">-- proof, Prop4 &lt;==&gt; LEM</span></a>
+<a class="sourceLine" id="cb7-9" title="9"><span class="kw">instance</span> <span class="dt">Monad</span> m <span class="ot">=&gt;</span> <span class="dt">Proof.Iso</span> (<span class="dt">Prop4</span> m) (<span class="dt">Lem</span> m) <span class="kw">where</span></a>
+<a class="sourceLine" id="cb7-10" title="10"><span class="ot">    to ::</span> <span class="dt">Prop4</span> m <span class="ot">-&gt;</span> <span class="dt">Lem</span> m</a>
+<a class="sourceLine" id="cb7-11" title="11">    to (<span class="dt">Prop4</span> p) <span class="fu">=</span> <span class="dt">Lem</span> </a>
+<a class="sourceLine" id="cb7-12" title="12">                    <span class="fu">$</span> <span class="fu">pure</span> </a>
+<a class="sourceLine" id="cb7-13" title="13">                    <span class="fu">$</span> <span class="dt">Right</span> </a>
+<a class="sourceLine" id="cb7-14" title="14">                        ((proof <span class="fu">&gt;&gt;=</span>) <span class="fu">.</span> <span class="fu">flip</span> <span class="fu">id</span> <span class="fu">.</span> <span class="dt">Left</span>)</a>
+<a class="sourceLine" id="cb7-15" title="15">                <span class="kw">where</span></a>
+<a class="sourceLine" id="cb7-16" title="16"><span class="ot">                proof ::</span> m (<span class="dt">Either</span> a a <span class="ot">-&gt;</span> m <span class="dt">Void</span>)</a>
+<a class="sourceLine" id="cb7-17" title="17">                proof <span class="fu">=</span> <span class="fu">curry</span> p ((proof <span class="fu">&gt;&gt;=</span>)</a>
+<a class="sourceLine" id="cb7-18" title="18">                                <span class="fu">.</span> <span class="fu">flip</span> <span class="fu">id</span></a>
+<a class="sourceLine" id="cb7-19" title="19">                                <span class="fu">.</span> <span class="dt">Left</span>) </a>
+<a class="sourceLine" id="cb7-20" title="20">                                ((proof <span class="fu">&gt;&gt;=</span>)</a>
+<a class="sourceLine" id="cb7-21" title="21">                                <span class="fu">.</span> <span class="fu">flip</span> <span class="fu">id</span></a>
+<a class="sourceLine" id="cb7-22" title="22">                                <span class="fu">.</span> <span class="dt">Right</span>)</a>
+<a class="sourceLine" id="cb7-23" title="23">        </a>
+<a class="sourceLine" id="cb7-24" title="24"><span class="ot">    from ::</span> <span class="dt">Lem</span> m <span class="ot">-&gt;</span> <span class="dt">Prop4</span> m</a>
+<a class="sourceLine" id="cb7-25" title="25">    from _ <span class="fu">=</span> <span class="dt">Prop4</span> <span class="fu">$</span> <span class="fu">uncurry</span> <span class="fu">$</span> (<span class="fu">pure</span> <span class="fu">.</span>) <span class="fu">.</span> <span class="fu">either</span></a></code></pre></div>
 <hr />
 <p><em>This is an <a href="https://github.com/kaychaks/notebooks/blob/master/logical-equivalences-in-haskell.ipynb">IHaskell Notebook</a> which is pretty cool for above kind of experiments. Much more feature rich than GHCi. I got the inspiration from <a href="https://twitter.com/vbhvsgr">Vaibhav Sagar</a> who writes <a href="https://vaibhavsagar.com/">all his posts</a> as IHaskell Notebooks.</em></p>
 </div>
