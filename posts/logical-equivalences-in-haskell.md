@@ -95,7 +95,7 @@ instance Monad m => Proof.Iso (Prop2 m) (Lem m) where
 
 ```haskell
 -- forall. P,Q. - (P /\ Q) -> (P -> - Q)
-import           Control.Applicative (liftA2)
+import Control.Applicative (liftA2)
 
 newtype Prop3 m = 
     Prop3
@@ -105,17 +105,25 @@ newtype Prop3 m =
 -- proof, Prop3 <==> LEM
 instance Monad m => Proof.Iso (Prop3 m) (Lem m) where
     to :: Prop3 m -> Lem m
-    to (Prop3 p) = Lem $ fmap Right $ proof >>= (\f -> pure (liftA2 (>>=) f (flip id))) where
-        proof :: m (a -> m (a -> m Void))
-        proof = p (\(x,y) -> proof >>= (($ y) =<<) . ($ x))
+    to (Prop3 p) = Lem 
+                    $ fmap Right 
+                    $ proof 
+                        >>= 
+                        (\f -> pure (liftA2 (>>=) f (flip id))) 
+                where
+                proof :: m (a -> m (a -> m Void))
+                proof = p (\(x,y) -> proof >>= (($ y) =<<) . ($ x))
         
     from :: Lem m -> Prop3 m
-    from (Lem l) = Prop3 $ (\f -> pure (\a -> either (const . f . (a ,)) id <$> l))
+    from (Lem l) = Prop3
+                    $ (\f ->
+                            pure
+                                $ \a ->
+                                    either (const . f . (a ,)) id <$> l)
 ```
 
 
 ```haskell
-import Proof
 -- forall. P,Q. -P /\ -Q -> - (P \/ Q)
 
 newtype Prop4 m = 
@@ -126,9 +134,18 @@ newtype Prop4 m =
 -- proof, Prop4 <==> LEM
 instance Monad m => Proof.Iso (Prop4 m) (Lem m) where
     to :: Prop4 m -> Lem m
-    to (Prop4 p) = Lem $ pure $ Right ((proof >>=) . flip id . Left) where
-        proof :: m (Either a a -> m Void)
-        proof = curry p ((proof >>=) . flip id . Left) ((proof >>=) . flip id . Right)
+    to (Prop4 p) = Lem 
+                    $ pure 
+                    $ Right 
+                        ((proof >>=) . flip id . Left)
+                where
+                proof :: m (Either a a -> m Void)
+                proof = curry p ((proof >>=)
+                                . flip id
+                                . Left) 
+                                ((proof >>=)
+                                . flip id
+                                . Right)
         
     from :: Lem m -> Prop4 m
     from _ = Prop4 $ uncurry $ (pure .) . either
