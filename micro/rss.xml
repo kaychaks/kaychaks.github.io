@@ -7,8 +7,18 @@
         <description><![CDATA[Kaushik Chakraborty's micro blog]]></description>
         <atom:link href="https://kaushikc.org/micro/rss.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Thu, 03 Jan 2019 05:48:41 UT</lastBuildDate>
+        <lastBuildDate>Thu, 21 Mar 2019 04:02:51 UT</lastBuildDate>
         <item>
+    <title></title>
+    <link>https://kaushikc.org/micro/20190321093251.html</link>
+    <description><![CDATA[<p>If you have <em>trusted types</em> then…</p>
+<p><a href="https://developers.google.com/web/updates/2019/02/trusted-types">Google Chrome Team’s new API to help prevent Cross-Site Scripting - Trusted Types</a></p>
+]]></description>
+    <pubDate>Thu, 21 Mar 2019 04:02:51 UT</pubDate>
+    <guid>https://kaushikc.org/micro/20190321093251.html</guid>
+    <dc:creator>Kaushik Chakraborty</dc:creator>
+</item>
+<item>
     <title></title>
     <link>https://kaushikc.org/micro/20190103111841.html</link>
     <description><![CDATA[<p><a href="https://arxiv.org/pdf/1812.03651.pdf">Serverless Computing: One Step Forward, Two Steps Back</a> is a remarkable assessment of the current “serverless computing” state of affairs or the lack of it. Moreover, it has some interesting research ideas/references towards the broader vision of “truly programmable &amp; dynamic cloud computing”.</p>
@@ -96,16 +106,6 @@
 ]]></description>
     <pubDate>Wed, 19 Sep 2018 04:25:39 UT</pubDate>
     <guid>https://kaushikc.org/micro/20180919095539.html</guid>
-    <dc:creator>Kaushik Chakraborty</dc:creator>
-</item>
-<item>
-    <title></title>
-    <link>https://kaushikc.org/micro/20180919071504.html</link>
-    <description><![CDATA[<p>A decent rant by <a href="https://twitter.com/nikitonsky">Nikita (creator of the font Fira Code)</a> on the apalling <em>state of the art</em> with modern softwares. There is a bit of trivialization but overall a required call for action.</p>
-<p><a href="http://tonsky.me/blog/disenchantment/">Software disenchantment</a></p>
-]]></description>
-    <pubDate>Wed, 19 Sep 2018 03:44:59 UT</pubDate>
-    <guid>https://kaushikc.org/micro/20180919071504.html</guid>
     <dc:creator>Kaushik Chakraborty</dc:creator>
 </item>
 
