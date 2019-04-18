@@ -7,8 +7,17 @@
         <description><![CDATA[Kaushik Chakraborty's micro blog]]></description>
         <atom:link href="https://kaushikc.org/micro/rss.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Thu, 21 Mar 2019 04:02:51 UT</lastBuildDate>
+        <lastBuildDate>Thu, 18 Apr 2019 05:38:59 UT</lastBuildDate>
         <item>
+    <title></title>
+    <link>https://kaushikc.org/micro/20190418110859.html</link>
+    <description><![CDATA[<p>Every time I cast my vote, especially for Lok Sabha, I feel an impeccable sense of accomplishment &amp; ardour. #GoVoteIndia</p>
+]]></description>
+    <pubDate>Thu, 18 Apr 2019 05:38:59 UT</pubDate>
+    <guid>https://kaushikc.org/micro/20190418110859.html</guid>
+    <dc:creator>Kaushik Chakraborty</dc:creator>
+</item>
+<item>
     <title></title>
     <link>https://kaushikc.org/micro/20190321093251.html</link>
     <description><![CDATA[<p>If you have <em>trusted types</em> then…</p>
@@ -93,19 +102,6 @@
 ]]></description>
     <pubDate>Wed, 19 Sep 2018 04:35:36 UT</pubDate>
     <guid>https://kaushikc.org/micro/20180919100536.html</guid>
-    <dc:creator>Kaushik Chakraborty</dc:creator>
-</item>
-<item>
-    <title></title>
-    <link>https://kaushikc.org/micro/20180919095539.html</link>
-    <description><![CDATA[<p>I’ve griped in the past [3,4] but this unnecessary grudge cycle against RSS comes back. Brent Simmons’ [2] latest explanation [1] is another good reminder - <em>leave RSS alone!</em></p>
-<p>[1] <a href="http://inessential.com/2018/09/17/oh_god_not_this_again" class="uri">http://inessential.com/2018/09/17/oh_god_not_this_again</a></p>
-<p>[2] <a href="https://micro.blog/brentsimmons" class="uri">https://micro.blog/brentsimmons</a></p>
-<p>[3] <a href="https://twitter.com/kaychaks/status/980797708314148865" class="uri">https://twitter.com/kaychaks/status/980797708314148865</a></p>
-<p>[4] <a href="https://kaushikc.org/linked/heil-rss.html" class="uri">https://kaushikc.org/linked/heil-rss.html</a></p>
-]]></description>
-    <pubDate>Wed, 19 Sep 2018 04:25:39 UT</pubDate>
-    <guid>https://kaushikc.org/micro/20180919095539.html</guid>
     <dc:creator>Kaushik Chakraborty</dc:creator>
 </item>
 
