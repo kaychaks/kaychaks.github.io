@@ -1,8 +1,19 @@
-{ nixpkgs ? import <nixpkgs> {}, compiler ? "default", doBenchmark ? false }:
+{ bootstrap ? import <nixpkgs> {}, compiler ? "default", doBenchmark ? false }:
 
 let
 
-  inherit (nixpkgs) pkgs;
+  fetcher = { owner, repo, rev, sha256, ... }: builtins.fetchTarball {
+          inherit sha256;
+          url = "https://github.com/${owner}/${repo}/archive/${rev}.tar.gz";
+  };
+
+  inherit (bootstrap) lib;
+
+  versions = lib.mapAttrs
+           (_:fetcher)
+           (builtins.fromJSON (builtins.readFile ./versions.json));
+
+  pkgs = import versions.nixpkgs {};
 
   f = { mkDerivation, aeson, base, bytestring, containers, hakyll
       , lens, lens-aeson, mtl, regex-pcre, stdenv, text, time

@@ -8,6 +8,7 @@
         <title>$title$</title>
         <link rel="stylesheet" href="/css/style.css" />
         <link rel="stylesheet" href="/css/default.css" />
+        <link rel="stylesheet" href="/css/syntax.css" />
         <link rel="stylesheet" href="/css/micro.css" />
         <link rel="stylesheet" href="https://use.typekit.net/jrr7jdg.css">
     </head>
@@ -70,7 +71,7 @@
          {
              const dt = new Date(curr.text)
              const text =
-                 dt.getFullYear() + "-" + dt.getMonth().toString().padStart(2,'0') + "-" + dt.getDate().toString().padStart(2,'0')
+                 dt.getFullYear() + "-" + (dt.getMonth() + 1).toString().padStart(2,'0') + "-" + dt.getDate().toString().padStart(2,'0')
                  + " " + dt.getHours().toString().padStart(2,'0') + ":" + dt.getMinutes().toString().padStart(2,'0')
                  + ":" + dt.getSeconds().toString().padStart(2,'0')
              curr.text = text
