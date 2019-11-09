@@ -25,7 +25,7 @@ jobs:
             mkdir --parents /home/circleci/.config/nixpkgs; mv config.nix $_
       - restore_cache:
           keys:
-            - deps1-{{.Branch}}-{{ checksum "../blog-hakyll.cabal" }}
+            - deps1-{{.Branch}}-{{ checksum "blog-hakyll.cabal" }}
       - run:
           name: setup haskell
           command: |
@@ -38,7 +38,7 @@ jobs:
             source /home/circleci/.nix-profile/etc/profile.d/nix.sh
             nix-shell --run "cabal new-build"
       - save_cache:
-          key: deps1-{{.Branch}}-{{ checksum "../blog-hakyll.cabal" }}
+          key: deps1-{{.Branch}}-{{ checksum "blog-hakyll.cabal" }}
           paths:
             - "/nix"
       - deploy:
