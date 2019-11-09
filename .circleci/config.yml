@@ -23,6 +23,12 @@ jobs:
           command: |
             bash <(curl https://nixos.org/nix/install)
             mkdir --parents /home/circleci/.config/nixpkgs; mv config.nix $_
+      - restore_cache:
+          keys:
+            - deps1-{{.Branch}}-{{ checksum "../blog-hakyll.cabal" }}
+      - run:
+          name: setup haskell
+          command: |
             source /home/circleci/.nix-profile/etc/profile.d/nix.sh
             nix-env -iA nixpkgs.haskellPackages.cabal-install
             nix-shell --run exit
@@ -31,6 +37,10 @@ jobs:
           command: |
             source /home/circleci/.nix-profile/etc/profile.d/nix.sh
             nix-shell --run "cabal new-build"
+      - save_cache:
+          key: deps1-{{.Branch}}-{{ checksum "../blog-hakyll.cabal" }}
+          paths:
+            - "/nix"
       - deploy:
           name: deploy master to github pages
           command: |
@@ -44,5 +54,5 @@ jobs:
             cp -a _site/. .
             echo "Commit"
             git add --all
-            git commit -m "[`date '+%F %T %Z'`] New Post"
+            git commit -m "[`date '+%F %T %Z'`] Update"
             git push origin master:master
