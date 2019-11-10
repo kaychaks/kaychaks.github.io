@@ -25,7 +25,7 @@ jobs:
             mkdir --parents /home/circleci/.config/nixpkgs; mv config.nix $_
             sudo mv /nix /nix-orig
             sudo mkdir /nix
-            sudo chmod -R 777
+            sudo chmod -R 777 /nix
       - restore_cache:
           keys:
             - deps1-{{.Branch}}-{{ checksum "blog-hakyll.cabal" }}
