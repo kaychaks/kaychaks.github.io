@@ -23,29 +23,24 @@ jobs:
           command: |
             bash <(curl https://nixos.org/nix/install)
             mkdir --parents /home/circleci/.config/nixpkgs; mv config.nix $_
-            sudo mv /nix /nix-orig
-            sudo mkdir /nix
-            sudo chmod -R 777 /nix
-      - restore_cache:
-          keys:
-            - deps1-{{.Branch}}-{{ checksum "blog-hakyll.cabal" }}
-      - run:
-          name: setup haskell
-          command: |
-            sudo mv -nT /nix-orig /nix
-            sudo chmod -R 755 /nix
-            source /home/circleci/.nix-profile/etc/profile.d/nix.sh
-            nix-env -iA nixpkgs.haskellPackages.cabal-install
-            nix-shell --run exit
+      # - restore_cache:
+      #     keys:
+      #       - deps1-{{.Branch}}-{{ checksum "blog-hakyll.cabal" }}
+      # - run:
+      #     name: setup haskell
+      #     command: |
+      #       source /home/circleci/.nix-profile/etc/profile.d/nix.sh
+      #       nix-env -iA nixpkgs.haskellPackages.cabal-install
+      #       nix-shell --run exit
       - run:
           name: build project
           command: |
             source /home/circleci/.nix-profile/etc/profile.d/nix.sh
-            nix-shell --run "cabal new-build"
-      - save_cache:
-          key: deps1-{{.Branch}}-{{ checksum "blog-hakyll.cabal" }}
-          paths:
-            - "/nix"
+            nix-shell -p nixpkgs.haskellPackages.cabal-install --run "cabal new-build"
+      # - save_cache:
+      #     key: deps1-{{.Branch}}-{{ checksum "blog-hakyll.cabal" }}
+      #     paths:
+      #       - "/nix"
       - deploy:
           name: deploy master to github pages
           command: |
