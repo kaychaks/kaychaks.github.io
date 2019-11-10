@@ -36,7 +36,7 @@ jobs:
           name: build project
           command: |
             source /home/circleci/.nix-profile/etc/profile.d/nix.sh
-            nix-shell -p cabal-install --run "cabal new-build"
+            nix-shell --packages "haskellPackages.ghcWithPackages (p: [p.cabal-install])" --run "cabal new-build"
       # - save_cache:
       #     key: deps1-{{.Branch}}-{{ checksum "blog-hakyll.cabal" }}
       #     paths:
