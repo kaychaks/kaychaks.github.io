@@ -29,7 +29,7 @@ let
           aeson base bytestring containers hakyll lens lens-aeson mtl
           regex-pcre text time time-locale-compat vector
         ];
-        executableSystemDepends = if pkgs.stdenv.isDarwin then [pkgs.darwin.apple_sdk.frameworks.Cocoa] else [];
+        executableSystemDepends = if pkgs.stdenv.isDarwin then [ pkgs.darwin.apple_sdk.frameworks.Cocoa pkgs.cabal-install ] else [ pkgs.cabal-install ];
         license = stdenv.lib.licenses.unfree;
         hydraPlatforms = stdenv.lib.platforms.none;
       };
