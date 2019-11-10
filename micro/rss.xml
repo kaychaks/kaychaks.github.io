@@ -7,8 +7,18 @@
         <description><![CDATA[Kaushik Chakraborty's micro blog]]></description>
         <atom:link href="https://kaushikc.org/micro/rss.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Fri, 24 May 2019 02:11:15 UT</lastBuildDate>
+        <lastBuildDate>Sun, 10 Nov 2019 06:16:21 UT</lastBuildDate>
         <item>
+    <title></title>
+    <link>https://kaushikc.org/micro/20191110114621.html</link>
+    <description><![CDATA[<p>It took 10 years for ACM to recognize, FB &amp; friends got it much earlier though, but current Enterprise &amp; associated folks still feels that #Haskell is not ready for them or for mainstream or for anything related to so-called “real”, “micro-services based”, “highly performant” and “cloud native” software !</p>
+<p><a href="https://engineering.fb.com/security/simon-marlow/">Simon Marlow, Simon Peyton Jones, and Satnam Singh win Most Influential ICFP Paper Award</a></p>
+]]></description>
+    <pubDate>Sun, 10 Nov 2019 06:16:21 UT</pubDate>
+    <guid>https://kaushikc.org/micro/20191110114621.html</guid>
+    <dc:creator>Kaushik Chakraborty</dc:creator>
+</item>
+<item>
     <title></title>
     <link>https://kaushikc.org/micro/20190524074115.html</link>
     <description><![CDATA[<p>Some more pragmatic resolutions- be smart to avoid any political discourse at workplace or public space (i.e. in parks, in shared rides, in kid’s school with other parents), improve stock market skills not to loose out on the giddiness of cronies 😉</p>
@@ -93,15 +103,6 @@
 ]]></description>
     <pubDate>Thu, 13 Dec 2018 13:54:11 UT</pubDate>
     <guid>https://kaushikc.org/micro/20181213192411.html</guid>
-    <dc:creator>Kaushik Chakraborty</dc:creator>
-</item>
-<item>
-    <title></title>
-    <link>https://kaushikc.org/micro/20181205080244.html</link>
-    <description><![CDATA[<p>On account of the Indian currency situation being in tatters, I only have 2 avenues for my year-end “thank you &amp; go on” donations - #NixOS Foundation &amp; #Haskell Org.</p>
-]]></description>
-    <pubDate>Wed, 05 Dec 2018 02:32:44 UT</pubDate>
-    <guid>https://kaushikc.org/micro/20181205080244.html</guid>
     <dc:creator>Kaushik Chakraborty</dc:creator>
 </item>
 
