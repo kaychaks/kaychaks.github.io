@@ -23,12 +23,14 @@ jobs:
           command: |
             bash <(curl https://nixos.org/nix/install)
             mkdir --parents /home/circleci/.config/nixpkgs; mv config.nix $_
+            mv /nix /nix-orig
       - restore_cache:
           keys:
             - deps1-{{.Branch}}-{{ checksum "blog-hakyll.cabal" }}
       - run:
           name: setup haskell
           command: |
+            mv -nT /nix-orig /nix
             source /home/circleci/.nix-profile/etc/profile.d/nix.sh
             nix-env -iA nixpkgs.haskellPackages.cabal-install
             nix-shell --run exit
