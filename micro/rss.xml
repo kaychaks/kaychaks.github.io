@@ -7,8 +7,17 @@
         <description><![CDATA[Kaushik Chakraborty's micro blog]]></description>
         <atom:link href="https://kaushikc.org/micro/rss.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Sun, 10 Nov 2019 06:16:21 UT</lastBuildDate>
+        <lastBuildDate>Wed, 01 Jan 2020 01:53:53 UT</lastBuildDate>
         <item>
+    <title></title>
+    <link>https://kaushikc.org/micro/20200101072353.html</link>
+    <description><![CDATA[<p>Resolution #n : Improve skills on Optics ✅ Get <a href="https://leanpub.com/optics-by-example">Optics By Example</a> by <span class="citation" data-cites="chrislpenner">@chrislpenner</span></p>
+]]></description>
+    <pubDate>Wed, 01 Jan 2020 01:53:53 UT</pubDate>
+    <guid>https://kaushikc.org/micro/20200101072353.html</guid>
+    <dc:creator>Kaushik Chakraborty</dc:creator>
+</item>
+<item>
     <title></title>
     <link>https://kaushikc.org/micro/20191110114621.html</link>
     <description><![CDATA[<p>It took 10 years for ACM to recognize, FB &amp; friends got it much earlier though, but current Enterprise &amp; associated folks still feels that #Haskell is not ready for them or for mainstream or for anything related to so-called “real”, “micro-services based”, “highly performant” and “cloud native” software !</p>
@@ -93,16 +102,6 @@
 ]]></description>
     <pubDate>Sun, 23 Dec 2018 04:13:56 UT</pubDate>
     <guid>https://kaushikc.org/micro/20181223094356.html</guid>
-    <dc:creator>Kaushik Chakraborty</dc:creator>
-</item>
-<item>
-    <title></title>
-    <link>https://kaushikc.org/micro/20181213192411.html</link>
-    <description><![CDATA[<p>Poignant perspective on the decline of Indian mainstream media in this month’s Caravan. It’s difficult to curtail Govt. coercion but easy to cut big conglomerates / advertisers by directly asking the consumer to pay for the value. It’s tough but it’s transparent, ethical, &amp; only way for long term survival.</p>
-<p><a href="https://caravanmagazine.in/media/indian-newsrooms-morgues-investigative-journalism">The Byline is Dead</a></p>
-]]></description>
-    <pubDate>Thu, 13 Dec 2018 13:54:11 UT</pubDate>
-    <guid>https://kaushikc.org/micro/20181213192411.html</guid>
     <dc:creator>Kaushik Chakraborty</dc:creator>
 </item>
 
