@@ -7,8 +7,19 @@
         <description><![CDATA[Kaushik Chakraborty's micro blog]]></description>
         <atom:link href="https://kaushikc.org/micro/rss.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Wed, 25 Mar 2020 06:51:02 UT</lastBuildDate>
+        <lastBuildDate>Thu, 26 Mar 2020 04:24:00 UT</lastBuildDate>
         <item>
+    <title></title>
+    <link>https://kaushikc.org/micro/wfh.html</link>
+    <description><![CDATA[<p>Definitive essay for anyone working/going to work from home, especially important for those working from office in Indian service industry now being mandated to work from home.</p>
+<p>BEWARE - contents inside might trigger some folks</p>
+<p>http://cosmicweenie.com/work.pdf</p>
+]]></description>
+    <pubDate>Thu, 26 Mar 2020 04:24:00 UT</pubDate>
+    <guid>https://kaushikc.org/micro/wfh.html</guid>
+    <dc:creator>Kaushik Chakraborty</dc:creator>
+</item>
+<item>
     <title></title>
     <link>https://kaushikc.org/micro/20200325122102.html</link>
     <description><![CDATA[<p>People WFH first time &amp; managed by someone who all these years was against WFH - beware of “always working coz nothing else to do expectation syndrome”. Disconnect, don’t take calls &amp; enjoy life, once your working day/shift is over.</p>
@@ -89,15 +100,6 @@
 ]]></description>
     <pubDate>Thu, 21 Mar 2019 04:02:51 UT</pubDate>
     <guid>https://kaushikc.org/micro/20190321093251.html</guid>
-    <dc:creator>Kaushik Chakraborty</dc:creator>
-</item>
-<item>
-    <title></title>
-    <link>https://kaushikc.org/micro/20190103111841.html</link>
-    <description><![CDATA[<p><a href="https://arxiv.org/pdf/1812.03651.pdf">Serverless Computing: One Step Forward, Two Steps Back</a> is a remarkable assessment of the current “serverless computing” state of affairs or the lack of it. Moreover, it has some interesting research ideas/references towards the broader vision of “truly programmable &amp; dynamic cloud computing”.</p>
-]]></description>
-    <pubDate>Thu, 03 Jan 2019 05:48:41 UT</pubDate>
-    <guid>https://kaushikc.org/micro/20190103111841.html</guid>
     <dc:creator>Kaushik Chakraborty</dc:creator>
 </item>
 
