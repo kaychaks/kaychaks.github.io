@@ -7,8 +7,19 @@
         <description><![CDATA[Kaushik Chakraborty's micro blog]]></description>
         <atom:link href="https://kaushikc.org/micro/rss.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Thu, 26 Mar 2020 04:24:00 UT</lastBuildDate>
+        <lastBuildDate>Thu, 26 Mar 2020 05:28:00 UT</lastBuildDate>
         <item>
+    <title></title>
+    <link>https://kaushikc.org/micro/bengali-ocr.html</link>
+    <description><![CDATA[<p>While WFH I get enough time to do real interesting things - I learnt how not easy it is to OCR Bengali (my mother tongue) &amp; learn internals about the lang itself as well</p>
+<p>Constraints in Developing a Complete Bengali Optical Character Recognition System</p>
+<p>https://arxiv.org/pdf/2003.08384.pdf</p>
+]]></description>
+    <pubDate>Thu, 26 Mar 2020 05:28:00 UT</pubDate>
+    <guid>https://kaushikc.org/micro/bengali-ocr.html</guid>
+    <dc:creator>Kaushik Chakraborty</dc:creator>
+</item>
+<item>
     <title></title>
     <link>https://kaushikc.org/micro/wfh.html</link>
     <description><![CDATA[<p>Definitive essay for anyone working/going to work from home, especially important for those working from office in Indian service industry now being mandated to work from home.</p>
@@ -90,16 +101,6 @@
 ]]></description>
     <pubDate>Thu, 18 Apr 2019 05:38:59 UT</pubDate>
     <guid>https://kaushikc.org/micro/20190418110859.html</guid>
-    <dc:creator>Kaushik Chakraborty</dc:creator>
-</item>
-<item>
-    <title></title>
-    <link>https://kaushikc.org/micro/20190321093251.html</link>
-    <description><![CDATA[<p>If you have <em>trusted types</em> then…</p>
-<p><a href="https://developers.google.com/web/updates/2019/02/trusted-types">Google Chrome Team’s new API to help prevent Cross-Site Scripting - Trusted Types</a></p>
-]]></description>
-    <pubDate>Thu, 21 Mar 2019 04:02:51 UT</pubDate>
-    <guid>https://kaushikc.org/micro/20190321093251.html</guid>
     <dc:creator>Kaushik Chakraborty</dc:creator>
 </item>
 
