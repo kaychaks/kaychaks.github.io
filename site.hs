@@ -8,8 +8,6 @@ import           Data.Time.Clock         (UTCTime (..))
 import           Data.Time.Format        (formatTime,defaultTimeLocale)
 import           Data.Tuple              (swap)
 import           Hakyll
-
-
 --------------------------------------------------------------------------------
 main :: IO ()
 main = hakyll $ do
