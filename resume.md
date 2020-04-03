@@ -1,6 +1,8 @@
 # Kaushik Chakraborty
 
-[kaushik@kaushikc.org](mailto:kaushik@kaushikc.org) | [github.com/kaychaks](github.com/kaychaks) | [keybase.io/kaushikc](keybase.io/kaushikc)
+[kaushik@kaushikc.org](mailto:kaushik@kaushikc.org) |
+[github.com/kaychaks](github.com/kaychaks) |
+[keybase.io/kaushikc](keybase.io/kaushikc) | [linkedin.com/in/kaychaks/](https://www.linkedin.com/in/kaychaks/)
 <br />[kaushikc.org/tags/technology](kaushikc.org/tags/technology)
 
 ## About me
@@ -31,7 +33,7 @@ _Also_: Terraform, Ansible, Circle CI, Docker Registry, Nix, Dhall
 _Also_: HTTP(1&2), Reactive Principles, Graphs, Formal Methods, Knowledge
 Engineering, Site Reliability Engineering (SRE), Extreme Programming based Agile
 
-## Experience [CTS, 2006 - NOW]
+## Experience [Cognizant Technology Solutions, 2006 - NOW]
 
 ### Sr. Architect - Large Store Transformation [2019 - 2020]
 
