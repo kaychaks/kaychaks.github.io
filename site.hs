@@ -21,6 +21,13 @@ main = hakyll $ do
         route   idRoute
         compile compressCssCompiler
 
+    match "resume.md" $ do
+      route $ setExtension "html"
+      compile $
+       pandocCompiler >>=
+       loadAndApplyTemplate "templates/resume-default.html" defaultContext
+       
+
     tags <- buildTags "posts/*" (fromCapture "tags/*.html")
 
     tagsRules tags $ \t p -> do
@@ -133,7 +140,9 @@ main = hakyll $ do
         let feedCtx = constField "title" "" <> postCtx <> bodyField "description"
         posts <- fmap (take 10) . recentFirst =<< loadAllSnapshots "micro-posts/*.md" "microPostBodySave"
         renderRss microFeedConfig feedCtx posts
+
     match "templates/*" $ compile templateBodyCompiler
+
 
 --------------------------------------------------------------------------------
 postCtx :: Context String
