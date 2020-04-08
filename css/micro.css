@@ -10,3 +10,9 @@ article.post {
 .micro-date {
     color: #748d9c;
 }
+
+@media only screen and (max-width: 420px) {
+    header nav .main-menu.label-toggle {
+        margin-top: -6rem;
+    }
+}

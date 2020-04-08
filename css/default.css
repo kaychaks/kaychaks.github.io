@@ -240,7 +240,7 @@ header {
 }
 
 a.download {
-    background: url('images/download.svg') right no-repeat;
+    background: url('../images/download.svg') right no-repeat;
     padding-right: 4rem;
 }
 
@@ -384,7 +384,7 @@ footer .menu {
     background-position: 50% 1%;
     background-color: #8E8E93;
     background-repeat: no-repeat;
-    background-image: url('images/icons.svg');
+    background-image: url('../images/icons.svg');
 }
 
 .tile .background-image.has-featured-image {
@@ -451,7 +451,7 @@ footer .menu {
 .tile.tag-debugger .background-image,
 .tile.tag-shortcuts .background-image,
 .tile.tag-timeline .background-image {
-     background-image: url('images/inspector.svg');
+     background-image: url('../images/inspector.svg');
 }
 
 .tile.tag-console .background-image {
@@ -606,7 +606,7 @@ footer .menu {
 
 .icon-tile .icon {
     position: relative;
-    background: url('images/compass.svg') no-repeat;
+    background: url('../images/compass.svg') no-repeat;
     background-position: 50% 50%;
     margin: 0 auto 3rem;
     padding: 40%;
@@ -614,11 +614,11 @@ footer .menu {
 }
 
 .icon-tile.download .icon {
-    background-image: url('images/download.svg');
+    background-image: url('../images/download.svg');
 }
 
 .icon-tile.developer .icon {
-    background-image: url('images/developer.svg');
+    background-image: url('../images/developer.svg');
 }
 
 .icon-tile, .icon-tile a {
@@ -729,7 +729,7 @@ footer .menu {
 /** Twitter Icons **/
 
 .twitter-icon {
-    background: url('images/twitter.svg') no-repeat;
+    background: url('../images/twitter.svg') no-repeat;
     background-size: cover;
 }
 
@@ -1395,7 +1395,7 @@ article,
     /* line-height: 4.2rem; */
     font-weight: 200;
     display: inline-block;
-    /* background: url('images/webkit.svg') no-repeat; */
+    /* background: url('../images/webkit.svg') no-repeat; */
     /* padding-left: 7rem; */
     color: #333;
 }
@@ -1409,7 +1409,7 @@ article,
 }
 
 .hero .logo {
-    background-image: url('images/webkit.svg');
+    background-image: url('../images/webkit.svg');
 }
 
 /** Status Page **/
@@ -1417,7 +1417,7 @@ article,
 .feature-header:after {
     display: inline-block;
     content: "";
-    background: url('images/menu-down.svg') no-repeat 50%;
+    background: url('../images/menu-down.svg') no-repeat 50%;
     background-size: 2rem;
 }
 
@@ -1481,7 +1481,7 @@ footer nav a:hover {
 }
 
 header .menu-item-has-children .label-toggle::after {
-    background: url('images/menu-down.svg') no-repeat;
+    background: url('../images/menu-down.svg') no-repeat;
     background-size: 1.2rem;
     display: inline-block;
     padding-right: 1.2rem;
@@ -1842,7 +1842,7 @@ header .menu-item { /* add bottom dimension to main menu items */
         margin: 1.5rem 0 2.5rem;
         height: 3rem;
         width: 3rem;
-        background: url('images/menu-down.svg') no-repeat 50%;
+        background: url('../images/menu-down.svg') no-repeat 50%;
         cursor: pointer;
 
         -webkit-transition: transform 0.3s ease-out;
@@ -2072,7 +2072,7 @@ header .menu-item { /* add bottom dimension to main menu items */
     .table-of-contents label:after {
         display: inline-block;
         content: "";
-        background: url('images/menu-down.svg') no-repeat 50%;
+        background: url('../images/menu-down.svg') no-repeat 50%;
         background-size: 2rem;
         width: 2rem;
         height: 2rem;
@@ -2199,7 +2199,7 @@ header .menu-item { /* add bottom dimension to main menu items */
     .table-of-contents label:after {
         display: inline-block;
         content: "";
-        background: url('images/menu-down.svg') no-repeat 50%;
+        background: url('../images/menu-down.svg') no-repeat 50%;
         background-size: 2rem;
         width: 2rem;
         height: 2rem;
