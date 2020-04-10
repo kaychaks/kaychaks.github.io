@@ -7,8 +7,18 @@
         <description><![CDATA[Kaushik Chakraborty's micro blog]]></description>
         <atom:link href="https://kaushikc.org/micro/rss.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Wed, 08 Apr 2020 02:58:45 UT</lastBuildDate>
+        <lastBuildDate>Fri, 10 Apr 2020 06:45:43 UT</lastBuildDate>
         <item>
+    <title></title>
+    <link>https://kaushikc.org/micro/20200410121543.html</link>
+    <description><![CDATA[<p>I followed the steps in this <a href="https://matrix.org/blog/2020/04/06/running-your-own-secure-communication-service-with-matrix-and-jitsi#synapse">superb guide</a> to setup Matrix &amp; Jitsi from scratch to rather do it in NixOS and here is my own rundown of the same</p>
+<p><a href="https://kaushikc.org/posts/matrix-jitsi-nixos.html">Declarative, Decentralised, and Secure communication via Matrix, Jitsi, &amp; NixOS</a></p>
+]]></description>
+    <pubDate>Fri, 10 Apr 2020 06:45:43 UT</pubDate>
+    <guid>https://kaushikc.org/micro/20200410121543.html</guid>
+    <dc:creator>Kaushik Chakraborty</dc:creator>
+</item>
+<item>
     <title></title>
     <link>https://kaushikc.org/micro/20200408082845.html</link>
     <description><![CDATA[<p>I am sure this would be useful for our Ministry of Health &amp; Family Welfare as well</p>
@@ -93,15 +103,6 @@
 ]]></description>
     <pubDate>Thu, 23 May 2019 17:45:15 UT</pubDate>
     <guid>https://kaushikc.org/micro/20190523231515.html</guid>
-    <dc:creator>Kaushik Chakraborty</dc:creator>
-</item>
-<item>
-    <title></title>
-    <link>https://kaushikc.org/micro/20190523200505.html</link>
-    <description><![CDATA[<p>5 year’s teaser ends, real show begins now #shutupslave 🤫</p>
-]]></description>
-    <pubDate>Thu, 23 May 2019 14:35:05 UT</pubDate>
-    <guid>https://kaushikc.org/micro/20190523200505.html</guid>
     <dc:creator>Kaushik Chakraborty</dc:creator>
 </item>
 
