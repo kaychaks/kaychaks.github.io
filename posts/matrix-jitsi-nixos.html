@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>“Declarative, Decentralised, and Secure communication via Matrix, Jitsi, & NixOS”</title>
+        <link rel="stylesheet" href="../css/default.css" />
+        <link rel="stylesheet" href="../css/custom.css" />
+        <link rel="stylesheet" href="../css/syntax.css" />
+        <link rel="stylesheet" href="../css/fa.min.css" />
+        <link rel="stylesheet" href="https://use.typekit.net/jrr7jdg.css">
+    </head>
+    <body>
+        <header>
+            <div class="page-width">
+                <a href="../">
+                    <div class="site-logo">
+                        kaushikc.Org
+                    </div>
+                </a>
+                <nav>
+                    <div class="menu-main-menu-container">
+                        <input type="checkbox" id="menu-main-menu-toggle" class="menu-toggle">
+                        <label for="menu-main-menu-toggle" class="label-toggle main-menu" data-open="Main Menu" data-close="Close Menu"></label>
+                        <ul class="menu" role="menubar">
+                            <li class="menu-item">
+                                <a title="Archive" href="../archive.html"><i class="fas fa-archive"></i> Archive</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="../resume.html"><i class="fas fa-lightbulb"></i> CV</a>
+                            </li>
+                            <li class="menu-item">
+                                <a title="Micro Blog" href="http://micro.kaushikc.org"><i class="fab fa-microblog"></i> Micro</a>
+                            </li>
+                            <li class="menu-item">
+                                <a target="_blank" title="Keybase Profile" href="https://keybase.io/kaushikc"><i class="fab fa-keybase"></i></a>
+                            </li>
+                            <li class="menu-item">
+                                <a id="chat-icon" target="_blank" title="Keybase Chat" href="https://keybase.io/kaushikc/chat""><i class="fas fa-comments"></i></a>
+                            </li>
+                            <li class="menu-item">
+                                <a title="RSS" href="../atom.xml"><i class="fas fa-rss"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main role="main" class="page-width">
+            <article class="post">
+    <h1>
+        
+        <a href="../posts/matrix-jitsi-nixos.html">
+            “Declarative, Decentralised, and Secure communication via Matrix, Jitsi, & NixOS”
+        </a>
+        
+        <a href="../posts/matrix-jitsi-nixos.html" class="link-perma">
+            <span>●</span>
+        </a>
+    </h1>
+    <div class="byline">
+    <p class="date">April 10, 2019</p>
+    <p class="author"><a href="../tags/technology.html">technology</a>, <a href="../tags/nixos.html">nixos</a></p>
+</div>
+<div class="bodycopy">
+    <p>It has been one of my strong pursuit to figure out a properly encrypted and decentralised communication setup. <a href="matrix.org">Matrix</a>’s claim to provide that is pretty strong against other alternatives. I’ve been using <a href="riot.im">Riot</a>, the most feature rich Matrix client, but mainly as an IRC bouncer.</p>
+<p>Just the other day I read this awesome guide on <em><a href="https://matrix.org/blog/2020/04/06/running-your-own-secure-communication-service-with-matrix-and-jitsi">Running your own secure communication service with Matrix and Jitsi</a></em> and realised it’s not that difficult nowadays to setup all the pieces of the puzzle.</p>
+<p>And so if I want to follow those steps shown in the above article but rather do it in NixOS - another project I am really excited about - how easy/difficult it would be ?</p>
+<p>Well apart from minor tweaks, it was pretty straightforward and I would argue more simpler than how its done for a Debian based system. Following is the rundown of how I made the relevant steps work for my setup. I am not going to repeat all the nice technical explanations of above article. So anyone following <strong>should </strong>first read the above article.</p>
+<p>Before we begin, I would also like to address one difference from the basic premise of the above article - Unlike in the above article the main domain (<em>dangerousdemos.net</em>) is already pointing to an existing blog <a href="https://help.github.com/en/github/working-with-github-pages/configuring-a-custom-domain-for-your-github-pages-site">hosted from a Github repository</a>. I think this might be a case for many like me who already have a domain name serving a static blog (like this one) but want to setup Matrix via the subdomains.</p>
+<p>So lets begin,</p>
+<h2 id="nixos">NixOS</h2>
+<p>With NixOS every step is declarative and hence we don’t have to worry about the mechanical rigor as is the case with most of the steps in the original article. What it entails for us broadly are these 3 steps (<em>apart from some additional stuff</em>)</p>
+<ul>
+<li>Update <code>/etc/nixos/configuration.nix</code></li>
+<li>Run <code>sudo nixos-rebuild switch</code></li>
+<li>Done!</li>
+</ul>
+<p><a href="https://nixos.org/">NixOS</a> made following the original article really easy as I could make mistakes and not worry because I could rollback and start again. Let that sink in as I think that in itself is mind-blowing.</p>
+<h2 id="dns">DNS</h2>
+<p>Let’s use the same domain name - <em>dangerousdemos.net</em> - as used in the original article for our explanations. As mentioned above, we have one change here that the root domain already is redirecting to the static blog hosted in Github Pages. So we need to setup <code>A</code> records for the following subdomains:</p>
+<ul>
+<li><code>matrix.dangerousdemos.net</code> (for Synapse)</li>
+<li><code>riot.dangerousdemos.net</code> (for Riot/Web)</li>
+<li><code>jitsi.dangerousdemos.net</code> (for Jitsi)</li>
+<li><em><code>turn.dangerousdemos.net</code></em> (for coturn based <code>TURN</code> server that in original article is taken care by <code>jitsi-meet</code> installer)</li>
+</ul>
+<p><em>Its important for all these to setup in the DNS before we run our configurations so that LetsEncrypt challenge flow works fine or else we might face errors.</em></p>
+<h2 id="firewall">Firewall</h2>
+<p>We need to ensure that following ports are open in the NixOS firewall for all the configurations to work fine</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"> <span class="co"># /etc/nixos/configuration.nix</span></a>
+<a class="sourceLine" id="cb1-2" title="2"></a>
+<a class="sourceLine" id="cb1-3" title="3">  <span class="ex">networking.firewall</span> = {</a>
+<a class="sourceLine" id="cb1-4" title="4">    <span class="ex">allowedUDPPorts</span> = [ 5349 5350]<span class="kw">;</span></a>
+<a class="sourceLine" id="cb1-5" title="5">    <span class="ex">allowedTCPPorts</span> = [ 80 443 3478 3479]<span class="kw">;</span></a>
+<a class="sourceLine" id="cb1-6" title="6">  }</a></code></pre></div>
+<h2 id="nginx-with-letsencrypt">Nginx with LetsEncrypt</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="co"># /etc/nixos/configuration.nix</span></a>
+<a class="sourceLine" id="cb2-3" title="3"></a>
+<a class="sourceLine" id="cb2-4" title="4"></a>
+<a class="sourceLine" id="cb2-5" title="5"> <span class="ex">services.nginx</span> = {</a>
+<a class="sourceLine" id="cb2-6" title="6">   <span class="bu">enable</span> = true<span class="kw">;</span></a>
+<a class="sourceLine" id="cb2-7" title="7">   <span class="ex">virtualHosts</span> = {</a>
+<a class="sourceLine" id="cb2-8" title="8"></a>
+<a class="sourceLine" id="cb2-9" title="9">     <span class="co">## virtual host for Syapse</span></a>
+<a class="sourceLine" id="cb2-10" title="10">     <span class="st">&quot;matrix.dangerousdemos.net&quot;</span> = <span class="kw">{</span></a>
+<a class="sourceLine" id="cb2-11" title="11">       <span class="co">## for force redirecting HTTP to HTTPS</span></a>
+<a class="sourceLine" id="cb2-12" title="12">       <span class="ex">forceSSL</span> = true<span class="kw">;</span></a>
+<a class="sourceLine" id="cb2-13" title="13">       <span class="co">## this setting takes care of all LetsEncrypt business</span></a>
+<a class="sourceLine" id="cb2-14" title="14">       <span class="ex">enableACME</span> = true<span class="kw">;</span></a>
+<a class="sourceLine" id="cb2-15" title="15">       <span class="ex">locations.</span><span class="st">&quot;/&quot;</span> = {</a>
+<a class="sourceLine" id="cb2-16" title="16">         <span class="ex">proxyPass</span> = <span class="st">&quot;http://localhost:8008&quot;</span><span class="kw">;</span></a>
+<a class="sourceLine" id="cb2-17" title="17">       <span class="kw">}</span>;</a>
+<a class="sourceLine" id="cb2-18" title="18">     };</a>
+<a class="sourceLine" id="cb2-19" title="19"></a>
+<a class="sourceLine" id="cb2-20" title="20">     <span class="co">## virtual host for Riot/Web</span></a>
+<a class="sourceLine" id="cb2-21" title="21">     <span class="st">&quot;riot.dangerousdemos.net&quot;</span> = <span class="kw">{</span></a>
+<a class="sourceLine" id="cb2-22" title="22">       <span class="co">## for force redirecting HTTP to HTTPS</span></a>
+<a class="sourceLine" id="cb2-23" title="23">       <span class="ex">forceSSL</span> = true<span class="kw">;</span></a>
+<a class="sourceLine" id="cb2-24" title="24">       <span class="co">## this setting takes care of all LetsEncrypt business</span></a>
+<a class="sourceLine" id="cb2-25" title="25">       <span class="ex">enableACME</span> = true<span class="kw">;</span></a>
+<a class="sourceLine" id="cb2-26" title="26">       <span class="co">## root points to the riot-web package content, also configured via Nix</span></a>
+<a class="sourceLine" id="cb2-27" title="27">       <span class="ex">locations.</span><span class="st">&quot;/&quot;</span> = {</a>
+<a class="sourceLine" id="cb2-28" title="28">           <span class="ex">root</span> = pkgs.riot-web<span class="kw">;</span></a>
+<a class="sourceLine" id="cb2-29" title="29">       <span class="kw">}</span>;</a>
+<a class="sourceLine" id="cb2-30" title="30">     };</a>
+<a class="sourceLine" id="cb2-31" title="31"></a>
+<a class="sourceLine" id="cb2-32" title="32">     <span class="co">## virtual host for Jitsi, reusing the same hostname as used</span></a>
+<a class="sourceLine" id="cb2-33" title="33">     <span class="co">## while configuring jitsi-meet</span></a>
+<a class="sourceLine" id="cb2-34" title="34">     <span class="va">${config</span><span class="er">.services.jitsi</span><span class="va">-</span>meet.hostName<span class="va">}</span> = <span class="kw">{</span></a>
+<a class="sourceLine" id="cb2-35" title="35">       <span class="ex">enableACME</span> = true<span class="kw">;</span></a>
+<a class="sourceLine" id="cb2-36" title="36">       <span class="ex">forceSSL</span> = true<span class="kw">;</span></a>
+<a class="sourceLine" id="cb2-37" title="37">     <span class="kw">}</span>;</a>
+<a class="sourceLine" id="cb2-38" title="38">   };</a>
+<a class="sourceLine" id="cb2-39" title="39"></a>
+<a class="sourceLine" id="cb2-40" title="40">   <span class="co">## other nginx specific best practices</span></a>
+<a class="sourceLine" id="cb2-41" title="41">   <span class="ex">recommendedGzipSettings</span> = true<span class="kw">;</span></a>
+<a class="sourceLine" id="cb2-42" title="42">   <span class="ex">recommendedOptimisation</span> = true<span class="kw">;</span></a>
+<a class="sourceLine" id="cb2-43" title="43">   <span class="ex">recommendedTlsSettings</span> = true<span class="kw">;</span></a>
+<a class="sourceLine" id="cb2-44" title="44"> };</a></code></pre></div>
+<p>The above setups Nginx along with LetsEncrypt. If it’s required (like in the original article) to setup main domain as a virtual host then make an additional entry inside <code>virtualHosts</code></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="st">&quot;dangerousdemos.net&quot;</span> = <span class="kw">{</span></a>
+<a class="sourceLine" id="cb3-3" title="3">  <span class="ex">forceSSL</span> = true<span class="kw">;</span></a>
+<a class="sourceLine" id="cb3-4" title="4">  <span class="ex">enableACME</span> = true<span class="kw">;</span></a>
+<a class="sourceLine" id="cb3-5" title="5">  <span class="ex">locations.</span><span class="st">&quot;/&quot;</span> = {</a>
+<a class="sourceLine" id="cb3-6" title="6">    <span class="ex">root</span> = <span class="st">&quot;/var/www/dangerousdemos.net&quot;</span></a>
+<a class="sourceLine" id="cb3-7" title="7">  <span class="kw">}</span></a>
+<a class="sourceLine" id="cb3-8" title="8">}</a></code></pre></div>
+<h2 id="synapse">Synapse</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"> <span class="co"># /etc/nixos/configuration.nix</span></a>
+<a class="sourceLine" id="cb4-2" title="2"></a>
+<a class="sourceLine" id="cb4-3" title="3">  <span class="ex">services.matrix-synapse</span> = {</a>
+<a class="sourceLine" id="cb4-4" title="4">    <span class="bu">enable</span> = true<span class="kw">;</span></a>
+<a class="sourceLine" id="cb4-5" title="5"></a>
+<a class="sourceLine" id="cb4-6" title="6">    <span class="co">## domain for the Matrix IDs</span></a>
+<a class="sourceLine" id="cb4-7" title="7">    <span class="ex">server_name</span> = <span class="st">&quot;dangerousdemos.net&quot;</span><span class="kw">;</span></a>
+<a class="sourceLine" id="cb4-8" title="8"></a>
+<a class="sourceLine" id="cb4-9" title="9">    <span class="co">## enable metrics collection</span></a>
+<a class="sourceLine" id="cb4-10" title="10">    <span class="ex">enable_metrics</span> = true<span class="kw">;</span></a>
+<a class="sourceLine" id="cb4-11" title="11"></a>
+<a class="sourceLine" id="cb4-12" title="12">    <span class="co">## enable user registration</span></a>
+<a class="sourceLine" id="cb4-13" title="13">    <span class="ex">enable_registration</span> = true<span class="kw">;</span></a>
+<a class="sourceLine" id="cb4-14" title="14"></a>
+<a class="sourceLine" id="cb4-15" title="15">    <span class="co">## Synapse guys recommend to use PostgreSQL over SQLite</span></a>
+<a class="sourceLine" id="cb4-16" title="16">    <span class="ex">database_type</span> = <span class="st">&quot;psycopg2&quot;</span><span class="kw">;</span></a>
+<a class="sourceLine" id="cb4-17" title="17"></a>
+<a class="sourceLine" id="cb4-18" title="18">    <span class="co">## database setup clarified later</span></a>
+<a class="sourceLine" id="cb4-19" title="19">    <span class="ex">database_args</span> = {</a>
+<a class="sourceLine" id="cb4-20" title="20">      <span class="ex">password</span> = <span class="st">&quot;synapse&quot;</span><span class="kw">;</span></a>
+<a class="sourceLine" id="cb4-21" title="21">    };</a>
+<a class="sourceLine" id="cb4-22" title="22"></a>
+<a class="sourceLine" id="cb4-23" title="23">    <span class="co">## default http listener which nginx will passthrough to</span></a>
+<a class="sourceLine" id="cb4-24" title="24">    <span class="ex">listeners</span> = [</a>
+<a class="sourceLine" id="cb4-25" title="25">      <span class="kw">{</span></a>
+<a class="sourceLine" id="cb4-26" title="26">        <span class="ex">port</span> = 8008<span class="kw">;</span></a>
+<a class="sourceLine" id="cb4-27" title="27">        <span class="ex">tls</span> = false<span class="kw">;</span></a>
+<a class="sourceLine" id="cb4-28" title="28">        <span class="ex">resources</span> = [</a>
+<a class="sourceLine" id="cb4-29" title="29">          <span class="kw">{</span></a>
+<a class="sourceLine" id="cb4-30" title="30">            <span class="ex">compress</span> = true<span class="kw">;</span></a>
+<a class="sourceLine" id="cb4-31" title="31">            <span class="ex">names</span> = [<span class="st">&quot;client&quot;</span> <span class="st">&quot;webclient&quot;</span> <span class="st">&quot;federation&quot;</span>]<span class="kw">;</span></a>
+<a class="sourceLine" id="cb4-32" title="32">          <span class="kw">}</span></a>
+<a class="sourceLine" id="cb4-33" title="33">        ];</a>
+<a class="sourceLine" id="cb4-34" title="34">      <span class="kw">}</span></a>
+<a class="sourceLine" id="cb4-35" title="35">    ];</a>
+<a class="sourceLine" id="cb4-36" title="36"></a>
+<a class="sourceLine" id="cb4-37" title="37">    <span class="co">## coturn based TURN server integration (TURN server setup mentioned later),</span></a>
+<a class="sourceLine" id="cb4-38" title="38">    <span class="co">## shared secret generated while configuring coturn</span></a>
+<a class="sourceLine" id="cb4-39" title="39">    <span class="co">## and reused here (power of Nix being a real programming language)</span></a>
+<a class="sourceLine" id="cb4-40" title="40">    <span class="ex">turn_uris</span> = [</a>
+<a class="sourceLine" id="cb4-41" title="41">      <span class="st">&quot;turn:turn.dangerousdemos.net:3478?transport=udp&quot;</span></a>
+<a class="sourceLine" id="cb4-42" title="42">      <span class="st">&quot;turn:turn.dangerousdemos.net:3478?transport=tcp&quot;</span></a>
+<a class="sourceLine" id="cb4-43" title="43">    ];</a>
+<a class="sourceLine" id="cb4-44" title="44">    <span class="ex">turn_shared_secret</span> = config.services.coturn.static-auth-secret<span class="kw">;</span></a>
+<a class="sourceLine" id="cb4-45" title="45">  };</a></code></pre></div>
+<p>Unlike in the original article we will do <a href="https://github.com/matrix-org/synapse#using-postgresql">what’s recommended by Synapse team</a> and configure PostgreSQL. In the current NixOS configuration for <code>services.matrix-synapse</code> it might be configuring PostgreSQL automatically based on the <code>database_type</code> setting but that will change in the new versions of NixOS where PostgreSQL setups need to happen separately. Here’s how we will do it for Synapse</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"> <span class="co"># /etc/nixos/configuration.nix</span></a>
+<a class="sourceLine" id="cb5-2" title="2"></a>
+<a class="sourceLine" id="cb5-3" title="3">  <span class="ex">services.postgresql</span> = {</a>
+<a class="sourceLine" id="cb5-4" title="4">    <span class="bu">enable</span> = true<span class="kw">;</span></a>
+<a class="sourceLine" id="cb5-5" title="5"></a>
+<a class="sourceLine" id="cb5-6" title="6">    <span class="co">## postgresql user and db name remains in the</span></a>
+<a class="sourceLine" id="cb5-7" title="7">    <span class="co">## service.matrix-synapse.database_args setting which</span></a>
+<a class="sourceLine" id="cb5-8" title="8">    <span class="co">## by default is matrix-synapse</span></a>
+<a class="sourceLine" id="cb5-9" title="9">    <span class="ex">initialScript</span> = pkgs.writeText <span class="st">&quot;synapse-init.sql&quot;</span> <span class="st">''</span></a>
+<a class="sourceLine" id="cb5-10" title="10">        <span class="ex">CREATE</span> ROLE <span class="st">&quot;matrix-synapse&quot;</span> WITH LOGIN PASSWORD <span class="st">'synapse'</span><span class="kw">;</span></a>
+<a class="sourceLine" id="cb5-11" title="11">        <span class="ex">CREATE</span> DATABASE <span class="st">&quot;matrix-synapse&quot;</span> WITH OWNER <span class="st">&quot;matrix-synapse&quot;</span></a>
+<a class="sourceLine" id="cb5-12" title="12">            <span class="ex">TEMPLATE</span> template0</a>
+<a class="sourceLine" id="cb5-13" title="13">            <span class="ex">LC_COLLATE</span> = <span class="st">&quot;C&quot;</span></a>
+<a class="sourceLine" id="cb5-14" title="14">            <span class="ex">LC_CTYPE</span> = <span class="st">&quot;C&quot;</span><span class="kw">;</span></a>
+<a class="sourceLine" id="cb5-15" title="15">        <span class="st">''</span>;</a>
+<a class="sourceLine" id="cb5-16" title="16">  };</a></code></pre></div>
+<p><strong>Federation setting</strong></p>
+<p>Original article’s description for <a href="https://matrix.org/blog/2020/04/06/running-your-own-secure-communication-service-with-matrix-and-jitsi#synapse">how to configure so that Matrix could find one’s server is nice</a>. I am just leveraging that with one additional setting required when there is already a static blog running via Github Pages pointing to base domain:</p>
+<ul>
+<li><p>create a file having this path <code>.well-known/matrix/server</code> in the top level of the Github repository serving the static site having the following content</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb6-1" title="1"><span class="fu">{</span> <span class="dt">&quot;m.server&quot;</span><span class="fu">:</span> <span class="st">&quot;matrix.dangerousdemos.net:443&quot;</span> <span class="fu">}</span></a></code></pre></div></li>
+<li><p>Github Pages via Jekyll exclude dotfiles/dotdirs from serving, so we need to explicitly include them by creating <code>_config.yml</code> at the top level of the Github repository having the following content</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb7-1" title="1"><span class="fu">include:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;.well-known&quot;</span><span class="kw">]</span></a></code></pre></div></li>
+</ul>
+<h2 id="riotweb">Riot/Web</h2>
+<p><code>riot-web</code> is a package already available within Nix packages which will take care of getting the right release package along with signature verification. So we can safely add the same to <code>systemPackages</code> like this</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" title="1"> <span class="co"># /etc/nixos/configuration.nix</span></a>
+<a class="sourceLine" id="cb8-2" title="2"></a>
+<a class="sourceLine" id="cb8-3" title="3">  <span class="ex">environment</span> = {</a>
+<a class="sourceLine" id="cb8-4" title="4">    <span class="ex">systemPackages</span> = with pkgs<span class="kw">;</span><span class="bu"> [</span></a>
+<a class="sourceLine" id="cb8-5" title="5">        riot-web</a>
+<a class="sourceLine" id="cb8-6" title="6">    ];</a>
+<a class="sourceLine" id="cb8-7" title="7">  };</a></code></pre></div>
+<p>However, we need to let know Nix of the additional configuration required once riot-web is setup. That we could do via <em>overlays</em>. This is another advantage of declarative package management where we state in clear terms the state of our system which also help us revert in case unexpected happens.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" title="1"> <span class="co"># /etc/nixos/configuration.nix</span></a>
+<a class="sourceLine" id="cb9-2" title="2"></a>
+<a class="sourceLine" id="cb9-3" title="3">  <span class="ex">nixpkgs.overlays</span> = [</a>
+<a class="sourceLine" id="cb9-4" title="4">    <span class="kw">(</span><span class="ex">self</span>: super: {</a>
+<a class="sourceLine" id="cb9-5" title="5">        <span class="ex">riot-web</span> = super.riot-web.override {</a>
+<a class="sourceLine" id="cb9-6" title="6">            <span class="ex">conf</span> = {</a>
+<a class="sourceLine" id="cb9-7" title="7">                 <span class="ex">default_server_config</span> = {</a>
+<a class="sourceLine" id="cb9-8" title="8">                    <span class="st">&quot;m.homeserver&quot;</span> = <span class="kw">{</span></a>
+<a class="sourceLine" id="cb9-9" title="9">                        <span class="st">&quot;base_url&quot;</span> = <span class="st">&quot;https://matrix.dangerousdemos.net&quot;</span>;</a>
+<a class="sourceLine" id="cb9-10" title="10">                        <span class="st">&quot;server_name&quot;</span> = <span class="st">&quot;dangerousdemos.net&quot;</span>;</a>
+<a class="sourceLine" id="cb9-11" title="11">                    <span class="kw">}</span>;</a>
+<a class="sourceLine" id="cb9-12" title="12">                    <span class="st">&quot;m.identity_server&quot;</span> = <span class="kw">{</span></a>
+<a class="sourceLine" id="cb9-13" title="13">                        <span class="st">&quot;base_url&quot;</span> = <span class="st">&quot;https://vector.im&quot;</span>;</a>
+<a class="sourceLine" id="cb9-14" title="14">                    <span class="kw">}</span>;</a>
+<a class="sourceLine" id="cb9-15" title="15">                 };</a>
+<a class="sourceLine" id="cb9-16" title="16"></a>
+<a class="sourceLine" id="cb9-17" title="17">                 <span class="co">## jitsi will be setup later,</span></a>
+<a class="sourceLine" id="cb9-18" title="18">                 <span class="co">## but we need to add to Riot configuration</span></a>
+<a class="sourceLine" id="cb9-19" title="19">                 <span class="ex">jitsi.preferredDomain</span> = <span class="st">&quot;jitsi.dangerousdemos.net&quot;</span><span class="kw">;</span></a>
+<a class="sourceLine" id="cb9-20" title="20">            };</a>
+<a class="sourceLine" id="cb9-21" title="21">        };</a>
+<a class="sourceLine" id="cb9-22" title="22">    }<span class="kw">)</span></a>
+<a class="sourceLine" id="cb9-23" title="23">  ];</a></code></pre></div>
+<h2 id="jitsi">Jitsi</h2>
+<p>Finally we head towards our last leg of configurations - setting up <code>jitsi-meet</code>. Unfortunately, current master and stable channels of Nix packages lack <code>jitsi-meet</code> and other supporting packages required to setup Jitsi. However, it will change pretty soon thanks to the awesome work from user <a href="https://github.com/mmilata">mmilata</a> in this <a href="https://github.com/NixOS/nixpkgs/pull/82920">pull request</a>. It’s feature complete and might come as part of the next Nix release (20.03). However, we can already use the same via <a href="https://github.com/nix-community/NUR">NUR</a>.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb10-1" title="1"> <span class="co"># /etc/nixos/configuration.nix</span></a>
+<a class="sourceLine" id="cb10-2" title="2"></a>
+<a class="sourceLine" id="cb10-3" title="3">  <span class="ex">imports</span> =</a>
+<a class="sourceLine" id="cb10-4" title="4">    <span class="bu">let</span></a>
+<a class="sourceLine" id="cb10-5" title="5">      <span class="ex">nur-no-pkgs</span> =</a>
+<a class="sourceLine" id="cb10-6" title="6">        <span class="ex">import</span> (</a>
+<a class="sourceLine" id="cb10-7" title="7">          <span class="ex">builtins.fetchTarball</span></a>
+<a class="sourceLine" id="cb10-8" title="8">          <span class="st">&quot;https://github.com/nix-community/NUR/archive/master.tar.gz&quot;</span></a>
+<a class="sourceLine" id="cb10-9" title="9">        ) {};</a>
+<a class="sourceLine" id="cb10-10" title="10">    <span class="kw">in</span></a>
+<a class="sourceLine" id="cb10-11" title="11">      [</a>
+<a class="sourceLine" id="cb10-12" title="12">        <span class="ex">nur-no-pkgs.repos.mmilata.modules.jitsi-meet</span></a>
+<a class="sourceLine" id="cb10-13" title="13">      ];</a></code></pre></div>
+<p>The above import add only the new service to setup <code>jitsi-meet</code> without any other OS specific stuff. And the configuration for the new service would auto-magically setup the related software (like <code>videobridge</code> &amp; <code>jicofo</code>) to have a functioning Jitsi, make sure to add a new virtual host to the Nginx configuration with the Jitsi <code>hostName</code> mentioned below, and enable LetsEncrypt certification for the same.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb11-1" title="1"> <span class="co"># /etc/nixos/configuration.nix</span></a>
+<a class="sourceLine" id="cb11-2" title="2"></a>
+<a class="sourceLine" id="cb11-3" title="3">  <span class="ex">services.jitsi-meet</span> = {</a>
+<a class="sourceLine" id="cb11-4" title="4">    <span class="bu">enable</span> = true<span class="kw">;</span></a>
+<a class="sourceLine" id="cb11-5" title="5">    <span class="ex">hostName</span> = <span class="st">&quot;jitsi.dangerousdemos.net&quot;</span><span class="kw">;</span></a>
+<a class="sourceLine" id="cb11-6" title="6"></a>
+<a class="sourceLine" id="cb11-7" title="7">    <span class="co">## this setting is going to add relevant ports to</span></a>
+<a class="sourceLine" id="cb11-8" title="8">    <span class="co">## networking.firewall.allowedTCPPorts &amp;</span></a>
+<a class="sourceLine" id="cb11-9" title="9">    <span class="co">## networking.firewall.allowedUDPPorts</span></a>
+<a class="sourceLine" id="cb11-10" title="10">    <span class="ex">videobridge.openFirewall</span> = true<span class="kw">;</span></a>
+<a class="sourceLine" id="cb11-11" title="11">  };</a></code></pre></div>
+<h2 id="turn-server">TURN server</h2>
+<p><code>jitsi-meet</code> Debian package takes care of setting up TURN server but in our case we need to take care of it ourselves. I followed the instructions mentioned in <a href="https://github.com/matrix-org/synapse/blob/master/docs/turn-howto.md">this documentation</a>. Nix already has a service configuration to setup <code>coturn</code>. Once set up, we will integrate the relevant parts to Synapse (which we have already done above).</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb12-1" title="1"> <span class="co"># /etc/nixos/configuration.nix</span></a>
+<a class="sourceLine" id="cb12-2" title="2"></a>
+<a class="sourceLine" id="cb12-3" title="3">  <span class="ex">services.coturn</span> = {</a>
+<a class="sourceLine" id="cb12-4" title="4">    <span class="bu">enable</span> = true<span class="kw">;</span></a>
+<a class="sourceLine" id="cb12-5" title="5">    <span class="ex">use-auth-secret</span> = true<span class="kw">;</span></a>
+<a class="sourceLine" id="cb12-6" title="6">    <span class="ex">static-auth-secret</span> = <span class="st">&quot;XJmzTf6VixzX5pDZKHOxtiUenkKzr10tlhBWYoti5DvCxR4TM9XlRHxII3Ml6yV2&quot;</span><span class="kw">;</span></a>
+<a class="sourceLine" id="cb12-7" title="7">    <span class="ex">realm</span> = <span class="st">&quot;turn.dangerousdemos.net&quot;</span><span class="kw">;</span></a>
+<a class="sourceLine" id="cb12-8" title="8">    <span class="ex">no-tcp-relay</span> = true<span class="kw">;</span></a>
+<a class="sourceLine" id="cb12-9" title="9">    <span class="ex">no-tls</span> = true<span class="kw">;</span></a>
+<a class="sourceLine" id="cb12-10" title="10">    <span class="ex">no-dtls</span> = true<span class="kw">;</span></a>
+<a class="sourceLine" id="cb12-11" title="11">    <span class="ex">extraConfig</span> = <span class="st">''</span></a>
+<a class="sourceLine" id="cb12-12" title="12">        <span class="ex">user-quota</span>=12</a>
+<a class="sourceLine" id="cb12-13" title="13">        <span class="ex">total-quota</span>=1200</a>
+<a class="sourceLine" id="cb12-14" title="14">        <span class="ex">denied-peer-ip</span>=10.0.0.0-10.255.255.255</a>
+<a class="sourceLine" id="cb12-15" title="15">        <span class="ex">denied-peer-ip</span>=192.168.0.0-192.168.255.255</a>
+<a class="sourceLine" id="cb12-16" title="16">        <span class="ex">denied-peer-ip</span>=172.16.0.0-172.31.255.255</a>
+<a class="sourceLine" id="cb12-17" title="17"></a>
+<a class="sourceLine" id="cb12-18" title="18">        <span class="ex">allowed-peer-ip</span>=192.168.191.127</a>
+<a class="sourceLine" id="cb12-19" title="19">    <span class="st">''</span>;</a>
+<a class="sourceLine" id="cb12-20" title="20">  };</a></code></pre></div>
+<p><code>static-auth-secret</code> generated above is via the tool <code>pwgen</code> which in Nix we could do like this</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb13-1" title="1">$ <span class="ex">nix-shell</span> -p pwgen --command <span class="st">&quot;pwgen -s 64 1&quot;</span></a>
+<a class="sourceLine" id="cb13-2" title="2"><span class="ex">XJmzTf6VixzX5pDZKHOxtiUenkKzr10tlhBWYoti5DvCxR4TM9XlRHxII3Ml6yV2</span></a></code></pre></div>
+<h2 id="conclusion">Conclusion</h2>
+<p>Once we have <a href="https://gist.github.com/kaychaks/c1a79aef68c32818dec7540412c9ee4b">all the above configuration in place</a>, now is the time to finally run them all. This will take time to get all the necessary stuff downloaded and setup.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb14-1" title="1">$ <span class="fu">sudo</span> nixos-rebuild switch</a></code></pre></div>
+<p>However, once its done you can launch Riot/Web, register a new user, create a room with someone else from the same MatrixVerse, have end-to-end encrypted conversation, and also start having a video call via Jitsi. All that infrastructure now being 100% owned by you with a protocol enforcing privacy and decentralisation. And finally every piece here is fully open-source.</p>
+<p>In these times of covert and overt surveillance its imperative to take matters at your hand. And when right tools make it simple to set them up and easy to reason their behavior, it’s a nice feeling.</p>
+</div>
+
+</article>
+
+        </main>
+
+        <footer class="page-width">
+            <hr />
+            <nav>
+                <div class="menu-footer-menu-container">
+                    <ul class="menu">
+                        <li class="menu-item">
+                            © 2020 <a target="_blank" href="https://keybase.io/kaushikc">Kaushik Chakraborty</a>
+                        </li>
+
+                        <li class="menu-item">
+                            <a href="../archive.html"><strong>Archive</strong></a>
+                        </li>
+
+                        <li class="menu-item">
+                            Styles influenced from <a href="https://webkit.org/blog/" target="_blank">WebKit Blog</a>
+                        </li>
+                        <li class="menu-item">
+                            Generated via <a href="http://jaspervdj.be/hakyll" target="_blank">Hakyll</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </footer>
+    </body>
+</html>
