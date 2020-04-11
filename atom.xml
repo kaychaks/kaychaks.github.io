@@ -235,7 +235,7 @@
 <a class="sourceLine" id="cb10-11" title="11">      [</a>
 <a class="sourceLine" id="cb10-12" title="12">        <span class="ex">nur-no-pkgs.repos.mmilata.modules.jitsi-meet</span></a>
 <a class="sourceLine" id="cb10-13" title="13">      ];</a></code></pre></div>
-<p>The above import add only the new service to setup <code>jitsi-meet</code> without any other OS specific stuff. And the configuration for the new service would auto-magically setup the related software (like <code>videobridge</code> &amp; <code>jicofo</code>) to have a functioning Jitsi, make sure to add a new virtual host to the Nginx configuration with the Jitsi <code>hostName</code> mentioned below, and enable LetsEncrypt certification for the same.</p>
+<p>The above import add only the new service to setup <code>jitsi-meet</code> without any other OS specific stuff. And the configuration for the new service would auto-magically setup the related software (like <code>videobridge</code> &amp; <code>jicofo</code>) to have a functioning Jitsi. We can then add a new virtual host to the Nginx configuration with the Jitsi <code>hostName</code> mentioned below (shown above in Nginx Section)</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb11-1" title="1"> <span class="co"># /etc/nixos/configuration.nix</span></a>
 <a class="sourceLine" id="cb11-2" title="2"></a>
 <a class="sourceLine" id="cb11-3" title="3">  <span class="ex">services.jitsi-meet</span> = {</a>
