@@ -322,9 +322,9 @@ already use the same via [NUR](https://github.com/nix-community/NUR).
 
 The above import add only the new service to setup `jitsi-meet` without any
 other OS specific stuff. And the configuration for the new service would
-auto-magically setup the related software (like `videobridge` & `jicofo`) to have a functioning Jitsi, make sure
-to add a new virtual host to the Nginx configuration with the Jitsi `hostName`
-mentioned below, and enable LetsEncrypt certification for the same.
+auto-magically setup the related software (like `videobridge` & `jicofo`) to
+have a functioning Jitsi. We can then add a new virtual host to the Nginx configuration with the Jitsi `hostName`
+mentioned below (shown above in Nginx Section)
 
 ```bash
  # /etc/nixos/configuration.nix
