@@ -1,6 +1,6 @@
 ---
 title : Declarative, Decentralised, and Secure communication via Matrix, Jitsi, & NixOS
-published : 2019-04-10
+published : 2020-04-10
 tags : technology , nixos
 link :
 ---
