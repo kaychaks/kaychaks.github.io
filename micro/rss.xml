@@ -7,8 +7,18 @@
         <description><![CDATA[Kaushik Chakraborty's micro blog]]></description>
         <atom:link href="https://kaushikc.org/micro/rss.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Fri, 17 Apr 2020 03:07:03 UT</lastBuildDate>
+        <lastBuildDate>Wed, 13 May 2020 03:14:11 UT</lastBuildDate>
         <item>
+    <title></title>
+    <link>https://kaushikc.org/micro/20200513084411.html</link>
+    <description><![CDATA[<p>So world’s foremost social media company ditched being social to work, leading the way, kudos to them. Will others follow the suit, I am still skeptical being in this shit-show for long. Folks will come up with new shit to deny / as workaround.</p>
+<p><a href="https://www.buzzfeednews.com/article/alexkantrowitz/twitter-will-allow-employees-to-work-at-home-forever">Twitter Will Allow Employees To Work At Home Forever</a></p>
+]]></description>
+    <pubDate>Wed, 13 May 2020 03:14:11 UT</pubDate>
+    <guid>https://kaushikc.org/micro/20200513084411.html</guid>
+    <dc:creator>Kaushik Chakraborty</dc:creator>
+</item>
+<item>
     <title></title>
     <link>https://kaushikc.org/micro/20200417083703.html</link>
     <description><![CDATA[<p>What’s better than beginning your day working from home with bunch of happy fishes.</p>
@@ -97,16 +107,6 @@
 ]]></description>
     <pubDate>Wed, 01 Jan 2020 01:53:53 UT</pubDate>
     <guid>https://kaushikc.org/micro/20200101072353.html</guid>
-    <dc:creator>Kaushik Chakraborty</dc:creator>
-</item>
-<item>
-    <title></title>
-    <link>https://kaushikc.org/micro/20191110114621.html</link>
-    <description><![CDATA[<p>It took 10 years for ACM to recognize, FB &amp; friends got it much earlier though, but current Enterprise &amp; associated folks still feels that #Haskell is not ready for them or for mainstream or for anything related to so-called “real”, “micro-services based”, “highly performant” and “cloud native” software !</p>
-<p><a href="https://engineering.fb.com/security/simon-marlow/">Simon Marlow, Simon Peyton Jones, and Satnam Singh win Most Influential ICFP Paper Award</a></p>
-]]></description>
-    <pubDate>Sun, 10 Nov 2019 06:16:21 UT</pubDate>
-    <guid>https://kaushikc.org/micro/20191110114621.html</guid>
     <dc:creator>Kaushik Chakraborty</dc:creator>
 </item>
 
