@@ -1,0 +1,60 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ develop ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+      with:
+        ref: 'develop'
+
+    - name: Nix
+      uses: cachix/install-nix-action@v10
+      
+    - name: Cachix
+      uses: cachix/cachix-action@v6
+      with:
+        # Name of a cachix cache to push and pull/substitute
+        name: kaushikc
+        # Signing key secret retrieved after creating binary cache on https://cachix.org
+        signingKey: ${{ secrets.CACHIX_SIGNING_KEY }}
+        extraPullNames: 'iohk'  
+
+    - name: Build
+      run: nix-build shell.nix -o site
+      
+    - name: Checkout
+      uses: actions/checkout@v2.3.1
+      with:
+        ref: 'master'
+
+    - name: Copy site
+      run: cp -a site/. .
+    
+    - name: Git add
+      run: git add --all
+    
+    - name: Git config
+      run: |
+          git config --global user.email $GITHUB_ACTOR@users.noreply.github.com
+          git config --global user.name $GITHUB_ACTOR
+    
+    - name: Git commit
+      run: git commit -m "[`date '+%F %T %Z'`] Update"
+    
+    - name: Git push
+      run: git push origin master:master
