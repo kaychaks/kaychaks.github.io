@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: New Post
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -24,9 +24,14 @@ jobs:
 
     - name: Nix
       uses: cachix/install-nix-action@v10
+
+    - name: Nix config
+      run: |
+        mkdir --parents $HOME/.config/nixpkgs
+        mv config.nix $_
       
     - name: Cachix
-      uses: cachix/cachix-action@v6
+      uses: cachix/cachix-action@master
       with:
         # Name of a cachix cache to push and pull/substitute
         name: kaushikc
