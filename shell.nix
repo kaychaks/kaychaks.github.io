@@ -1,6 +1,6 @@
 {
   # bootstrap ? import <nixpkgs> {},
-  compiler ? "ghc865",
+  compiler ? "ghc883",
   doBenchmark ? false
 }:
 
@@ -21,7 +21,9 @@ let
 
   sources = import ./nix/sources.nix;
   haskellNix = import sources."haskell.nix" {};
-  nixpkgs = import sources.nixpkgs haskellNix.nixpkgsArgs;
+  nixpkgsSrc = haskellNix.sources.nixpkgs-2003;
+  # nixpkgs = import sources.nixpkgs haskellNix.nixpkgsArgs;
+  nixpkgs = import nixpkgsSrc haskellNix.nixpkgsArgs;
   haskell = nixpkgs.haskell-nix;
 
   hspkgs = haskell.cabalProject {
@@ -29,6 +31,7 @@ let
     compiler-nix-name = compiler;
     configureArgs = "";
     modules = [];
+    index-state = "2020-07-05T00:00:00Z";
   };
 
   site = nixpkgs.stdenv.mkDerivation {
