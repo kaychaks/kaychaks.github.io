@@ -10,7 +10,7 @@ import           Data.Tuple              (swap)
 import           Hakyll
 --------------------------------------------------------------------------------
 main :: IO ()
-main = hakyll $ do
+main = hakyllWith defaultConfiguration {providerDirectory = "./public", destinationDirectory = "./site"} $ do
     match "images/*" $ do
         route   idRoute
         compile copyFileCompiler

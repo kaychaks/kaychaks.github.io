@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: New Post
+name: Blog Workflow
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -22,27 +22,34 @@ jobs:
       with:
         ref: 'develop'
 
-    - name: Nix
-      uses: cachix/install-nix-action@v11
+    - name: Setup Haskell
+      uses: actions/setup-haskell@v1
       with:
-        nix_path: nixpkgs=https://github.com/NixOS/nixpkgs-channels/archive/289466dd6a11c65a7de4a954d6ebf66c1ad07652.tar.gz
+        ghc-version: '8.8.2'
+        cabal-version: '3.0.0'
 
-    - name: Nix config
-      run: |
-        mkdir -p $HOME/.config/nixpkgs
-        mv config.nix $_
-      
-    - name: Cachix
-      uses: cachix/cachix-action@master
+    - name: Cache
+      uses: actions/cache@v1
+      env:
+        cache-name: cache-cabal
       with:
-        # Name of a cachix cache to push and pull/substitute
-        name: kaushikc
-        # Signing key secret retrieved after creating binary cache on https://cachix.org
-        signingKey: ${{ secrets.CACHIX_SIGNING_KEY }}
-        extraPullNames: 'iohk'  
+        path: ~/.cabal
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/*.cabal') }}-${{ hashFiles('**/cabal.project') }}
+        restore-keys: |
+          ${{ runner.os }}-build-${{ env.cache-name }}-
+          ${{ runner.os }}-build-
+          ${{ runner.os }}-
+
+    
+    - name: Install dependencies
+      run: |
+        cabal update
+        cabal v2-build
 
     - name: Build
-      run: nix-build shell.nix -o site
+      run: |
+        cabal v2-build
+        cabal v2-exec site build
       
     - name: Checkout
       uses: actions/checkout@v2.3.1
