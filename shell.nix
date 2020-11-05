@@ -33,7 +33,7 @@ let
     configureArgs = "";
     modules = [ ];
     index-state = "2020-07-05T00:00:00Z";
-    plan-sha256 = "1v71yj9zwcblcvk55zpzrb11nixp0hkyq0rb1pnz4c5878v4aygd";
+    # plan-sha256 = "1v71yj9zwcblcvk55zpzrb11nixp0hkyq0rb1pnz4c5878v4aygd";
     # materialized = ./blog-hakyll.mat;
     # checkMaterialization = true;
   };

@@ -23,9 +23,9 @@ jobs:
         ref: 'develop'
 
     - name: Nix
-      uses: cachix/install-nix-action@v10
+      uses: cachix/install-nix-action@v11
       with:
-        skip_adding_nixpkgs_channel: true
+        nix_path: nixpkgs=https://github.com/NixOS/nixpkgs-channels/archive/289466dd6a11c65a7de4a954d6ebf66c1ad07652.tar.gz
 
     - name: Nix config
       run: |
