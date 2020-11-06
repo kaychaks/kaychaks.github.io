@@ -56,7 +56,7 @@ jobs:
         ref: 'master'
 
     - name: Copy site
-      run: cp -a site/. .
+      run: cp -a ./site/. .
     
     - name: Git add
       run: git add --all
