@@ -1,0 +1,81 @@
+==================================================================
+https://keybase.io/kaushikc
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://kaushikc.org
+  * I am kaushikc (https://keybase.io/kaushikc) on keybase.
+  * I have a public key with fingerprint 7D28 A83E 1A1C CE87 4E3B  DC12 604E 119F FCEF F635
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "010157d4db95c8c92acc9b043e6f3c37dafe2e71a7366f901a58d0965263c41e69ce0a",
+      "fingerprint": "7d28a83e1a1cce874e3bdc12604e119ffceff635",
+      "host": "keybase.io",
+      "key_id": "604e119ffceff635",
+      "kid": "010157d4db95c8c92acc9b043e6f3c37dafe2e71a7366f901a58d0965263c41e69ce0a",
+      "uid": "187d474c07e41d2fe2fff0f54ab43100",
+      "username": "kaushikc"
+    },
+    "merkle_root": {
+      "ctime": 1604663223,
+      "hash_meta": "fc2f5fd0f09826f1fb07652ae7347efbebda80e062c5fbfb9775eec1fb57f04e",
+      "seqno": 18038226
+    },
+    "revoke": {
+      "sig_ids": [
+        "8769385b1726e9e71a495d4ce934d16644cc2bb66f5a03357da8a311eaebdd5f0f"
+      ]
+    },
+    "service": {
+      "hostname": "kaushikc.org",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1604663258,
+  "expire_in": 157680000,
+  "prev": "05a5a770432411c19a1f688145db81768fcc89740c1cb96b706a98bca79074c5",
+  "seqno": 155,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+yMK2AnicrZNbaB1VFIZPmtpqirZW0VIviWMfLIay98y+BoJCHwJe8EoxbfV07z1r
+n0xPcuY4MydtCccKfdAXEzBaaRStRaEa2xivtAqmaahoUTRtLAhao1RLUBA8pkge
+dE9QkOKj8zLMzL/+9a9vzZ66vLnQ0vTSaRKNbzrzVNPJyZ21QvFV/vWAp+Nwl9cx
+4JVh8Qa9IaRZsRyFXoeHMMKUhyTUkhphpK+MkRqRAJgNTMBDZcEHjhUPGLMSYUVF
+iCSjPgsMwcCkAaS8ds9GlRIk1SSqZM6Wh75QIgCssDEgOIFAhwb7DBHAWFprwFoW
+UFfYE6d5hQunVQoboti9cw/FxXj/of+fc9cW7bBwXpwYxIHg0He11lpkKVGaBBih
+XJhCUlF9kGdVtbQnKhuv3u71QVLuhWISx1kO12RRLsEuOGOB7wduQJX2FPsgU67S
+Gt9SGyKLpPCZxVYj7jIp4AHhYDXoUAkEiPmGWm215JwCGKej3DoWLkcKj1Zi10Gg
+QPg+cxES6I/LkHdPo5LjlnodWzzBmQwE1Zj7DGROgkgaEgMyICFmjBBjfK0dHKpQ
+EDiWSqgAY1AuQ0jd8N7D9bxb0h+ZRfN8URcB2BAnJRepmsRZbOJe96Uny6ppRw4m
+21XNpTtAF/82KeqoErrfxFX0Q5JGccWN4ZQXMaOi3YOd1SiBYpQrKGcCuSvvA/35
+7qmiinO3bJ9gbLBU2DIhMKGhFtiprTFCcoIMNloyzRFTUmijuERux/RfECl1QVXJ
+mTp0FZXVEvDqkxNblhaaWgrLLlmSH6BCy2Wr/jlWfzSWX7iz9fqBlUdrq6+ekXu3
+tx9cMah/f+TcB1sf7Jy57cP18vu7W48tmTtdKdzSdf+R0tiR88+Mrz3atmZfoW37
+2YWugR+H5u+Y8JZtvv2G2ZdP7b25sbby6YL9eEc4VD3zzp/XbNv8WvOhxx5Plu75
+9fWRkYmu6fe6XlyxcN8B0jz9wK1rvtm9rqKvTL/YNlt+4tndwT2X3vjK8OfPfTU5
+8/PwXRsPHBsbmZ/qXtXWPTa3f7U+FJzYP10A/cIvK9dfePIhMjy45/jht8431s29
+PXpy1utu/fa35dq76bNz7z4/eqo+eLYxOfrGvUOdI1/KK1q3Hr92vhZF4wdPXNc5
+/eYn74/va1xV31j+buqH0Y+e/ukvyyqJ2w==
+=kGqY
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/kaushikc
+
+==================================================================
