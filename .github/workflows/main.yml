@@ -57,15 +57,17 @@ jobs:
         clean: 'false'
 
     - name: Copy site
-      run: cp -a ./site/. .
+      run: cp -a site/. .
     
     - name: Git add
-      run: git add --all
+      run: |
+        git status
+        git add --all
     
     - name: Git config
       run: |
-          git config --global user.email $GITHUB_ACTOR@users.noreply.github.com
-          git config --global user.name $GITHUB_ACTOR
+        git config --global user.email $GITHUB_ACTOR@users.noreply.github.com
+        git config --global user.name $GITHUB_ACTOR
     
     - name: Git commit
       run: git commit -m "[`date '+%F %T %Z'`] Update"
