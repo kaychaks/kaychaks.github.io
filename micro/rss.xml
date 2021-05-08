@@ -7,8 +7,18 @@
         <description><![CDATA[Kaushik Chakraborty's micro blog]]></description>
         <atom:link href="https://kaushikc.org/micro/rss.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Mon, 03 May 2021 03:07:29 UT</lastBuildDate>
+        <lastBuildDate>Sat, 08 May 2021 06:57:43 UT</lastBuildDate>
         <item>
+    <title></title>
+    <link>https://kaushikc.org/micro/20210508122743.html</link>
+    <description><![CDATA[<p>“Digital India” empowering people 🙏😂</p>
+<p><a href="https://www.thehindu.com/news/national/telangana/digital-divide-curbs-vaccine-access-in-rural-telangana/article34508753.ece">Coronavirus | Digital divide curbs vaccine access in rural Telangana - The Hindu</a></p>
+]]></description>
+    <pubDate>2021-05-08 12:27:43+0530</pubDate>
+    <guid>https://kaushikc.org/micro/20210508122743.html</guid>
+    <dc:creator>Kaushik Chakraborty</dc:creator>
+</item>
+<item>
     <title></title>
     <link>https://kaushikc.org/micro/20210503083729.html</link>
     <description><![CDATA[<p>48% vote share is real kick in the ass. It is 5% more than what AITC got it 2019. While the fanatics lost 2% from what they got in 2019. Does that mean people now are getting woke ? Naah</p>
@@ -97,17 +107,6 @@
 ]]></description>
     <pubDate>2020-04-08 08:28:45+0530</pubDate>
     <guid>https://kaushikc.org/micro/20200408082845.html</guid>
-    <dc:creator>Kaushik Chakraborty</dc:creator>
-</item>
-<item>
-    <title></title>
-    <link>https://kaushikc.org/micro/bengali-ocr.html</link>
-    <description><![CDATA[<p>While WFH I get enough time to do real interesting things - I learnt how not easy it is to OCR Bengali (my mother tongue) &amp; learn internals about the lang itself as well</p>
-<p>Constraints in Developing a Complete Bengali Optical Character Recognition System</p>
-<p>https://arxiv.org/pdf/2003.08384.pdf</p>
-]]></description>
-    <pubDate>2020-03-26 10:58:00+0530</pubDate>
-    <guid>https://kaushikc.org/micro/bengali-ocr.html</guid>
     <dc:creator>Kaushik Chakraborty</dc:creator>
 </item>
 
