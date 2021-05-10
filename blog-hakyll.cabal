@@ -7,7 +7,7 @@ executable site
   main-is:          site.hs
   -- other-modules:    Importer
   build-depends:    base >= 4.6 && < 5
-                  , hakyll = 4.*
+                  , hakyll == 4.*
                   , containers           >= 0.3
                   , time                 >= 1.4
                   , time-locale-compat   >= 0.1
