@@ -7,8 +7,18 @@
         <description><![CDATA[Kaushik Chakraborty's micro blog]]></description>
         <atom:link href="https://kaushikc.org/micro/rss.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Sat, 08 May 2021 06:57:43 UT</lastBuildDate>
+        <lastBuildDate>Mon, 10 May 2021 02:55:30 UT</lastBuildDate>
         <item>
+    <title></title>
+    <link>https://kaushikc.org/micro/20210510082530.html</link>
+    <description><![CDATA[<p>It’s not evil to go out or open windows coz it might save your life. And other uncomfortable facts long ignored/chastised by gods of WHO/CDC.</p>
+<p><a href="https://www.nytimes.com/2021/05/07/opinion/coronavirus-airborne-transmission.html">Why Did It Take So Long to Accept the Facts About Covid?</a></p>
+]]></description>
+    <pubDate>2021-05-10 08:25:30+0530</pubDate>
+    <guid>https://kaushikc.org/micro/20210510082530.html</guid>
+    <dc:creator>Kaushik Chakraborty</dc:creator>
+</item>
+<item>
     <title></title>
     <link>https://kaushikc.org/micro/20210508122743.html</link>
     <description><![CDATA[<p>“Digital India” empowering people 🙏😂</p>
@@ -97,16 +107,6 @@
 ]]></description>
     <pubDate>2020-04-10 12:15:43+0530</pubDate>
     <guid>https://kaushikc.org/micro/20200410121543.html</guid>
-    <dc:creator>Kaushik Chakraborty</dc:creator>
-</item>
-<item>
-    <title></title>
-    <link>https://kaushikc.org/micro/20200408082845.html</link>
-    <description><![CDATA[<p>I am sure this would be useful for our Ministry of Health &amp; Family Welfare as well</p>
-<p><a href="http://blog.schema.org/2020/04/covid-19-schema-for-cdc-hospital.html">COVID-19 schema for CDC hospital reporting</a></p>
-]]></description>
-    <pubDate>2020-04-08 08:28:45+0530</pubDate>
-    <guid>https://kaushikc.org/micro/20200408082845.html</guid>
     <dc:creator>Kaushik Chakraborty</dc:creator>
 </item>
 
