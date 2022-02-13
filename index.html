@@ -68,31 +68,61 @@
     <p class="author"><a title="All pages tagged 'technology'." href="./tags/technology.html">technology</a>, <a title="All pages tagged 'nixos'." href="./tags/nixos.html">nixos</a></p>
 </div>
 <div class="bodycopy">
-    <p>It has been one of my strong pursuit to figure out a properly encrypted and decentralised communication setup. <a href="matrix.org">Matrix</a>’s claim to provide that is pretty strong against other alternatives. I’ve been using <a href="riot.im">Riot</a>, the most feature rich Matrix client, but mainly as an IRC bouncer.</p>
-<p>Just the other day I read this awesome guide on <em><a href="https://matrix.org/blog/2020/04/06/running-your-own-secure-communication-service-with-matrix-and-jitsi">Running your own secure communication service with Matrix and Jitsi</a></em> and realised it’s not that difficult nowadays to setup all the pieces of the puzzle.</p>
-<p>And so if I want to follow those steps shown in the above article but rather do it in NixOS - another project I am really excited about - how easy/difficult it would be ?</p>
-<p>Well apart from minor tweaks, it was pretty straightforward and I would argue more simpler than how its done for a Debian based system. Following is the rundown of how I made the relevant steps work for my setup. I am not going to repeat all the nice technical explanations of above article. So anyone following <strong>should </strong>first read the above article.</p>
-<p>Before we begin, I would also like to address one difference from the basic premise of the above article - Unlike in the above article the main domain (<em>dangerousdemos.net</em>) is already pointing to an existing blog <a href="https://help.github.com/en/github/working-with-github-pages/configuring-a-custom-domain-for-your-github-pages-site">hosted from a Github repository</a>. I think this might be a case for many like me who already have a domain name serving a static blog (like this one) but want to setup Matrix via the subdomains.</p>
+    <p>It has been one of my strong pursuit to figure out a properly encrypted and decentralised
+communication setup. <a href="matrix.org">Matrix</a>’s claim to provide that is pretty
+strong against other alternatives. I’ve been using <a href="riot.im">Riot</a>, the most feature rich
+Matrix client, but mainly as an IRC bouncer.</p>
+<p>Just the other day I read this
+awesome guide on <em><a href="https://matrix.org/blog/2020/04/06/running-your-own-secure-communication-service-with-matrix-and-jitsi">Running your own secure communication service with Matrix and
+Jitsi</a></em>
+and realised it’s not that difficult nowadays to setup all the pieces of the
+puzzle.</p>
+<p>And so if I want to follow those steps shown in the above article but rather
+do it in NixOS - another project I am really excited about - how easy/difficult
+it would be ?</p>
+<p>Well apart from minor tweaks, it was pretty straightforward and I would argue
+more simpler than how its done for a Debian based system. Following is the
+rundown of how I made the relevant steps work for my setup. I am not going to
+repeat all the nice technical explanations of above article. So anyone following
+<strong>should </strong>first read the above article.</p>
+<p>Before we begin, I would also like to address one difference from the basic premise of
+the above article - Unlike in the above article the main domain
+(<em>dangerousdemos.net</em>) is already pointing to an existing blog <a href="https://help.github.com/en/github/working-with-github-pages/configuring-a-custom-domain-for-your-github-pages-site">hosted from a
+Github
+repository</a>.
+I think this might be a case for many like me who already have a domain name
+serving a static blog (like this one) but
+want to setup Matrix via the subdomains.</p>
 <p>So lets begin,</p>
 <h2 id="nixos">NixOS</h2>
-<p>With NixOS every step is declarative and hence we don’t have to worry about the mechanical rigor as is the case with most of the steps in the original article. What it entails for us broadly are these 3 steps (<em>apart from some additional stuff</em>)</p>
+<p>With NixOS every step is declarative and hence we don’t have to worry about the
+mechanical rigor as is the case with most of the steps in the original article.
+What it entails for us broadly are these 3 steps (<em>apart from some additional stuff</em>)</p>
 <ul>
 <li>Update <code>/etc/nixos/configuration.nix</code></li>
 <li>Run <code>sudo nixos-rebuild switch</code></li>
 <li>Done!</li>
 </ul>
-<p><a href="https://nixos.org/">NixOS</a> made following the original article really easy as I could make mistakes and not worry because I could rollback and start again. Let that sink in as I think that in itself is mind-blowing.</p>
+<p><a href="https://nixos.org/">NixOS</a> made following the original article really easy as I could make
+mistakes and not worry because I could rollback and start again. Let that sink
+in as I think that in itself is mind-blowing.</p>
 <h2 id="dns">DNS</h2>
-<p>Let’s use the same domain name - <em>dangerousdemos.net</em> - as used in the original article for our explanations. As mentioned above, we have one change here that the root domain already is redirecting to the static blog hosted in Github Pages. So we need to setup <code>A</code> records for the following subdomains:</p>
+<p>Let’s use the same domain name - <em>dangerousdemos.net</em> - as used in the original
+article for our explanations. As mentioned above, we have one change here that the root domain
+already is redirecting to the static blog hosted in Github Pages. So we need to
+setup <code>A</code> records for the following subdomains:</p>
 <ul>
 <li><code>matrix.dangerousdemos.net</code> (for Synapse)</li>
 <li><code>riot.dangerousdemos.net</code> (for Riot/Web)</li>
 <li><code>jitsi.dangerousdemos.net</code> (for Jitsi)</li>
-<li><em><code>turn.dangerousdemos.net</code></em> (for coturn based <code>TURN</code> server that in original article is taken care by <code>jitsi-meet</code> installer)</li>
+<li><em><code>turn.dangerousdemos.net</code></em> (for coturn based <code>TURN</code> server that in original article is
+taken care by <code>jitsi-meet</code> installer)</li>
 </ul>
-<p><em>Its important for all these to setup in the DNS before we run our configurations so that LetsEncrypt challenge flow works fine or else we might face errors.</em></p>
+<p><em>Its important for all these to setup in the DNS before we run our configurations
+so that LetsEncrypt challenge flow works fine or else we might face errors.</em></p>
 <h2 id="firewall">Firewall</h2>
-<p>We need to ensure that following ports are open in the NixOS firewall for all the configurations to work fine</p>
+<p>We need to ensure that following ports are open in the NixOS firewall for all
+the configurations to work fine</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a> <span class="co"># /etc/nixos/configuration.nix</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">networking.firewall</span> = {</span>
@@ -144,7 +174,9 @@
 <span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>   <span class="ex">recommendedOptimisation</span> = true<span class="kw">;</span></span>
 <span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>   <span class="ex">recommendedTlsSettings</span> = true<span class="kw">;</span></span>
 <span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a> <span class="er">}</span><span class="kw">;</span></span></code></pre></div>
-<p>The above setups Nginx along with LetsEncrypt. If it’s required (like in the original article) to setup main domain as a virtual host then make an additional entry inside <code>virtualHosts</code></p>
+<p>The above setups Nginx along with LetsEncrypt. If it’s required (like in the
+original article) to setup main domain as a virtual host then make an additional
+entry inside <code>virtualHosts</code></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;dangerousdemos.net&quot;</span> = {</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">forceSSL</span> = true<span class="kw">;</span></span>
@@ -199,7 +231,11 @@
 <span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>    <span class="ex">]</span><span class="kw">;</span></span>
 <span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>    <span class="ex">turn_shared_secret</span> = config.services.coturn.static-auth-secret<span class="kw">;</span></span>
 <span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>  <span class="er">}</span><span class="kw">;</span></span></code></pre></div>
-<p>Unlike in the original article we will do <a href="https://github.com/matrix-org/synapse#using-postgresql">what’s recommended by Synapse team</a> and configure PostgreSQL. In the current NixOS configuration for <code>services.matrix-synapse</code> it might be configuring PostgreSQL automatically based on the <code>database_type</code> setting but that will change in the new versions of NixOS where PostgreSQL setups need to happen separately. Here’s how we will do it for Synapse</p>
+<p>Unlike in the original article we will do <a href="https://github.com/matrix-org/synapse#using-postgresql">what’s recommended by Synapse team</a> and
+configure PostgreSQL. In the current NixOS configuration for
+<code>services.matrix-synapse</code> it might be configuring PostgreSQL automatically based
+on the <code>database_type</code> setting but that will change in the new versions of NixOS where
+PostgreSQL setups need to happen separately. Here’s how we will do it for Synapse</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a> <span class="co"># /etc/nixos/configuration.nix</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">services.postgresql</span> = {</span>
@@ -217,15 +253,23 @@
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">''</span><span class="kw">;</span></span>
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="er">}</span><span class="kw">;</span></span></code></pre></div>
 <p><strong>Federation setting</strong></p>
-<p>Original article’s description for <a href="https://matrix.org/blog/2020/04/06/running-your-own-secure-communication-service-with-matrix-and-jitsi#synapse">how to configure so that Matrix could find one’s server is nice</a>. I am just leveraging that with one additional setting required when there is already a static blog running via Github Pages pointing to base domain:</p>
+<p>Original article’s description for <a href="https://matrix.org/blog/2020/04/06/running-your-own-secure-communication-service-with-matrix-and-jitsi#synapse">how to configure so that Matrix could find
+one’s server is nice</a>. I am just leveraging that with one additional setting
+required when there is already a static blog
+running via Github Pages pointing to base domain:</p>
 <ul>
-<li><p>create a file having this path <code>.well-known/matrix/server</code> in the top level of the Github repository serving the static site having the following content</p>
+<li><p>create a file having this path <code>.well-known/matrix/server</code> in the top level of the Github
+repository serving the static site having the following content</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span> <span class="dt">&quot;m.server&quot;</span><span class="fu">:</span> <span class="st">&quot;matrix.dangerousdemos.net:443&quot;</span> <span class="fu">}</span></span></code></pre></div></li>
-<li><p>Github Pages via Jekyll exclude dotfiles/dotdirs from serving, so we need to explicitly include them by creating <code>_config.yml</code> at the top level of the Github repository having the following content</p>
+<li><p>Github Pages via Jekyll exclude dotfiles/dotdirs from serving, so we need to
+explicitly include them by creating <code>_config.yml</code> at the top level of the
+Github repository having the following content</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">include</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;.well-known&quot;</span><span class="kw">]</span></span></code></pre></div></li>
 </ul>
 <h2 id="riotweb">Riot/Web</h2>
-<p><code>riot-web</code> is a package already available within Nix packages which will take care of getting the right release package along with signature verification. So we can safely add the same to <code>systemPackages</code> like this</p>
+<p><code>riot-web</code> is a package already available within Nix packages which will take
+care of getting the right release package along with signature verification. So we
+can safely add the same to <code>systemPackages</code> like this</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a> <span class="co"># /etc/nixos/configuration.nix</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">environment</span> = {</span>
@@ -233,7 +277,10 @@
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        riot-web</span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">]</span><span class="kw">;</span></span>
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="er">}</span><span class="kw">;</span></span></code></pre></div>
-<p>However, we need to let know Nix of the additional configuration required once riot-web is setup. That we could do via <em>overlays</em>. This is another advantage of declarative package management where we state in clear terms the state of our system which also help us revert in case unexpected happens.</p>
+<p>However, we need to let know Nix of the additional configuration required once
+riot-web is setup. That we could do via <em>overlays</em>. This is another advantage of
+declarative package management where we state in clear terms the state of our
+system which also help us revert in case unexpected happens.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a> <span class="co"># /etc/nixos/configuration.nix</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">nixpkgs.overlays</span> = [</span>
@@ -258,7 +305,14 @@
 <span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>    <span class="er">}</span><span class="kw">)</span></span>
 <span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>  <span class="ex">]</span><span class="kw">;</span></span></code></pre></div>
 <h2 id="jitsi">Jitsi</h2>
-<p>Finally we head towards our last leg of configurations - setting up <code>jitsi-meet</code>. Unfortunately, current master and stable channels of Nix packages lack <code>jitsi-meet</code> and other supporting packages required to setup Jitsi. However, it will change pretty soon thanks to the awesome work from user <a href="https://github.com/mmilata">mmilata</a> in this <a href="https://github.com/NixOS/nixpkgs/pull/82920">pull request</a>. It’s feature complete and might come as part of the next Nix release (20.03). However, we can already use the same via <a href="https://github.com/nix-community/NUR">NUR</a>.</p>
+<p>Finally we head towards our last leg of configurations - setting up
+<code>jitsi-meet</code>. Unfortunately, current master and stable channels of Nix packages
+lack <code>jitsi-meet</code> and other supporting packages required to setup Jitsi.
+However, it will change pretty soon thanks to the awesome work from user
+<a href="https://github.com/mmilata">mmilata</a> in this <a href="https://github.com/NixOS/nixpkgs/pull/82920">pull
+request</a>. It’s feature complete
+and might come as part of the next Nix release (20.03). However, we can
+already use the same via <a href="https://github.com/nix-community/NUR">NUR</a>.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a> <span class="co"># /etc/nixos/configuration.nix</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">imports</span> =</span>
@@ -272,7 +326,11 @@
 <span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>      <span class="bu">[</span></span>
 <span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>        nur-no-pkgs.repos.mmilata.modules.jitsi-meet</span>
 <span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>      <span class="bu">]</span><span class="kw">;</span></span></code></pre></div>
-<p>The above import add only the new service to setup <code>jitsi-meet</code> without any other OS specific stuff. And the configuration for the new service would auto-magically setup the related software (like <code>videobridge</code> &amp; <code>jicofo</code>) to have a functioning Jitsi. We can then add a new virtual host to the Nginx configuration with the Jitsi <code>hostName</code> mentioned below (shown above in Nginx Section)</p>
+<p>The above import add only the new service to setup <code>jitsi-meet</code> without any
+other OS specific stuff. And the configuration for the new service would
+auto-magically setup the related software (like <code>videobridge</code> &amp; <code>jicofo</code>) to
+have a functioning Jitsi. We can then add a new virtual host to the Nginx configuration with the Jitsi <code>hostName</code>
+mentioned below (shown above in Nginx Section)</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a> <span class="co"># /etc/nixos/configuration.nix</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">services.jitsi-meet</span> = {</span>
@@ -285,7 +343,11 @@
 <span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">videobridge.openFirewall</span> = true<span class="kw">;</span></span>
 <span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="er">}</span><span class="kw">;</span></span></code></pre></div>
 <h2 id="turn-server">TURN server</h2>
-<p><code>jitsi-meet</code> Debian package takes care of setting up TURN server but in our case we need to take care of it ourselves. I followed the instructions mentioned in <a href="https://github.com/matrix-org/synapse/blob/master/docs/turn-howto.md">this documentation</a>. Nix already has a service configuration to setup <code>coturn</code>. Once set up, we will integrate the relevant parts to Synapse (which we have already done above).</p>
+<p><code>jitsi-meet</code> Debian package takes care of setting up TURN server but in our case
+we need to take care of it ourselves. I followed the instructions mentioned in <a href="https://github.com/matrix-org/synapse/blob/master/docs/turn-howto.md">this
+documentation</a>.
+Nix already has a service configuration to setup <code>coturn</code>. Once set up, we will
+integrate the relevant parts to Synapse (which we have already done above).</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a> <span class="co"># /etc/nixos/configuration.nix</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">services.coturn</span> = {</span>
@@ -306,14 +368,22 @@
 <span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>        <span class="ex">allowed-peer-ip=192.168.191.127</span></span>
 <span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">''</span><span class="kw">;</span></span>
 <span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>  <span class="er">}</span><span class="kw">;</span></span></code></pre></div>
-<p><code>static-auth-secret</code> generated above is via the tool <code>pwgen</code> which in Nix we could do like this</p>
+<p><code>static-auth-secret</code> generated above is via the tool <code>pwgen</code> which in Nix we
+could do like this</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> nix-shell <span class="at">-p</span> pwgen <span class="at">--command</span> <span class="st">&quot;pwgen -s 64 1&quot;</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="ex">XJmzTf6VixzX5pDZKHOxtiUenkKzr10tlhBWYoti5DvCxR4TM9XlRHxII3Ml6yV2</span></span></code></pre></div>
 <h2 id="conclusion">Conclusion</h2>
-<p>Once we have <a href="https://gist.github.com/kaychaks/c1a79aef68c32818dec7540412c9ee4b">all the above configuration in place</a>, now is the time to finally run them all. This will take time to get all the necessary stuff downloaded and setup.</p>
+<p>Once we have <a href="https://gist.github.com/kaychaks/c1a79aef68c32818dec7540412c9ee4b">all the above configuration in place</a>, now is the time to finally run them
+all. This will take time to get all the necessary stuff downloaded and setup.</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo nixos-rebuild switch</span></code></pre></div>
-<p>However, once its done you can launch Riot/Web, register a new user, create a room with someone else from the same MatrixVerse, have end-to-end encrypted conversation, and also start having a video call via Jitsi. All that infrastructure now being 100% owned by you with a protocol enforcing privacy and decentralisation. And finally every piece here is fully open-source.</p>
-<p>In these times of covert and overt surveillance its imperative to take matters at your hand. And when right tools make it simple to set them up and easy to reason their behavior, it’s a nice feeling.</p>
+<p>However, once its done you can launch Riot/Web, register a new user, create a room
+with someone else from the same MatrixVerse, have end-to-end encrypted conversation,
+and also start having a video call via Jitsi. All that infrastructure now
+being 100% owned by you with a protocol enforcing privacy and decentralisation.
+And finally every piece here is fully open-source.</p>
+<p>In these times of covert and overt surveillance its imperative to take matters
+at your hand. And when right tools make it simple to set them up and easy to
+reason their behavior, it’s a nice feeling.</p>
 </div>
 
 </article>
