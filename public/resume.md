@@ -18,13 +18,13 @@ value open-source culture and try to contribute to open-source projects on the s
 
 ### Programming
 
-**Haskell**, **TypeScript**, **JavaScript**<br />
-_Also_: Scala, React, Relay, Redux, PHP, Python, PureScript
+**TypeScript**, **JavaScript**, **Haskell**<br />
+_Also_: React, Vue, Svelte, Relay, Redux, Rust, Scala, PHP, Python, PureScript
 
 ### Operations
 
 **Linux**, **Kubernetes**<br />
-_Also_: Terraform, Ansible, Circle CI, Docker Registry, Nix, Dhall
+_Also_: Nix, Terraform, Ansible, Circle CI, Docker Registry, Dhall
 
 ### General
 
@@ -34,6 +34,15 @@ _Also_: HTTP(1&2), Reactive Principles, Graphs, Formal Methods, Knowledge
 Engineering, Site Reliability Engineering (SRE), Extreme Programming based Agile
 
 ## Experience [Cognizant Technology Solutions, 2006 - NOW]
+
+### Asscociate Director - Large E-Commerce Site Transformation [2021 - Present]
+
+---
+
+- Designed and spearheading a large frontend techonology transformation initiative for one of the largest e-commerce web application. The web application is being transitioned from legacy technologies of Backbone / Marrionette to modern Vue3 and SSR based frontend stack.
+- The design is keeping in mind large number of existing vertical domains thereby implementation is being done in a pure domain-driven design model.
+- Design is trying to enable some flavours of micro-frontends so that disparate teams could go live without having hard dependencies on other teams
+- The overall design also entails creating a multi-theme design system from scratch (without relying on any external design frameworks) 
 
 ### Sr. Architect - Large Store Transformation [2019 - 2020]
 
