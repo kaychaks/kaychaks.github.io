@@ -1,28 +1,55 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>resume</title>
-        <link rel="stylesheet" type="text/css" media="all" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.min.css"  />
-        <link rel="stylesheet" type="text/css" media="all" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/github.min.css"  />
-        <link rel="stylesheet" href="/css/default.css" />
-        <link rel="stylesheet" href="/css/custom.css" />
-        <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
-        <style>
-         body { box-sizing: border-box; max-width: 740px; width: 100%; margin: 40px auto; padding: 0 10px; }
-        </style>
-        <script src='https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js'></script>
-        <script>
-         document.addEventListener('DOMContentLoaded', () => { document.body.classList.add('markdown-body'); document.querySelectorAll('pre[lang] > code').forEach((code) => { code.classList.add(code.parentElement.lang); }); document.querySelectorAll('pre > code').forEach((code) => { hljs.highlightBlock(code); }); });
-        </script>
-    </head>
-    <body>
-
-        <main role="main" class="page-width">
-            <article class="post">
-            <h1 id="kaushik-chakraborty">Kaushik Chakraborty</h1>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>resume</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+      href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+      href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/github.min.css"
+    />
+    <link rel="stylesheet" href="/css/default.css" />
+    <link rel="stylesheet" href="/css/custom.css" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <style>
+      body {
+        box-sizing: border-box;
+        max-width: 740px;
+        width: 100%;
+        margin: 40px auto;
+        padding: 0 10px;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.body.classList.add("markdown-body");
+        document.querySelectorAll("pre[lang] > code").forEach((code) => {
+          code.classList.add(code.parentElement.lang);
+        });
+        document.querySelectorAll("pre > code").forEach((code) => {
+          hljs.highlightBlock(code);
+        });
+        document.querySelector("#copy_year").innerHTML =
+          new Date().getFullYear();
+      });
+    </script>
+  </head>
+  <body>
+    <main role="main" class="page-width">
+      <article class="post"><h1 id="kaushik-chakraborty">Kaushik Chakraborty</h1>
 <p><a href="mailto:kaushik@kaushikc.org">kaushik@kaushikc.org</a> |
 <a href="github.com/kaychaks">github.com/kaychaks</a> |
 <a href="keybase.io/kaushikc">keybase.io/kaushikc</a> | <a href="https://www.linkedin.com/in/kaychaks/">linkedin.com/in/kaychaks/</a>
@@ -153,21 +180,21 @@ resource constrain registers. Had to consider critically both space and time com
 </ul>
 <h2 id="education">Education</h2>
 <p><strong>B. Tech [Computer Science &amp; Engineering]</strong>, 2002 - 2006, Kalinga Institute of Technology
-and Science, Bhubaneshwar, India.</p>
-            </article>
-        </main>
+and Science, Bhubaneshwar, India.</p></article>
+    </main>
 
-        <footer class="page-width">
-            <hr />
-            <nav>
-                <div class="menu-footer-menu-container">
-                    <ul class="menu">
-                        <li class="menu-item">
-                            © 2020 <a target="_blank" href="/">Kaushik Chakraborty</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </footer>
-    </body>
+    <footer class="page-width">
+      <hr />
+      <nav>
+        <div class="menu-footer-menu-container">
+          <ul class="menu">
+            <li class="menu-item">
+              © <span id="copy_year"></span>
+              <a target="_blank" href="/">Kaushik Chakraborty</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </footer>
+  </body>
 </html>
