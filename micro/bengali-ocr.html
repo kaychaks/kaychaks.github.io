@@ -12,14 +12,34 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>bengali-ocr</title>
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/default.css" />
+    <link rel="stylesheet" href="../css/default-micro.css" />
     <link rel="stylesheet" href="../css/syntax.css" />
     <link rel="stylesheet" href="../css/micro.css" />
     <link rel="stylesheet" href="../css/fa.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      @tailwind base;
+      @tailwind components;
+      @tailwind utilities;
+
+      a {
+        @apply text-blue-400;
+      }
+      em {
+        @apply italic font-light;
+      }
+      article p,
+      article blockquote {
+        @apply mb-4;
+      }
+      article p:last-child,
+      article blockquote:last-child {
+        @apply mb-0;
+      }
+    </style>
     <link rel="stylesheet" href="https://use.typekit.net/jrr7jdg.css" />
   </head>
-  <body>
+  <body class="font-['acuta']">
     <header>
       <div class="page-width">
         <a href="../micro">
@@ -53,62 +73,40 @@
       </div>
     </header>
 
-    <main role="main" class="page-width"><article class="post">
-<div class="byline">
-    <p class="date">
-        <a href="../micro/bengali-ocr.html" class="micro-date">2020-03-26T05:28:00Z</a>
-    </p>
-</div>
-<div class="bodycopy">
-    <p>While WFH I get enough time to do real interesting things - I learnt how not easy it is to OCR Bengali (my mother tongue) &amp; learn internals about the lang itself as well</p>
+    <main role="main" class="sm:max-w-[1140px] ml-24 sm:ml-auto sm:mx-auto"><div class="mx-auto p-4 flex flex-col">
+  <span class="text-gray-400 font-normal block mx-auto my-6">March 26, 2020</span>
+  <article class="text-[20px]"><p>While WFH I get enough time to do real interesting things - I learnt how not easy it is to OCR Bengali (my mother tongue) &amp; learn internals about the lang itself as well</p>
 <p>Constraints in Developing a Complete Bengali Optical Character Recognition System</p>
 <p>https://arxiv.org/pdf/2003.08384.pdf</p>
-
-</div>
 </article>
+</div>
 </main>
 
-    <footer class="page-width">
-      <hr />
-      <nav aria-label="Footer">
-        <div class="menu-footer-menu-container">
-          <ul class="menu">
-            <li class="menu-item">
-              © <span id="copy_year"></span>
-              <a target="_blank" href="https://keybase.io/kaushikc">Kaushik Chakraborty</a>
-            </li>
+    <footer class="border-t-gray-200 border-t border-solid">
+      <div class="page-width">
+        <nav aria-label="Footer">
+          <div class="menu-footer-menu-container">
+            <ul class="menu">
+              <li class="menu-item">
+                © <span id="copy_year"></span>
+                <a target="_blank" href="https://keybase.io/kaushikc">Kaushik Chakraborty</a>
+              </li>
 
-            <li class="menu-item">
-              Styles influenced from
-              <a href="https://webkit.org/blog/" target="_blank">WebKit Blog</a>
-            </li>
-            <li class="menu-item">
-              Generated via
-              <a href="http://jaspervdj.be/hakyll" target="_blank">Hakyll</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+              <li class="menu-item">
+                Styles influenced from
+                <a href="https://webkit.org/blog/" target="_blank">WebKit Blog</a>
+              </li>
+              <li class="menu-item">
+                Generated via
+                <a href="http://jaspervdj.be/hakyll" target="_blank">Hakyll</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
     </footer>
   </body>
   <script>
     document.querySelector("#copy_year").innerHTML = new Date().getFullYear();
-    const dts = document.querySelectorAll("a.micro-date");
-    Array.from(dts).map((curr) => {
-      const dt = new Date(curr.text);
-      const text =
-        dt.getFullYear() +
-        "-" +
-        (dt.getMonth() + 1).toString().padStart(2, "0") +
-        "-" +
-        dt.getDate().toString().padStart(2, "0") +
-        " " +
-        dt.getHours().toString().padStart(2, "0") +
-        ":" +
-        dt.getMinutes().toString().padStart(2, "0") +
-        ":" +
-        dt.getSeconds().toString().padStart(2, "0");
-      curr.text = text;
-    });
   </script>
 </html>
