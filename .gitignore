@@ -1,9 +1,0 @@
-_site
-_cache
-.*
-!.well-known
-!/.gitignore
-!/.circleci/
-*.out
-dist*
-site/
