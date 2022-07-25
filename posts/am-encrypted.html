@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Am Encrypted!</title>
+    <link rel="stylesheet" href="../css/default.css" />
+    <link rel="stylesheet" href="../css/custom.css" />
+    <link rel="stylesheet" href="../css/syntax.css" />
+    <link rel="stylesheet" href="../css/fa.min.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/jrr7jdg.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelector("#copy_year").innerHTML =
+          new Date().getFullYear();
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="page-width">
+        <a href="../">
+          <div class="site-logo">kaushikc.Org</div>
+        </a>
+        <nav aria-label="Header">
+          <div class="menu-main-menu-container">
+            <input type="checkbox" id="menu-main-menu-toggle" class="menu-toggle" />
+            <label for="menu-main-menu-toggle" class="label-toggle main-menu" data-open="Main Menu" data-close="Close Menu"></label>
+            <ul class="menu" role="menubar">
+              <li class="menu-item">
+                <a title="Archive" href="../archive.html"><em class="fas fa-archive"></em> Archive</a>
+              </li>
+              <li class="menu-item">
+                <a href="../resume.html"><em class="fas fa-lightbulb"></em> CV</a>
+              </li>
+              <li class="menu-item">
+                <a title="Micro Blog" href="http://micro.kaushikc.org"><em class="fab fa-microblog"></em> Micro</a>
+              </li>
+              <li class="menu-item">
+                <a target="_blank" title="Keybase Profile" href="https://keybase.io/kaushikc"><em class="fab fa-keybase"></em></a>
+              </li>
+              <li class="menu-item">
+                <a title="RSS" href="../atom.xml"><em class="fas fa-rss"></em></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main role="main" class="page-width"><article class="post">
+    <h1>
+        
+        <a href="../posts/am-encrypted.html">
+            Am Encrypted!
+        </a>
+        
+        <a href="../posts/am-encrypted.html" class="link-perma">
+            <span>●</span>
+        </a>
+    </h1>
+    <div class="byline">
+    <p class="date">December  5, 2015</p>
+    <p class="author"><a title="All pages tagged 'encryption'." href="../tags/encryption.html">encryption</a>, <a title="All pages tagged 'security'." href="../tags/security.html">security</a>, <a title="All pages tagged 'technology'." href="../tags/technology.html">technology</a></p>
+</div>
+<div class="bodycopy">
+    <p><a href="https://letsencrypt.org/2015/12/03/entering-public-beta.html">Let’s Encrypt is in public beta</a> since last night.</p>
+<p>And hence the lock icon in the location bar says</p>
+<figure>
+<img src="../images/Screen-Shot-2015-12-04-at-4-31-26-pm.png" alt="My Certificate" />
+<figcaption aria-hidden="true">My Certificate</figcaption>
+</figure>
+<p>Although Let’s Encrypt guys are not shipping auto-install plugin for nginx in this beta, the whole process is smooth.</p>
+<p>Here are the steps that I followed:</p>
+<ul>
+<li>Get the certificates</li>
+</ul>
+<pre><code>./letsencrypt-auto certonly</code></pre>
+<ul>
+<li>Make sym links</li>
+</ul>
+<pre><code>sudo ln -s
+/etc/letsencrypt/live/www.kaushikc.org/fullchain.pem
+/etc/nginx/ssl/fullchain.pem
+
+sudo ln -s /etc/letsencrypt/live/www.kaushikc.org/privkey.pem /etc/nginx/ssl/privkey.pem</code></pre>
+<ul>
+<li>Configure SSL in nginx site config</li>
+</ul>
+<pre><code>server {
+    listen 443 ssl;
+    server_name kaushikc.org www.kaushikc.org;
+    add_header Strict-Transport-Security &quot;max-age=31536000&quot;;
+    ssl_certificate /etc/nginx/ssl/fullchain.pem;
+    ssl_certificate_key /etc/nginx/ssl/privkey.pem;</code></pre>
+<ul>
+<li>Redirect all <em>http</em> to <em>https</em></li>
+</ul>
+<pre><code>server {
+       listen         80;
+       server_name    kaushikc.org www.kaushikc.org;
+       return         301 https://$server_name$request_uri;
+}</code></pre>
+<ul>
+<li>Reload nginx</li>
+</ul>
+<pre><code>sudo service nginx reload</code></pre>
+<ul>
+<li><a href="https://letsencrypt.org/become-a-sponsor/">Donate to ISRG</a></li>
+</ul>
+<hr />
+<p><strong>Update</strong></p>
+<ul>
+<li><a href="../posts/am-encrypted-renewal.html">How do I renew these certs every 90 days</a></li>
+</ul>
+</div>
+
+</article>
+</main>
+
+    <footer class="page-width">
+      <hr />
+      <nav aria-label="Footer">
+        <div class="menu-footer-menu-container">
+          <ul class="menu">
+            <li class="menu-item">
+              © <span id="copy_year"></span>
+              <a target="_blank" href="https://keybase.io/kaushikc">Kaushik Chakraborty</a>
+            </li>
+
+            <li class="menu-item">
+              <a href="../archive.html"><strong>Archive</strong></a>
+            </li>
+
+            <li class="menu-item">
+              Styles influenced from
+              <a href="https://webkit.org/blog/" target="_blank">WebKit Blog</a>
+            </li>
+            <li class="menu-item">
+              Generated via
+              <a href="http://jaspervdj.be/hakyll" target="_blank">Hakyll</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </footer>
+  </body>
+</html>

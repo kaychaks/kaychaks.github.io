@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Relay Notes</title>
+    <link rel="stylesheet" href="../css/default.css" />
+    <link rel="stylesheet" href="../css/custom.css" />
+    <link rel="stylesheet" href="../css/syntax.css" />
+    <link rel="stylesheet" href="../css/fa.min.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/jrr7jdg.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelector("#copy_year").innerHTML =
+          new Date().getFullYear();
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="page-width">
+        <a href="../">
+          <div class="site-logo">kaushikc.Org</div>
+        </a>
+        <nav aria-label="Header">
+          <div class="menu-main-menu-container">
+            <input type="checkbox" id="menu-main-menu-toggle" class="menu-toggle" />
+            <label for="menu-main-menu-toggle" class="label-toggle main-menu" data-open="Main Menu" data-close="Close Menu"></label>
+            <ul class="menu" role="menubar">
+              <li class="menu-item">
+                <a title="Archive" href="../archive.html"><em class="fas fa-archive"></em> Archive</a>
+              </li>
+              <li class="menu-item">
+                <a href="../resume.html"><em class="fas fa-lightbulb"></em> CV</a>
+              </li>
+              <li class="menu-item">
+                <a title="Micro Blog" href="http://micro.kaushikc.org"><em class="fab fa-microblog"></em> Micro</a>
+              </li>
+              <li class="menu-item">
+                <a target="_blank" title="Keybase Profile" href="https://keybase.io/kaushikc"><em class="fab fa-keybase"></em></a>
+              </li>
+              <li class="menu-item">
+                <a title="RSS" href="../atom.xml"><em class="fas fa-rss"></em></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main role="main" class="page-width"><article class="post">
+    <h1>
+        
+        <a href="../posts/relay-notes.html">
+            Relay Notes
+        </a>
+        
+        <a href="../posts/relay-notes.html" class="link-perma">
+            <span>●</span>
+        </a>
+    </h1>
+    <div class="byline">
+    <p class="date">November 30, 2015</p>
+    <p class="author"><a title="All pages tagged 'technology'." href="../tags/technology.html">technology</a>, <a title="All pages tagged 'javascript'." href="../tags/javascript.html">javascript</a></p>
+</div>
+<div class="bodycopy">
+    <!-- Object Identification & Mutations -->
+<!-- --- -->
+<p><a href="http://facebook.github.io/graphql/">GraphQL</a> is new way of fetching data from server championed at Facebook. It’s a spec, mostly straightforward, which needs to be followed both at server and client to achieve its goals of a schema backed data correspondence.</p>
+<p><a href="https://facebook.github.io/relay/">Relay</a> is an extension of GraphQL which is an attempt to bring sanity in other practical aspects of data management at the client especially for <a href="http://facebook.github.io/react/index.html">React</a> based applications. However, being a spec it’s not a React only thing.</p>
+<p>I am attempting to port a fully semantic model based web application with mildly complex user interface and rich with REST &amp; adhoc endpoints to GraphQL-Relay-React land.</p>
+<p>As I mentioned before, GraphQL as a spec and Facebook’s <a href="https://github.com/graphql/graphql-js">reference implementation</a> is pretty straightforward. Moreover, as my backend is nothing but bunch of RDFs stored in a triple store backed by an OWL based semantic model, creating a GraphQL schema for the client was not that challenging.</p>
+<p>The real challenge comes when Relay comes into picture.</p>
+<p>Relay tries to simplify some practical pain points of front-end development like data flow between UI components, state / scope management , both local and global, separation of concern while fetching data from server, managing timeouts and retries. And for that it takes the convention over configuration approach. By design, it’s built with React in mind (but there is no reason why it can’t be used without it).</p>
+<p>GraphQL has the term <em>query</em> as part of its name and for a good reason. As long as the application is asking for data from server, everything works fine. But to have any meaningful implementation, we need write some data. Or as they say in functional world, we need to have side effects. In GraphQL land, its called <em>Mutations</em>.</p>
+<p>Mutations are a late addition to the spec and again simple enough. It just mandates client to say along with what they want to write to also mention how is that gonna change the overall system. I.e. there is <code>payload object</code> for every mutation request which clients should leverage to ask GraphQL server to fetch everything that that they think might have changed because of what they have done. At a client level it’s somewhat similar to a Monadic system (without the required laws though) where the overall state is also part of the input &amp; output.</p>
+<p>Relay’s take on mutations is still a bit rusty. Both at the spec level as well as in the current implementation. Having said that, I am pretty confident on the job the committers at Facebook and others in the open are doing.</p>
+<p>The documentation around mutations in Relay is pretty weak. Other than <a href="https://www.youtube.com/watch?v=mmke4w4gc6c">this video</a> and some posts explaining simple scenarios, the <a href="https://facebook.github.io/relay/docs/guides-mutations.html#content">official documentation</a> and source code of <a href="https://github.com/facebook/relay/tree/master/examples">these examples</a> as part of relay framework is the best we’ve got right now.</p>
+<p>There are some important discussions around mutations is happening as Github issues and StackOverflow questions.</p>
+<p><em>I just want to reiterate, Relay (more than GraphQL) needs a different way of thinking in building client-server applications. I will surely have more to write on it (in much smaller doses than this one) as I tread deep into this land.</em></p>
+<p>Here are few of my realisations for now</p>
+<hr />
+<ul>
+<li><p><a href="https://facebook.github.io/relay/docs/graphql-object-identification.html#content">Object Identification</a> is an important concept when working with Relay-on-React(RoR). In almost all of the examples of Relay, the entry to the application happens by fetching a collection of a particular type which means that Relay store gets to know about the IDs of the individual instances.</p></li>
+<li><p>These IDs as mentioned in the documentation are <em>opaque</em> which in other words is the domain agnostic way for both client and server to identify an instance. It’s synonymous to ID column in databases (SQL &amp; NOSQL both) which is different from the domain specific identification of the same instance.</p></li>
+<li><p>Relay Store saves those IDs as <code>__dataID__</code> for each instance that it tracks and then use the same for all it’s data fetching exercise like when some React component would want to get additional information of those instance or the instance changes state as a result of some mutation.</p></li>
+<li><p>Unless the ID of an instance remains consistent to what Relay saves and what server sends, there will be weird warning / error messages from Relay. Or Relay won’t bother creating the right query to GraphQL server. Which is more frustrating as I spent a lot of time debugging my application rather than looking at the request created by Relay.</p></li>
+<li><p>A way that worked for me and I think something that is recommended when thinking in Relay is that</p>
+<ul>
+<li><p>your instances are always expected be treated with an unique ID that follows a pattern and is different of from the domain specific identifier (if any)</p></li>
+<li><p>the pattern is known to server so that it can be deciphered in the resolve function of your <code>Node</code> definition and the domain specific ID is used for further processing</p></li>
+<li><p>Relay client should be unaware of the pattern so that the separation of concern remains intact</p></li>
+<li><p>the same id, however, should be used whenever Relay client need to identify the instance e.g. in <code>getConfigs</code> method of <code>Mutation</code> class or a React component creating query <code>fragments</code> for relevant information of the same instance</p></li>
+<li><p>Relay store internally maps the <code>id</code> field of the <code>Node</code> type (Relay specific interface for your GraphQL schema) to <code>__dataID__</code> and then use the same to track the same instance across the application boundaries. Our app need not concern with the internal representation but be very sure that the <code>id</code> of our instance is consistent &amp; available to Relay store at all times. Best way to check the same is via <a href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi">React Chrome Plugin</a> where we can see what <code>props</code> data Relay containers are having.</p></li>
+</ul></li>
+<li><p><a href="https://facebook.github.io/relay/docs/api-reference-relay-mutation.html#content">Mutation apis</a> at client side is still developing and some major updates are coming in future releases of relay. One confusing feature is the <code>RANGE_ADD</code> configuration for the Relay mutator</p>
+<ul>
+<li><p>If as a result of a mutation, some new <code>edges</code> are added to an existing <code>connection</code> (Relay’s way to represent the graph of associations between GraphQL types e.g. a <code>user</code> type has a connection <code>todos</code> to represent list of <code>todo</code> types), the mutation should have a <code>connectionEdge</code> as one of the output fields</p></li>
+<li><p>the same edge then can be used in the <code>getFatQuery</code> and <code>getConfigs</code> function of the Mutation to ask Relay store to magically take care of replicating the same addition operation in it’s store mimicking what happened at the server side. It’s a really powerful feature but still has some rough edges especially when it throws weird warnings and fail silently. So here is what worked for me</p>
+<ul>
+<li><p>the <code>RANGE_ADD</code> option for the mutator will only work for instances that are already getting tracked by Relay. In other words, if the <code>connection</code> in question is not queried before by any component then Relay is going to skip asking for it when it frames the final mutation query and show this weird warning - <code>newly created edge &lt;edge_name&gt; and its &lt;node_name&gt; field. Did you forget to update the RANGE_ADD mutation config?</code>.</p></li>
+<li><p>Relay only looks for common fields when it does intersection between what’s asked in the <code>getFatQuery</code> and what exactly it’s components need as per their <code>getFragments</code> definition. So, check that the connection is at least used in one of the component’s <code>fragments</code>.</p></li>
+<li><p>in future updates the above warning message will be replaced with relevant message based on whether the problem is at the client end (i.e. when connection is never queried before being asked as part of the mutation) or at the server side when server is not including the new edge as part of the mutation payload. Check out <a href="https://github.com/facebook/relay/issues/542">issue #542</a> for the discussion and <a href="https://github.com/facebook/relay/pull/574">issue #574</a> for a possible implementation</p></li>
+<li><p>in cases where you still need to get fields
+in the mutation payload which are not being asked by any component, there is a new option <code>REQUIRED_CHILDREN</code> which would force Relay to include the relevant fields in its mutation query. Check out <a href="https://github.com/facebook/relay/issues/237">issue #237</a></p></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+
+</article>
+</main>
+
+    <footer class="page-width">
+      <hr />
+      <nav aria-label="Footer">
+        <div class="menu-footer-menu-container">
+          <ul class="menu">
+            <li class="menu-item">
+              © <span id="copy_year"></span>
+              <a target="_blank" href="https://keybase.io/kaushikc">Kaushik Chakraborty</a>
+            </li>
+
+            <li class="menu-item">
+              <a href="../archive.html"><strong>Archive</strong></a>
+            </li>
+
+            <li class="menu-item">
+              Styles influenced from
+              <a href="https://webkit.org/blog/" target="_blank">WebKit Blog</a>
+            </li>
+            <li class="menu-item">
+              Generated via
+              <a href="http://jaspervdj.be/hakyll" target="_blank">Hakyll</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </footer>
+  </body>
+</html>
