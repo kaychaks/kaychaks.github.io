@@ -107,16 +107,15 @@ main = hakyllWith
         do
           pandocCompiler
           >>= loadAndApplyTemplate "templates/micro-post-body.html" microPostCtx
-          >>= saveSnapshot "microPostBodySave"
-          >>= loadAndApplyTemplate "templates/micro-post.html" microPostCtx
           >>= saveSnapshot "microPostSave"
+          >>= loadAndApplyTemplate "templates/micro-post-single.html" fullDateCtx
           >>= loadAndApplyTemplate "templates/micro-default.html" defaultContext
           >>= relativizeUrls
     match "micro-posts/index.html" $ do
       route $ gsubRoute "micro-posts/" (const "micro/")
       compile $
         do
-          posts <- (recentFirst =<< loadAllSnapshots "micro-posts/*.md" "microPostSave") :: Compiler [Item String]
+          posts <- recentFirst =<< traverse (loadAndApplyTemplate "templates/micro-post-date.html" microPostCtx) =<< (loadAllSnapshots "micro-posts/*.md" "microPostSave" :: Compiler [Item String])
           let indexCtx =
                 listField "posts" microPostCtx (return posts)
                   `mappend` constField "title" (feedTitle microFeedConfig)
@@ -129,7 +128,7 @@ main = hakyllWith
       route $ gsubRoute "micro-posts/" (const "micro/")
       compile $ do
         let feedCtx = constField "title" "" <> postCtx <> bodyField "description"
-        posts <- fmap (take 10) . recentFirst =<< loadAllSnapshots "micro-posts/*.md" "microPostBodySave"
+        posts <- fmap (take 10) . recentFirst =<< loadAllSnapshots "micro-posts/*.md" "microPostSave"
         renderRss microFeedConfig feedCtx posts
     match "templates/*" $ compile templateBodyCompiler
 
@@ -140,8 +139,11 @@ postCtx =
 
 microPostCtx :: Context String
 microPostCtx =
-  dateField "date" "%FT%TZ"
+  dateField "date" "%B %e"
     <> defaultContext
+
+fullDateCtx :: Context String
+fullDateCtx = dateField "fullDate" "%B %e, %Y" <> defaultContext
 
 postCtxWithTags :: Tags -> Context String
 postCtxWithTags t = tagsField "tags" t `mappend` postCtx
