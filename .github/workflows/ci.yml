@@ -38,6 +38,7 @@ jobs:
         run: |
           cabal build
           cabal exec site build
+          cp static/* site
        
       - name: "deploy"
         uses: peaceiris/actions-gh-pages@v3
