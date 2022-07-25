@@ -44,6 +44,6 @@ jobs:
         if: ${{ github.ref == 'refs/heads/develop' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publis_dir: ./static
+          publish_dir: ./static
           publish_branch: master
           
