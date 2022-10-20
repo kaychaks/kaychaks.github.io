@@ -7,8 +7,17 @@
         <description><![CDATA[Kaushik Chakraborty's micro blog]]></description>
         <atom:link href="https://kaushikc.org/micro/rss.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Mon, 10 May 2021 02:55:30 UT</lastBuildDate>
+        <lastBuildDate>Thu, 20 Oct 2022 14:43:04 UT</lastBuildDate>
         <item>
+    <title></title>
+    <link>https://kaushikc.org/micro/20221020201304.html</link>
+    <description><![CDATA[<p>Projection and updates of nested data structure encoded as <code>Map&lt;String, Object&gt;</code> made elegant via Optics - not a big deal unless one needs to do that in Java. But FunctionalJava’s optics APIs saved my day again. The fact that FunctionalJava is so underused in the enterprise, which still lives in Java-land, is mind-boggling to me. I don’t work in Java anymore but demoing the power of lawful optics via FunctionalJava library was interesting.</p>
+]]></description>
+    <pubDate>2022-10-20 20:13:04+0530</pubDate>
+    <guid>https://kaushikc.org/micro/20221020201304.html</guid>
+    <dc:creator>Kaushik Chakraborty</dc:creator>
+</item>
+<item>
     <title></title>
     <link>https://kaushikc.org/micro/20210510082530.html</link>
     <description><![CDATA[<p>It’s not evil to go out or open windows coz it might save your life. And other uncomfortable facts long ignored/chastised by gods of WHO/CDC.</p>
@@ -99,18 +108,6 @@ thrown that last bit of rationality out of window leaving fear &amp; fear-monger
 ]]></description>
     <pubDate>2020-04-12 14:38:09+0530</pubDate>
     <guid>https://kaushikc.org/micro/20200412143809.html</guid>
-    <dc:creator>Kaushik Chakraborty</dc:creator>
-</item>
-<item>
-    <title></title>
-    <link>https://kaushikc.org/micro/20200410121543.html</link>
-    <description><![CDATA[<p>I followed the steps in this <a href="https://matrix.org/blog/2020/04/06/running-your-own-secure-communication-service-with-matrix-and-jitsi#synapse">superb
-guide</a>
-to setup Matrix &amp; Jitsi from scratch to rather do it in NixOS and here is my own rundown of the same</p>
-<p><a href="https://kaushikc.org/posts/matrix-jitsi-nixos.html">Declarative, Decentralised, and Secure communication via Matrix, Jitsi, &amp; NixOS</a></p>
-]]></description>
-    <pubDate>2020-04-10 12:15:43+0530</pubDate>
-    <guid>https://kaushikc.org/micro/20200410121543.html</guid>
     <dc:creator>Kaushik Chakraborty</dc:creator>
 </item>
 
