@@ -36,7 +36,9 @@
 - Contributed to [haskell-nix/hnix project](https://github.com/haskell-nix/hnix), a Haskell re-implementation of the Nix expression language, [2018](https://github.com/haskell-nix/hnix/commits/master/?author=kaychaks)
 
 ## Experience [Cognizant Technology Solutions, 2006 - NOW]
+
 ### Associate Director - Warehouse Management System (WMS) Modernisation for the World's Largest Refrigerated Warehousing Company [2022 - NOW]
+
 ---
 - Architected the modernisation of a critical WMS built using legacy FoxPro to a modern web application using React with NestJS-based Node APIs in the backend interacting with MS SQL server.
 - Built multiple internal libraries to fasten the overall implementation, like
@@ -52,6 +54,7 @@
 - Helped design and solve critical bugs in a parallel modernisation of legacy mobile WMS to a new React Native-driver mobile WMS
 
 ### Associate Director - Large E-Commerce Site Transformation [2021 - 2022]
+
 ---
 - Designed and spearheaded a large frontend technology transformation initiative for one of the largest e-commerce web applications. The web application is transitioning from legacy technologies of Backbone / Marrionette to modern Vue3 and SSR-based frontend stack.
 - The design is keeping in mind many existing vertical domains. Thereby, implementation is being done in a pure domain-driven design model.
@@ -59,6 +62,7 @@
 - The overall design also entails creating a multi-theme design system from scratch (without relying on any external design frameworks)
 
 ### Sr. Architect - Large Store Transformation [2019 - 2020]
+
 ---
 - Designed the end-to-end flow of a Hybrid Mobile Web Application destined to provide one consolidated experience capturing features from more than 40 legacy applications
 - Designed & implemented _GraphQL_ based middleware providing sophisticated schema for an _React/Relay_ based Hybrid Web Application and also having totally _type-safe Typescript_ resolvers integrating with multiple
@@ -68,6 +72,7 @@
 - Implemented advanced techniques in Relay's runtime and network manager to deal with better client performance for lazy loading and automated remote logging/monitoring.
 
 ### Sr. Architect - Global Technology Office - Applied Research Initiatives [2018 - 2019]
+
 ---
 - Collaborated with academia for research engagements, which entailed doing extensive literature study (especially going through foundational research papers), evaluating relevant source code libraries/implementations, and coming up with novel approaches to become a
   research proposal.
@@ -79,6 +84,7 @@
 	- Evaluating proposal on using Fluid Session Types for various use cases
 
 ### Architect - Global Technology Office - Solutions and Accelerators [2012-2018]
+
 ---
 - Worked on creating Knowledge Graph Models using Semantic Web Technologies (RDF & OWL) and
   other innovative techniques involving logic programming (Datalog & mini-Kanren), rules-engines, & other platforms (Stanford DeepDive) for various use-cases both internal and customer specific.
@@ -90,12 +96,14 @@
 - Contributed to HNix, an open source project for Haskell re-imlementation of the Nix expression language
 
 ### Sr. Associate - Global Technology Office - Consulting [2011 - 2012]
+
 ---
 - Worked as lead consultant and developed features for the web dashboards of a large NY based Investment Bank's R&D division. Used extensively ExtJS widgets & a web-components-based design that integrated with multiple other 3rd party
   scripts while ensuring strict performance requirements from the customers.
 - Worked as a consultant for a large mobility customer creating their massive web platform for converged experience of one of US's biggest media houses. The platform used advanced JavaScript to deliver streaming media content as well as lots of form based configuration screens having complicated business rules. Along with lead developer also tasked to manage teams across geographies for a seamless delivery.
 
 ### Associate [2006 - 2011]
+
 ---
 - Developed an enterprise mashup platform which worked similar to Yahoo Pipes but produced deployable mashups. Used Adobe Flex as one of the technologies to create the platform.
 - Involved in a project to create web based knowledge management portal by one of the largest casual dining chain of US. Used a home-grown JavaScript framework which
