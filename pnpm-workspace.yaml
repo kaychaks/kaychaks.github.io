@@ -1,0 +1,5 @@
+packages:
+  - 'webauthn-rp'
+  - 'passkey-registration-cli'
+
+
