@@ -1,9 +1,9 @@
-import * as E from 'fp-ts/Either';
+import * as E from 'fp-ts/lib/Either.js';
 import { copyBytes } from '../utils/bytes.js';
 import { domainError, type Base64UrlString, type Result } from '../utils/types.js';
 import { toBase64Url, fromBase64UrlToBytes } from '../utils/base64url.js';
 
-export type PublicKeyAlgorithm = 'ECDSA_P256' | 'EdDSA';
+export type PublicKeyAlgorithm = 'ES256' | 'EdDSA' | 'RS256';
 
 export interface PublicKey {
   readonly coseBytes: Uint8Array;

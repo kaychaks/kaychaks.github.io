@@ -1,5 +1,5 @@
 import { domainError, type Base64UrlString, type Result } from './types.js';
-import * as E from 'fp-ts/Either';
+import * as E from 'fp-ts/lib/Either.js';
 
 const BASE64URL_REGEX = /^[A-Za-z0-9_-]*$/;
 

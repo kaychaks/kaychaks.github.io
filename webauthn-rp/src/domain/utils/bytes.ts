@@ -1,5 +1,10 @@
 export const copyBytes = (bytes: Uint8Array): Uint8Array => new Uint8Array(bytes);
 
+export const toString = (bytes: Uint8Array): string => {
+  const str = new TextDecoder().decode(bytes);
+  return str;
+};
+
 export const timingSafeEqual = (a: Uint8Array, b: Uint8Array): boolean => {
   if (a.length !== b.length) {
     // Ensure constant time by comparing anyway
