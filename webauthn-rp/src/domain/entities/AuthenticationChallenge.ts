@@ -1,4 +1,4 @@
-import * as E from 'fp-ts/Either';
+import * as E from 'fp-ts/lib/Either.js';
 import { domainError, type Brand, type Result } from '../utils/types.js';
 import type { Challenge } from '../valueObjects/Challenge.js';
 

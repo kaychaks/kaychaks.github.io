@@ -1,4 +1,4 @@
-import * as E from 'fp-ts/Either';
+import * as E from 'fp-ts/lib/Either.js';
 import { copyBytes } from '../utils/bytes.js';
 import { domainError, type Result } from '../utils/types.js';
 import type { CredentialId } from '../valueObjects/CredentialId.js';
