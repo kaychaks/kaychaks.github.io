@@ -1,0 +1,11 @@
+{
+  "name": "blog-root",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "webauthn-rp",
+    "passkey-registration-cli"
+  ]
+}
+
+
