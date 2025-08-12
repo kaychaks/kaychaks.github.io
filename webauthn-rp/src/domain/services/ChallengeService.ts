@@ -1,5 +1,5 @@
-import * as E from 'fp-ts/Either';
-import * as O from 'fp-ts/Option';
+import * as E from 'fp-ts/lib/Either.js';
+import * as O from 'fp-ts/lib/Option.js';
 import { randomBytes as nodeRandomBytes } from 'node:crypto';
 import { type Result, domainError } from '../utils/types.js';
 import { toBase64Url } from '../utils/base64url.js';

@@ -1,4 +1,4 @@
-import * as E from 'fp-ts/Either';
+import * as E from 'fp-ts/lib/Either.js';
 import { createHash } from 'node:crypto';
 import { domainError, type Result } from '../utils/types.js';
 
