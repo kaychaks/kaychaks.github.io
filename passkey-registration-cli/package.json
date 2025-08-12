@@ -1,0 +1,37 @@
+{
+  "name": "passkey-registration-cli",
+  "version": "0.1.0",
+  "description": "One-time passkey registration tool for blog auth (CLI + local web server)",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "passkey-registration": "dist/index.js"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "open": "^10.1.0",
+    "cbor-x": "^1.6.0",
+    "webauthn-rp": "file:../webauthn-rp",
+    "fp-ts": "^2.16.10"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^24.2.1",
+    "typescript": "^5.9.2"
+  },
+  "engines": {
+    "node": ">=18.17"
+  },
+  "license": "ISC"
+}
+
+

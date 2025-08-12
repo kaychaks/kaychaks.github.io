@@ -1,0 +1,9 @@
+{
+  "credentialId": "zAoVk8HeHhmODU5wVaNlHO5UDt23y9QBB4lm6vIOGUtN7z4ASbvFmLUA9w",
+  "publicKeyCose": "uQAFYTECYTMmYi0xAWItMthAWCB5ekOEn0ZI6ard73hOq0rb4mutRGj2puLcAOUooHpHNmItM9hAWCDTYC1vMSg30Y5mGFlX24nko4HHPQWtmN1FuhJXUdaQNg",
+  "algorithm": -7,
+  "registrationTimestamp": "2025-08-12T10:34:15.254Z",
+  "rpId": "localhost",
+  "toolVersion": "0.1.0",
+  "signCounter": 0
+}
