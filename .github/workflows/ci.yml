@@ -11,13 +11,15 @@ jobs:
         ghc:
           - 8.10.7
         cabal:
-          - 3.10.3.0
+          - latest
 
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
       - uses: haskell-actions/setup@v2
+        id: setup
         with:
           ghc-version: ${{ matrix.ghc }}
           cabal-version: ${{ matrix.cabal }}
@@ -50,7 +52,7 @@ jobs:
         with:
           path: ${{ steps.setup.outputs.cabal-store }}
           key: ${{ steps.cache.outputs.cache-primary-key }}
-          
+
       - name: "build site"
         run: |
           cabal build
