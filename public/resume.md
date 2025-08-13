@@ -1,8 +1,7 @@
 # Kaushik Chakraborty
 
 [kaushik@kaushikc.org](mailto:kaushik@kaushikc.org) |
-[github.com/kaychaks](github.com/kaychaks) | [linkedin.com/in/kaychaks/](https://www.linkedin.com/in/kaychaks/) |
-<br />[kaushikc.org/tags/technology](kaushikc.org/tags/technology)
+[github.com/kaychaks](github.com/kaychaks) | [linkedin.com/in/kaychaks/](https://www.linkedin.com/in/kaychaks/) | [kaushikc.org/tags/technology](kaushikc.org/tags/technology)
 
 ## About me
   
@@ -10,7 +9,7 @@
 
 ### Programming
   
-  **TypeScript**, **Unison**<br />
+  **TypeScript**, **Rust**, **Unison**<br />
   _Also_: Rust, Haskell, Python, NodeJS, React, Vue, Svelte, Scala, Lean, PHP, Relay, Redux
 
 ### Operations
@@ -20,7 +19,7 @@
   
 ### General
   
-  **Modern Web Programming(GraphQL, Virtual DOM, Progressive Web, Web Assembly)**,
+  **Enterprise Architecture**, **Distributed Systems**, **Modern Web Programming**,
   **Functional Programming**, **Type Systems**<br />
   _Also_: HTTP, Reactive Principles, Graphs, Formal Methods, Knowledge
   Engineering, Site Reliability Engineering (SRE), Extreme Programming based Agile
