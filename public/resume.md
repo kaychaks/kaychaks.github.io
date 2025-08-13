@@ -1,8 +1,7 @@
 # Kaushik Chakraborty
 
 [kaushik@kaushikc.org](mailto:kaushik@kaushikc.org) |
-[github.com/kaychaks](github.com/kaychaks) |
-[keybase.io/kaushikc](keybase.io/kaushikc) | [linkedin.com/in/kaychaks/](https://www.linkedin.com/in/kaychaks/) |
+[github.com/kaychaks](github.com/kaychaks) | [linkedin.com/in/kaychaks/](https://www.linkedin.com/in/kaychaks/) |
 <br />[kaushikc.org/tags/technology](kaushikc.org/tags/technology)
 
 ## About me
@@ -11,13 +10,13 @@
 
 ### Programming
   
-  **TypeScript**, **JavaScript**, **Rust**<br />
-  _Also_: NodeJS, React, Vue, Svelte, Relay, Redux, Haskell, Scala, Lean, PHP, Python, PureScript
+  **TypeScript**, **Unison**<br />
+  _Also_: Rust, Haskell, Python, NodeJS, React, Vue, Svelte, Scala, Lean, PHP, Relay, Redux
 
 ### Operations
   
-  **Linux**, **Kubernetes**<br />
-  _Also_: Nix, Github Actions, Terraform, Ansible, Circle CI, Docker Registry, Dhall
+  **Linux**, **Kubernetes**, **AWS**<br />
+  _Also_: Nix, Github Actions, AWS EKS, AWS Cognito, AWS Lambda, Terraform, Dhall
   
 ### General
   
@@ -28,6 +27,8 @@
 
 ## Experience [Open Source]
 
+- Published [unichorn](https://share.unison-lang.org/@kaychaks/unichorn), a Functional Choreographic Programming library in Unison. Choreographic programming is a programming paradigm where one writes a single program that describes the complete behavior of a distributed system and then compiles it to individual programs that run on each node. In this way, the generated programs are guaranteed to be deadlock-free, 2024
+- Published [cbor](https://share.unison-lang.org/@kaychaks/cbor), a library providing a CBOR (Concise Binary Object Representation) decoder implemented in Unison. It is specifically designed for decoding CBOR data in the context of WebAuthn flows, with a focus on supporting the CBOR Data Model that aligns with JSON document structures, 2024
 - Published [autopack](https://github.com/kaychaks/autopack), a CLI tool built in Rust to auto-build and run a React app within a Docker container without a Dockerfile leveraging Cloud Native Buildpacks, 2023
 - Published [kiteticker-async Rust crate](https://crates.io/crates/kiteticker-async), an async Rust client for Kite Connect Websocket API, [2022](https://github.com/kaychaks/kiteticker-async)
 - Published [hmm](https://github.com/kaychaks/hmm), Haskell implementations of Hidden Markov Models & related algorithms
@@ -35,8 +36,16 @@
 - Contributed to [scalaz/scalaz](https://github.com/scalaz/scalaz), a library for principled functional programming in Scala, [2019](https://github.com/scalaz/scalaz/commits/master/?author=kaychaks)
 - Contributed to [haskell-nix/hnix project](https://github.com/haskell-nix/hnix), a Haskell re-implementation of the Nix expression language, [2018](https://github.com/haskell-nix/hnix/commits/master/?author=kaychaks)
 
-## Experience [Cognizant Technology Solutions, 2006 - NOW]
-### Associate Director - Warehouse Management System (WMS) Modernisation for the World's Largest Refrigerated Warehousing Company [2022 - NOW]
+## Experience [Cognizant Technology Solutions, 2006 - 2025]
+### Enterprise Architect - Customer Portal Modernisation [2024-2025]
+---
+- Architected, implemented, and lead a large-scale migration of existing .NET & Angular-based legacy customer portal into modern AWS cloud-native Java Springboot microservices & Next.js microfrontends.
+
+- Migration of ad-hoc authentication & authorisation system to AWS Cognito with both Cognito user pools & federated OIDC authentication and Amazon Verified Permission-based authorisation. 
+
+- Database migration from legacy Oracle DB to AWS DocumentDB for application & RedShift for analytics. 
+
+### Associate Director - Warehouse Management System (WMS) Modernisation for the World's Largest Refrigerated Warehousing Company [2022 - 2024]
 ---
 - Architected the modernisation of a critical WMS built using legacy FoxPro to a modern web application using React with NestJS-based Node APIs in the backend interacting with MS SQL server.
 - Built multiple internal libraries to fasten the overall implementation, like
