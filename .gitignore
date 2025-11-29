@@ -6,3 +6,19 @@ _cache
 dist*
 site/
 .DS_Store
+# Devenv
+.devenv*
+devenv.local.nix
+
+# direnv
+.direnv
+
+# pre-commit
+.pre-commit-config.yaml
+
+unison-workspace/
+.playwright-mcp
+passkey-registration-cli/
+webauthn-rp/
+node_modules/
+
