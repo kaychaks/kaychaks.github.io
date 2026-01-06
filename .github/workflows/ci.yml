@@ -1,69 +1,52 @@
 name: CI Workflow
+
 on:
   push:
     branches:
       - "develop"
-jobs:
-  ci:
-    runs-on: ubuntu-22.04
-    strategy:
-      matrix:
-        ghc:
-          - 8.10.7
-        cabal:
-          - latest
 
+jobs:
+  build:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      - uses: haskell-actions/setup@v2
-        id: setup
+      - name: Install Nix
+        uses: cachix/install-nix-action@v30
         with:
-          ghc-version: ${{ matrix.ghc }}
-          cabal-version: ${{ matrix.cabal }}
-          cabal-update: true
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+          extra_nix_config: |
+            accept-flake-config = true
+            experimental-features = nix-command flakes
 
-      - name: Configure the build
-        run: |
-          cabal configure --enable-tests --enable-benchmarks --disable-documentation
-          cabal build all --dry-run
-
-      - name: Restore cached dependencies
-        uses: actions/cache/restore@v4
-        id: cache
-        env:
-          key: ${{ runner.os }}-ghc-${{ steps.setup.outputs.ghc-version }}-cabal-${{ steps.setup.outputs.cabal-version }}
+      - name: Setup Cachix
+        uses: cachix/cachix-action@v15
         with:
-          path: ${{ steps.setup.outputs.cabal-store }}
-          key: ${{ env.key }}-plan-${{ hashFiles('**/plan.json') }}
-          restore-keys: ${{ env.key }}-
+          name: kaushikc-blog
+          authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
 
-      - name: Install dependencies
-        # If we had an exact cache hit, the dependencies will be up to date.
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: cabal build all --only-dependencies
-      
-      - name: Save cached dependencies
-        uses: actions/cache/save@v4
-        # If we had an exact cache hit, trying to save the cache would error because of key clash.
-        if: steps.cache.outputs.cache-hit != 'true'
-        with:
-          path: ${{ steps.setup.outputs.cabal-store }}
-          key: ${{ steps.cache.outputs.cache-primary-key }}
+      - name: Build site
+        run: nix build --print-build-logs
 
-      - name: "build site"
-        run: |
-          cabal build
-          cabal exec site build
-          cp static/* site
-       
-      - name: "deploy"
-        uses: peaceiris/actions-gh-pages@v4
-        if: ${{ github.ref == 'refs/heads/develop' }}
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site
-          publish_branch: master
-          
+          path: result/
+
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/develop'
+    runs-on: ubuntu-latest
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

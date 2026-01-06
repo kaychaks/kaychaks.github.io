@@ -16,6 +16,11 @@ devenv.local.nix
 # pre-commit
 .pre-commit-config.yaml
 
+# Nix
+result
+result-*
+flake.lock
+
 unison-workspace/
 .playwright-mcp
 passkey-registration-cli/
