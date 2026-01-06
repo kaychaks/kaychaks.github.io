@@ -1,5 +1,5 @@
 ---
-title : Declarative, Decentralised, and Secure communication via Matrix, Jitsi, & NixOS
+title : Declarative, Decentralised, and Secure communication via Matrix, Jitsi, &amp; NixOS
 published : 2020-04-10
 tags : technology , nixos
 link :
