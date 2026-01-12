@@ -20,7 +20,7 @@ jobs:
             experimental-features = nix-command flakes
 
       - name: Setup Cachix
-        uses: cachix/cachix-action@v15
+        uses: cachix/cachix-action@v16
         with:
           name: kaushikc-blog
           authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
